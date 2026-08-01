@@ -58,9 +58,19 @@ export function Header() {
           <span className="relative grid size-9 place-items-center rounded-xl bg-brand shadow-glow">
             <span className="size-3.5 rounded-[5px] border-2 border-primary-foreground" />
           </span>
-          <span className="font-display text-lg leading-none tracking-tight text-navy">
+          <span
+            className={cn(
+              "font-display text-lg leading-none tracking-tight transition-colors",
+              scrolled ? "text-navy" : "text-navy-foreground",
+            )}
+          >
             Nex<span className="text-gradient">Home</span>
-            <span className="mt-1 block text-[0.6rem] font-medium tracking-[0.28em] text-muted-foreground uppercase">
+            <span
+              className={cn(
+                "mt-1 block text-[0.6rem] font-medium tracking-[0.28em] uppercase transition-colors",
+                scrolled ? "text-muted-foreground" : "text-navy-foreground/60",
+              )}
+            >
               Automation
             </span>
           </span>
@@ -71,7 +81,12 @@ export function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="rounded-full px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-secondary hover:text-primary"
+              className={cn(
+                "rounded-full px-3 py-2 text-sm font-medium transition-colors",
+                scrolled
+                  ? "text-foreground/80 hover:bg-secondary hover:text-primary"
+                  : "text-navy-foreground/80 hover:bg-navy-foreground/10 hover:text-navy-foreground",
+              )}
             >
               {item.label}
             </a>
@@ -82,13 +97,23 @@ export function Header() {
           <button
             onClick={toggle}
             aria-label="Toggle dark mode"
-            className="grid size-10 place-items-center rounded-full border border-border text-foreground/80 transition-colors hover:border-primary/40 hover:text-primary"
+            className={cn(
+              "grid size-10 place-items-center rounded-full border transition-colors",
+              scrolled
+                ? "border-border text-foreground/80 hover:border-primary/40 hover:text-primary"
+                : "border-navy-foreground/25 text-navy-foreground/85 hover:border-accent/60 hover:text-accent",
+            )}
           >
             {dark ? <Sun className="size-4.5" /> : <Moon className="size-4.5" />}
           </button>
           <a
             href={CONTACT.phoneHref}
-            className="hidden size-10 place-items-center rounded-full border border-border text-foreground/80 transition-colors hover:border-primary/40 hover:text-primary sm:grid"
+            className={cn(
+              "hidden size-10 place-items-center rounded-full border transition-colors sm:grid",
+              scrolled
+                ? "border-border text-foreground/80 hover:border-primary/40 hover:text-primary"
+                : "border-navy-foreground/25 text-navy-foreground/85 hover:border-accent/60 hover:text-accent",
+            )}
             aria-label={`Call ${CONTACT.phoneDisplay}`}
           >
             <PhoneCall className="size-4.5" />
@@ -102,12 +127,18 @@ export function Header() {
           <button
             onClick={() => setOpen(true)}
             aria-label="Open menu"
-            className="grid size-10 place-items-center rounded-full border border-border text-foreground xl:hidden"
+            className={cn(
+              "grid size-10 place-items-center rounded-full border xl:hidden",
+              scrolled
+                ? "border-border text-foreground"
+                : "border-navy-foreground/25 text-navy-foreground",
+            )}
           >
             <Menu className="size-5" />
           </button>
         </div>
       </div>
+
 
       {/* Mobile drawer */}
       <div
