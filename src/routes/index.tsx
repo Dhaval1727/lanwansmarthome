@@ -1,24 +1,100 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Header } from "@/components/site/header";
+import {
+  Hero,
+  About,
+  Products,
+  Solutions,
+  WhyUs,
+  Process,
+  Brands,
+} from "@/components/site/sections-top";
+import {
+  Stats,
+  Gallery,
+  Testimonials,
+  Faqs,
+  Blog,
+  Contact,
+  Footer,
+  FloatingActions,
+} from "@/components/site/sections-bottom";
+import { CONTACT, FAQS } from "@/lib/site-data";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const title = "NexHome Automation | Premium Smart Home Solutions & Installation";
+const description =
+  "Smart locks, switches, cameras, video door phones, lighting and curtains — designed and installed by certified engineers. Book a free consultation today.";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      name: CONTACT.brand,
+      description,
+      telephone: CONTACT.phoneDisplay,
+      email: CONTACT.email,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "No. 42, Prestige Tech Park Road, Whitefield",
+        addressLocality: "Bengaluru",
+        postalCode: "560066",
+        addressCountry: "IN",
+      },
+      openingHours: "Mo-Sa 09:30-19:30",
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "4.9",
+        reviewCount: "380",
+      },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: FAQS.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    },
+  ],
+};
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(jsonLd) }],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background">
+      <Header />
+      <main>
+        <Hero />
+        <About />
+        <Products />
+        <Solutions />
+        <WhyUs />
+        <Process />
+        <Brands />
+        <Stats />
+        <Gallery />
+        <Testimonials />
+        <Faqs />
+        <Blog />
+        <Contact />
+      </main>
+      <Footer />
+      <FloatingActions />
     </div>
   );
 }
