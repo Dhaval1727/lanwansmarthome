@@ -72,14 +72,15 @@ export function Hero() {
           </span>
 
           <h1 className="mt-7 text-[2.75rem] leading-[1.03] text-navy-foreground sm:text-6xl lg:text-7xl">
-            Secure Smarter.
+            Control Everything
             <br />
-            <span className="text-gradient">Live Better.</span>
+            <span className="text-gradient">Effortlessly.</span>
           </h1>
 
           <p className="mt-6 max-w-xl text-base leading-relaxed text-navy-foreground/75 sm:text-lg">
-            Premium smart home automation solutions for homes and businesses —
-            designed, installed and supported by certified engineers.
+            Makes value smarter, comfort enhanced. Ultra-fast IoT response,
+            smart app control and seamless Zigbee 3.0 automation — designed,
+            installed and supported by certified engineers.
           </p>
 
           <div className="mt-9 flex flex-wrap gap-3">
@@ -133,16 +134,17 @@ export function About() {
         <Reveal>
           <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3.5 py-1.5 text-xs font-semibold tracking-[0.18em] text-primary uppercase">
             <span className="size-1.5 rounded-full bg-accent" />
-            About NexHome
+            About Lanwan
           </span>
           <h2 className="mt-5 text-3xl leading-[1.12] text-navy sm:text-4xl lg:text-[2.75rem]">
             Automation that feels invisible, engineered to be dependable.
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-            NexHome Automation designs and installs complete smart home systems
-            for residences, villas and commercial spaces across South India.
-            Since 2021 we have commissioned more than 500 projects — each one
-            planned on site, wired cleanly and handed over with training.
+            Lanwan Automation is a leading smart home automation and IoT solutions
+            company, transforming everyday spaces into intelligent environments.
+            From homes to enterprises — hotels, hospitals, senior living spaces
+            and warehouses — we design solutions that bring comfort, convenience
+            and control to your fingertips.
           </p>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -204,7 +206,7 @@ export function Products() {
         <SectionHeading
           eyebrow="Our Products"
           title={<>Premium hardware, curated and tested</>}
-          subtitle="Every device we sell is installed by our own engineers — so we only stock what we trust in our own homes."
+          subtitle="The complete Phlipton catalogue — switches, knobs, screens, locks, curtains and lighting — installed by our own engineers."
         />
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -266,7 +268,7 @@ export function Solutions() {
           tone="dark"
           eyebrow="Smart Home Solutions"
           title={<>Built for the space you are designing</>}
-          subtitle="From a single apartment retrofit to a 42-room hotel rollout, the system scales with you."
+          subtitle="From a single apartment retrofit to hotels, hospitals and warehouses, one ecosystem scales with you."
         />
 
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

@@ -7,12 +7,13 @@ import light from "@/assets/p-light.jpg";
 import curtain from "@/assets/p-curtain.jpg";
 
 export const CONTACT = {
-  brand: "NexHome Automation",
+  brand: "Lanwan Automation",
+  tagline: "Makes Value Smarter, Comfort Enhanced",
   phoneDisplay: "+91 98765 43210",
   phoneHref: "tel:+919876543210",
   whatsappHref:
-    "https://wa.me/919876543210?text=Hi%20NexHome%2C%20I%27d%20like%20a%20free%20smart%20home%20consultation.",
-  email: "hello@nexhomeautomation.in",
+    "https://wa.me/919876543210?text=Hi%20Lanwan%2C%20I%27d%20like%20a%20free%20smart%20home%20consultation.",
+  email: "hello@lanwanautomation.in",
   address: "No. 42, Prestige Tech Park Road, Whitefield, Bengaluru 560066",
   hours: "Mon – Sat · 9:30 AM to 7:30 PM",
 };
@@ -31,91 +32,91 @@ export const NAV = [
 ];
 
 export const TRUST_BADGES = [
-  "5+ Years Experience",
-  "500+ Installations",
+  "Zigbee 3.0 & Matter",
+  "Make in India",
+  "100+ Panel Combinations",
+  "5-Year Switch Warranty",
   "24×7 Support",
-  "Certified Experts",
-  "Warranty Included",
 ];
 
 export const PRODUCTS = [
   {
+    name: "Titan Switch",
+    image: switchImg,
+    description:
+      "Modular 2/4/6/8 module panels in premium aluminium and PC finish with up to 10 relays and 18 programmable keys.",
+    features: ["100+ combinations", "10A heavy load", "USB-A + USB-C"],
+  },
+  {
+    name: "LuxeRay Glass Switches",
+    image: switchImg,
+    description:
+      "2.5D curved toughened glass panels with CNC machined gold, silver or black bezels and backlit custom icons.",
+    features: ["50+ variants", "16A per switch", "ALS auto-brightness"],
+  },
+  {
+    name: "Smart Knob",
+    image: switchImg,
+    description:
+      "Zigbee rotary knobs in Curve, Edge, Luxe and Core styles for dimming, tuning and up to 12 one-touch scenes.",
+    features: ["Magnetic plate", "Type-C charging", "12 scenes"],
+  },
+  {
+    name: "Multifunctional Screen",
+    image: vdp,
+    description:
+      "3.5\", 4\", 8\" and 10\" central control panels on the latest Tuya OS, doubling as an in-wall Zigbee gateway.",
+    features: ["Alexa support", "Built-in gateway", "Fits 86 box"],
+  },
+  {
     name: "Smart Door Locks",
     image: lock,
     description:
-      "Fingerprint, PIN, RFID and app access with anti-theft alarms for main doors.",
-    features: ["5-way unlock", "Auto-lock", "Tamper alert"],
+      "Series 1 to Series 4, G1, R1/R1D and H1 locks with fingerprint, password, card, key, app and remote unlock.",
+    features: ["6-way unlock", "Wi-Fi active", "Anti-theft alarm"],
   },
   {
-    name: "Smart Switches",
-    image: switchImg,
-    description:
-      "Retrofit touch panels that control lights, fans and appliances from anywhere.",
-    features: ["No rewiring", "Fan regulator", "Scene control"],
-  },
-  {
-    name: "Video Door Phones",
-    image: vdp,
-    description:
-      "See, speak and unlock for visitors from a 7-inch indoor monitor or your phone.",
-    features: ["HD video", "Cloud recording", "Multi-unit"],
-  },
-  {
-    name: "Smart Cameras",
-    image: camera,
-    description:
-      "Indoor and outdoor cameras with AI person detection and instant alerts.",
-    features: ["2K clarity", "Night vision", "Two-way talk"],
-  },
-  {
-    name: "Smart Door Bells",
+    name: "Video Door Bell & VDP",
     image: bell,
     description:
-      "Battery or wired video doorbells that record every visit, even when you're away.",
-    features: ["Motion alerts", "Chime kit", "Wide angle"],
-  },
-  {
-    name: "Smart Lighting",
-    image: light,
-    description:
-      "Tunable, dimmable and RGB profile lighting choreographed to your daily routine.",
-    features: ["16M colours", "Circadian modes", "Voice ready"],
+      "Wi-Fi video doorbells and IP video door phones with indoor chime, multi-monitor support and easy install.",
+    features: ["HD video", "Two-way talk", "Multi-monitor"],
   },
   {
     name: "Smart Curtains",
     image: curtain,
     description:
-      "Whisper-quiet motorised tracks and blinds that wake up with the sunrise.",
-    features: ["Silent motor", "Sun schedule", "Manual pull"],
+      "1.2Nm and 2Nm curtain motors up to 90kg with heavy-duty aluminium tracks — silent, smooth and app controlled.",
+    features: ["Up to 90kg", "Silent motor", "Sun schedule"],
   },
   {
-    name: "Automation Controllers",
-    image: switchImg,
+    name: "Smart Lights & Track",
+    image: light,
     description:
-      "Zigbee, Matter and Wi-Fi hubs that unify every device under one dependable brain.",
-    features: ["Matter ready", "Offline scenes", "Alexa & Google"],
+      "Concealed downlights, magnetic track lights, LED strips, drivers and controllers with flicker-free 0.1–100% dimming.",
+    features: ["Flicker-free", "CCT 2700–6500K", "Surface / concealed"],
   },
 ];
 
 export const SOLUTIONS = [
   { title: "Homes", copy: "Lighting, security and climate for independent houses." },
-  { title: "Apartments", copy: "Retrofit automation with zero civil work or damage." },
-  { title: "Villas", copy: "Multi-floor scenes, gate control and perimeter security." },
+  { title: "Apartments", copy: "Retrofit Zigbee panels with zero civil work or damage." },
+  { title: "Villas", copy: "IP villa intercom, gate control and perimeter security." },
+  { title: "Hotels", copy: "Series H0/H1 RFID locks, DND panels and energy-saving switches." },
+  { title: "Hospitals", copy: "Nurse-friendly controls, access logs and reliable offline scenes." },
+  { title: "Senior Living", copy: "Human presence sensors, one-touch scenes and voice control." },
+  { title: "Warehouses", copy: "Gateway-managed lighting zones and load monitoring at scale." },
   { title: "Offices", copy: "Access control, occupancy sensing and energy dashboards." },
-  { title: "Hotels", copy: "Guest room controls, RFID locks and housekeeping logic." },
-  { title: "Retail Shops", copy: "Shutter alerts, camera analytics and display lighting." },
-  { title: "Builders", copy: "Standardised automation packages across every unit." },
-  { title: "Architects", copy: "Early-stage load planning and conduit drawings." },
-  { title: "Interior Designers", copy: "Concealed hardware that respects your design language." },
+  { title: "Architects & Designers", copy: "Concealed hardware, load planning and conduit drawings." },
 ];
 
 export const WHY_US = [
-  { title: "Certified Installation", copy: "In-house engineers, not subcontracted labour." },
-  { title: "Premium Brands", copy: "Only genuine, warranty-backed global hardware." },
+  { title: "Zigbee 3.0 Mesh", copy: "Unmatched stability with offline scene operation." },
+  { title: "Matter Ready", copy: "Pro Max gateway future-proofs every installation." },
   { title: "Expert Support", copy: "Dedicated account engineer for every project." },
-  { title: "Warranty", copy: "Up to 3 years on product plus 1 year on workmanship." },
-  { title: "Affordable Pricing", copy: "Transparent quotes with phased upgrade paths." },
-  { title: "Quick Installation", copy: "Most homes commissioned within 48 hours." },
+  { title: "5-Year Warranty", copy: "Up to 5 years on switches plus workmanship cover." },
+  { title: "Make in India", copy: "Locally engineered panels built for Indian gang boxes." },
+  { title: "Quick Installation", copy: "Retrofit fitment — most homes live within 48 hours." },
   { title: "Professional Team", copy: "Uniformed, background-verified technicians." },
 ];
 
@@ -129,20 +130,20 @@ export const PROCESS = [
 ];
 
 export const BRANDS = [
-  "Yale",
-  "Godrej",
-  "Qubo",
-  "Aqara",
-  "Philips",
-  "Samsung",
-  "Hikvision",
-  "CP Plus",
+  "Phlipton",
+  "Titan Switch",
+  "LuxeRay",
+  "Tuya",
+  "Zigbee 3.0",
+  "Matter",
+  "Alexa",
+  "Google Home",
 ];
 
 export const STATS = [
   { value: 500, suffix: "+", label: "Projects Completed" },
   { value: 1000, suffix: "+", label: "Happy Customers" },
-  { value: 5, suffix: "+", label: "Years Experience" },
+  { value: 200, suffix: "", label: "Devices per Gateway" },
   { value: 24, suffix: "×7", label: "Support" },
 ];
 
@@ -152,7 +153,7 @@ export const TESTIMONIALS = [
     location: "Prestige Lakeside, Bengaluru",
     rating: 5,
     review:
-      "They automated our 3BHK in two days without breaking a single wall. The lighting scenes alone changed how the house feels in the evening.",
+      "The Titan panels replaced every switchboard in our 3BHK without breaking a wall. The knob dimming alone changed how the house feels in the evening.",
     initials: "AM",
   },
   {
@@ -160,7 +161,7 @@ export const TESTIMONIALS = [
     location: "Villa Owner, Sarjapur",
     rating: 5,
     review:
-      "From the site visit to the handover session, everything was documented. The smart lock and cameras give my parents real peace of mind.",
+      "From the site visit to handover, everything was documented. The Series 3 lock and villa intercom give my parents real peace of mind.",
     initials: "SR",
   },
   {
@@ -168,7 +169,7 @@ export const TESTIMONIALS = [
     location: "Interior Designer, Chennai",
     rating: 5,
     review:
-      "I now specify NexHome on every premium project. Their hardware is concealed beautifully and the team respects site timelines.",
+      "I now specify LuxeRay glass panels on every premium project. The bezels match our hardware finishes and the team respects site timelines.",
     initials: "KI",
   },
   {
@@ -176,79 +177,79 @@ export const TESTIMONIALS = [
     location: "Boutique Hotel, Kochi",
     rating: 5,
     review:
-      "42 rooms with RFID locks and occupancy-linked AC. Our energy bill dropped by nearly a fifth in the first quarter.",
+      "42 rooms with Series H1 RFID locks, DND panels and energy-saving switches. Our power bill dropped by nearly a fifth in the first quarter.",
     initials: "PN",
   },
 ];
 
 export const GALLERY = [
-  { title: "Penthouse Lighting", tag: "Luxury Home", image: light },
-  { title: "Villa Entrance Security", tag: "Villa Project", image: lock },
-  { title: "Bedroom Curtain Automation", tag: "Apartment", image: curtain },
-  { title: "Boardroom Access Control", tag: "Office", image: vdp },
+  { title: "Penthouse Track Lighting", tag: "Luxury Home", image: light },
+  { title: "Villa Entrance Smart Lock", tag: "Villa Project", image: lock },
+  { title: "Bedroom Curtain Motors", tag: "Apartment", image: curtain },
+  { title: "8\" Control Panel Boardroom", tag: "Office", image: vdp },
   { title: "Perimeter Camera Grid", tag: "Villa Project", image: camera },
-  { title: "Entrance Doorbell Retrofit", tag: "Before / After", image: bell },
+  { title: "Video Doorbell Retrofit", tag: "Before / After", image: bell },
 ];
 
 export const FAQS = [
   {
     q: "What warranty do I get on products and installation?",
-    a: "Every device carries the manufacturer warranty of 1 to 3 years, and we add a 1-year workmanship warranty on all wiring and fitment done by our engineers.",
+    a: "Titan and LuxeRay switch panels carry up to a 5-year warranty, other devices 1 to 3 years, and we add a 1-year workmanship warranty on all wiring and fitment done by our engineers.",
   },
   {
     q: "How long does a full home installation take?",
-    a: "A typical 2–3 BHK apartment is completed in 1 to 2 days. Villas and commercial sites usually take 3 to 5 days depending on the number of points.",
+    a: "A typical 2–3 BHK apartment is completed in 1 to 2 days. Villas, hotels and commercial sites usually take 3 to 5 days depending on the number of points.",
   },
   {
     q: "Do I need to break walls or redo my wiring?",
-    a: "No. Our smart switches and locks are retrofit devices that sit inside your existing boxes and doors. New construction projects can opt for full concealed wiring.",
+    a: "No. Our panels fit standard Indian gang boxes and the locks are retrofit devices. New construction projects can opt for full concealed wiring and magnetic track lighting.",
   },
   {
     q: "Is there a single mobile app for everything?",
-    a: "Yes. We commission all devices into one app with room-wise grouping, scenes, schedules and family sharing, plus Alexa and Google Assistant voice control.",
+    a: "Yes. Everything is commissioned into one Tuya-based app with room grouping, scenes, schedules and family sharing, plus Alexa, Google and Siri shortcuts.",
   },
   {
     q: "What happens if my internet goes down?",
-    a: "Local scenes, switches and locks keep working offline through the hub. Only remote access and notifications pause until connectivity returns.",
+    a: "The Zigbee 3.0 mesh keeps local scenes, switches, knobs and locks working offline through the gateway. Only remote access and notifications pause until connectivity returns.",
   },
   {
-    q: "Do you support products bought elsewhere?",
-    a: "We support most Matter, Zigbee and Wi-Fi devices. Share the model numbers and we will confirm compatibility during the consultation.",
+    q: "How many devices can one gateway handle?",
+    a: "The Wired Pro Gateway supports 200 Zigbee devices simultaneously, with up to 200 m outdoor and 20 m indoor range. Larger sites use multiple gateways or the Pro Max Matter gateway.",
   },
 ];
 
 export const BLOG = [
   {
-    title: "7 Reasons Smart Locks Beat Traditional Locks",
-    excerpt: "Keys get copied and lost. Here is how digital access changes home security.",
+    title: "Titan vs LuxeRay: Choosing Your Switch Panel",
+    excerpt: "Aluminium modularity or curved glass elegance — how to pick per room.",
     date: "12 Jul 2026",
     read: "6 min read",
-    tag: "Security",
-  },
-  {
-    title: "How Smart Homes Cut Energy Bills by 22%",
-    excerpt: "Occupancy sensing, scheduling and load monitoring add up faster than you think.",
-    date: "28 Jun 2026",
-    read: "5 min read",
-    tag: "Efficiency",
-  },
-  {
-    title: "Choosing the Best Smart Switches for Indian Homes",
-    excerpt: "Neutral wire, fan regulation and retrofit depth — what actually matters.",
-    date: "09 Jun 2026",
-    read: "8 min read",
     tag: "Buying Guide",
   },
   {
-    title: "Home Security Tips Before You Travel",
-    excerpt: "A five-minute checklist that makes an empty house look permanently occupied.",
-    date: "21 May 2026",
-    read: "4 min read",
-    tag: "Tips",
+    title: "Why Zigbee 3.0 Mesh Beats Wi-Fi-Only Homes",
+    excerpt: "Offline scenes, lower standby draw and rock-solid range across floors.",
+    date: "28 Jun 2026",
+    read: "5 min read",
+    tag: "Technology",
   },
   {
-    title: "The Future of Home Automation: Matter & Beyond",
-    excerpt: "Why one open standard finally ends the brand lock-in problem.",
+    title: "Smart Door Locks: Series 1 to Series 4 Explained",
+    excerpt: "Fingerprint, card, palm and app access — which series suits your door.",
+    date: "09 Jun 2026",
+    read: "8 min read",
+    tag: "Security",
+  },
+  {
+    title: "Designing with Magnetic Track Lighting",
+    excerpt: "Surface or concealed, grill or flood — building layered light that moves.",
+    date: "21 May 2026",
+    read: "4 min read",
+    tag: "Lighting",
+  },
+  {
+    title: "Matter & the End of Brand Lock-In",
+    excerpt: "How the Pro Max gateway future-proofs everything you install today.",
     date: "02 May 2026",
     read: "7 min read",
     tag: "Insights",
