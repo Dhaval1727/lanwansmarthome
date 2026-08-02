@@ -67,7 +67,7 @@ export function Header() {
         "fixed inset-x-0 top-0 z-50 transition-all duration-500",
         scrolled
           ? "border-b border-border/70 bg-background/85 backdrop-blur-xl shadow-soft"
-          : "bg-transparent",
+          : "bg-linear-to-b from-navy-deep/75 via-navy-deep/35 to-transparent",
       )}
     >
       <div className="container-page flex h-18 items-center justify-between gap-6 py-3">
