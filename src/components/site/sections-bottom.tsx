@@ -337,7 +337,7 @@ export function Contact() {
 
             <div className="overflow-hidden rounded-3xl border border-border shadow-soft">
               <iframe
-                title="NexHome Automation experience centre location"
+                title="Lanwan Automation experience centre location"
                 src="https://www.google.com/maps?q=Whitefield%20Bengaluru&output=embed"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -466,7 +466,7 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-[1.4fr_repeat(3,0.7fr)_1.1fr]">
           <div>
             <span className="font-display text-xl text-navy-foreground">
-              Nex<span className="text-gradient">Home</span>
+              LAN<span className="text-gradient">WAN</span>
             </span>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-navy-foreground/60">
               Premium smart home automation — design, supply, installation and
@@ -514,7 +514,7 @@ export function Footer() {
               onSubmit={(e) => {
                 e.preventDefault();
                 e.currentTarget.reset();
-                toast.success("Subscribed", { description: "Welcome to the NexHome journal." });
+                toast.success("Subscribed", { description: "Welcome to the Lanwan journal." });
               }}
               className="mt-4 flex gap-2"
             >
@@ -537,7 +537,7 @@ export function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-navy-foreground/10 pt-6 text-xs text-navy-foreground/50 sm:flex-row">
-          <p>© {new Date().getFullYear()} NexHome Automation. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Lanwan Automation. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#contact" className="transition-colors hover:text-accent">Privacy Policy</a>
             <a href="#contact" className="transition-colors hover:text-accent">Terms of Service</a>

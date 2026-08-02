@@ -81,7 +81,7 @@ export function Header() {
               scrolled ? "text-navy" : "text-navy-foreground",
             )}
           >
-            Nex<span className="text-gradient">Home</span>
+            LAN<span className="text-gradient">WAN</span>
             <span
               className={cn(
                 "mt-1 block text-[0.6rem] font-medium tracking-[0.28em] uppercase transition-colors",
@@ -165,7 +165,7 @@ export function Header() {
         )}
       >
         <div className="container-page flex h-18 items-center justify-between py-3">
-          <span className="font-display text-lg text-navy-foreground">NexHome</span>
+          <span className="font-display text-lg text-navy-foreground">LANWAN</span>
           <button
             onClick={() => setOpen(false)}
             aria-label="Close menu"
