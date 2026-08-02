@@ -21,9 +21,9 @@ import {
 } from "@/components/site/sections-bottom";
 import { CONTACT, FAQS } from "@/lib/site-data";
 
-const title = "NexHome Automation | Premium Smart Home Solutions & Installation";
+const title = "Lanwan Automation | Smart Home Automation & IoT Solutions";
 const description =
-  "Smart locks, switches, cameras, video door phones, lighting and curtains — designed and installed by certified engineers. Book a free consultation today.";
+  "Titan & LuxeRay switches, smart knobs, control screens, door locks, VDP, curtains and smart lighting — Zigbee 3.0 and Matter ready, installed by certified engineers.";
 
 const jsonLd = {
   "@context": "https://schema.org",
