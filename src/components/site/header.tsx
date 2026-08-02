@@ -26,23 +26,40 @@ function useTheme() {
 }
 
 export function Header() {
-  const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(true);
   const [open, setOpen] = useState(false);
   const { dark, toggle } = useTheme();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => {
+      const hero = document.getElementById("home");
+      const heroBottom = hero ? hero.getBoundingClientRect().bottom : 0;
+      // Solid header unless we are still over the dark hero near the top.
+      setScrolled(!(heroBottom > 160 && window.scrollY <= 24));
+    };
     onScroll();
+    const raf = requestAnimationFrame(onScroll);
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", onScroll);
+    window.addEventListener("load", onScroll);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      window.removeEventListener("load", onScroll);
+    };
   }, []);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    window.addEventListener("keydown", onKey);
     return () => {
       document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKey);
     };
   }, [open]);
+
 
   return (
     <header
