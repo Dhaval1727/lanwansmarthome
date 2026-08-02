@@ -94,7 +94,7 @@ export function Hero() {
               href="#products"
               className="inline-flex items-center gap-2 rounded-full border border-navy-foreground/25 bg-navy-foreground/10 px-7 py-4 text-sm font-semibold text-navy-foreground backdrop-blur-md transition-colors duration-300 hover:border-accent/60 hover:text-accent"
             >
-              View Products
+              Explore Products
             </a>
           </div>
         </Reveal>
@@ -243,9 +243,10 @@ export function Products() {
                 </ul>
                 <a
                   href="#contact"
-                  className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors hover:text-accent"
+                  aria-label={`Learn more about ${product.name}`}
+                  className="mt-6 inline-flex w-fit items-center gap-1.5 rounded-full border border-primary/25 bg-primary/5 px-4 py-2 text-sm font-semibold text-primary transition-colors duration-300 hover:border-primary hover:bg-brand hover:text-primary-foreground"
                 >
-                  Know More
+                  Learn More
                   <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </a>
               </div>
