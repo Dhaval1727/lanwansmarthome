@@ -469,8 +469,8 @@ export function Footer() {
               LAN<span className="text-gradient">WAN</span>
             </span>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-navy-foreground/60">
-              Premium smart home automation — design, supply, installation and
-              lifelong support for homes and businesses.
+              Makes value smarter, comfort enhanced — design, supply,
+              installation and lifelong support for homes and enterprises.
             </p>
             <p className="mt-5 text-sm text-navy-foreground/70">{CONTACT.address}</p>
             <div className="mt-5 flex gap-2">
