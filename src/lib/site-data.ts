@@ -46,64 +46,143 @@ export const TRUST_BADGES = [
   "24×7 Support",
 ];
 
+export const PRODUCT_CATEGORIES = [
+  "All",
+  "Smart Locks",
+  "Door Entry",
+  "Accessories",
+  "Automation",
+] as const;
+
 export const PRODUCTS = [
   {
-    name: "Titan Switch",
-    image: switchImg,
+    name: "S-AL Series",
+    category: "Smart Locks",
+    image: lockSal,
+    alt: "S-AL Series aluminium alloy smart door lock with fingerprint reader in bronze finish",
     description:
-      "Modular 2/4/6/8 module panels in premium aluminium and PC finish with up to 10 relays and 18 programmable keys.",
+      "Aircraft-grade aluminium alloy body with a hairline bronze finish — the entry point into the premium lock line-up.",
+    features: ["Fingerprint + PIN", "Anti-peep password", "IP54 weather sealed"],
+  },
+  {
+    name: "S1 Series",
+    category: "Smart Locks",
+    image: lockS1,
+    alt: "S1 Series slim smart door lock with touch keypad and lever handle on a dark door",
+    description:
+      "A slim lever-handle lock with a hidden capacitive keypad that disappears into the door when idle.",
+    features: ["5-way unlock", "Auto-lock timer", "6-month battery"],
+  },
+  {
+    name: "S1 Pro",
+    category: "Smart Locks",
+    image: lockS1Pro,
+    alt: "S1 Pro smart door lock with 3D face recognition panel and bronze trim",
+    description:
+      "Flagship 3D face recognition lock that reads and opens in under half a second, day or night.",
+    features: ["3D face unlock", "Live app video", "Tamper alarm"],
+  },
+  {
+    name: "Series 6",
+    category: "Smart Locks",
+    image: lockSeries6,
+    alt: "Series 6 luxury smart door lock with palm vein scanner and antique bronze handle",
+    description:
+      "Full-length luxury escutcheon with palm-vein recognition and a reinforced mortise for main doors.",
+    features: ["Palm vein scan", "C-grade cylinder", "Push-pull handle"],
+  },
+  {
+    name: "Glass Door Lock",
+    category: "Smart Locks",
+    image: lockGlass,
+    alt: "Frameless glass door smart lock with black glass panel and bronze edging",
+    description:
+      "Frameless fitment for glass office and balcony doors — no drilling, no visible cabling.",
+    features: ["Frameless fit", "Fingerprint + card", "Fail-safe release"],
+  },
+  {
+    name: "Video Door Bell",
+    category: "Door Entry",
+    image: lockDoorbell,
+    alt: "Smart video doorbell with camera and illuminated bronze ring beside a luxury door",
+    description:
+      "2K wide-angle doorbell with human detection, indoor chime and instant two-way conversation.",
+    features: ["2K HD video", "Two-way talk", "Cloud + SD storage"],
+  },
+  {
+    name: "Smart Door Lock Accessories",
+    category: "Accessories",
+    image: lockAccessories,
+    alt: "Smart lock accessories including RFID cards, mechanical keys, Wi-Fi gateway and battery pack",
+    description:
+      "RFID cards, emergency keys, Wi-Fi gateways and rechargeable battery packs to complete every install.",
+    features: ["Wi-Fi gateway", "RFID key cards", "Rechargeable pack"],
+  },
+  {
+    name: "Video Door Phone (VDP)",
+    category: "Door Entry",
+    image: bell,
+    alt: "IP video door phone indoor monitor mounted on a dark wall",
+    description:
+      "IP villa intercom with indoor monitors, multi-monitor calling and gate release from any screen.",
+    features: ["Multi-monitor", "Gate release", "Night vision"],
+  },
+  {
+    name: "Titan Switch",
+    category: "Automation",
+    image: switchImg,
+    alt: "Titan modular smart switch panel in aluminium finish",
+    description:
+      "Modular 2/4/6/8 module panels in premium aluminium with up to 10 relays and 18 programmable keys.",
     features: ["100+ combinations", "10A heavy load", "USB-A + USB-C"],
   },
   {
     name: "LuxeRay Glass Switches",
+    category: "Automation",
     image: switchImg,
+    alt: "LuxeRay curved glass smart switch panel with backlit icons",
     description:
-      "2.5D curved toughened glass panels with CNC machined gold, silver or black bezels and backlit custom icons.",
+      "2.5D curved toughened glass panels with CNC machined bronze, gold or black bezels and backlit icons.",
     features: ["50+ variants", "16A per switch", "ALS auto-brightness"],
   },
   {
-    name: "Smart Knob",
-    image: switchImg,
-    description:
-      "Zigbee rotary knobs in Curve, Edge, Luxe and Core styles for dimming, tuning and up to 12 one-touch scenes.",
-    features: ["Magnetic plate", "Type-C charging", "12 scenes"],
-  },
-  {
     name: "Multifunctional Screen",
+    category: "Automation",
     image: vdp,
+    alt: "Wall mounted smart home control screen showing room scenes",
     description:
-      "3.5\", 4\", 8\" and 10\" central control panels on the latest Tuya OS, doubling as an in-wall Zigbee gateway.",
+      '3.5", 4", 8" and 10" central control panels on the latest Tuya OS, doubling as an in-wall Zigbee gateway.',
     features: ["Alexa support", "Built-in gateway", "Fits 86 box"],
   },
   {
-    name: "Smart Door Locks",
-    image: lock,
-    description:
-      "Series 1 to Series 4, G1, R1/R1D and H1 locks with fingerprint, password, card, key, app and remote unlock.",
-    features: ["6-way unlock", "Wi-Fi active", "Anti-theft alarm"],
-  },
-  {
-    name: "Video Door Bell & VDP",
-    image: bell,
-    description:
-      "Wi-Fi video doorbells and IP video door phones with indoor chime, multi-monitor support and easy install.",
-    features: ["HD video", "Two-way talk", "Multi-monitor"],
-  },
-  {
     name: "Smart Curtains",
+    category: "Automation",
     image: curtain,
+    alt: "Motorised smart curtains opening in a luxury bedroom",
     description:
-      "1.2Nm and 2Nm curtain motors up to 90kg with heavy-duty aluminium tracks — silent, smooth and app controlled.",
+      "1.2Nm and 2Nm curtain motors up to 90kg with heavy-duty tracks — silent, smooth and app controlled.",
     features: ["Up to 90kg", "Silent motor", "Sun schedule"],
   },
   {
     name: "Smart Lights & Track",
+    category: "Automation",
     image: light,
+    alt: "Magnetic track lighting and concealed downlights in a dark luxury interior",
     description:
-      "Concealed downlights, magnetic track lights, LED strips, drivers and controllers with flicker-free 0.1–100% dimming.",
+      "Concealed downlights, magnetic track lights, strips and controllers with flicker-free 0.1–100% dimming.",
     features: ["Flicker-free", "CCT 2700–6500K", "Surface / concealed"],
   },
+  {
+    name: "Security Cameras",
+    category: "Door Entry",
+    image: camera,
+    alt: "Outdoor smart security camera mounted on a villa wall at night",
+    description:
+      "Indoor and outdoor Wi-Fi cameras with motion tracking, sirens and encrypted cloud recording.",
+    features: ["Motion tracking", "Colour night vision", "Encrypted cloud"],
+  },
 ];
+
 
 export const SOLUTIONS = [
   { title: "Homes", copy: "Lighting, security and climate for independent houses." },
