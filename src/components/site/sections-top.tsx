@@ -76,16 +76,17 @@ export function Hero() {
           </span>
 
           <h1 className="mt-7 text-[2.75rem] leading-[1.03] text-navy-foreground sm:text-6xl lg:text-7xl">
-            Control Everything
+            Luxury Security,
             <br />
-            <span className="text-gradient">Effortlessly.</span>
+            <span className="text-gradient">Effortlessly Yours.</span>
           </h1>
 
           <p className="mt-6 max-w-xl text-base leading-relaxed text-navy-foreground/75 sm:text-lg">
-            Makes value smarter, comfort enhanced. Ultra-fast IoT response,
-            smart app control and seamless Zigbee 3.0 automation — designed,
-            installed and supported by certified engineers.
+            Bronze-finished smart door locks, face and palm recognition, video
+            door bells and full home automation — engineered for premium homes
+            and installed by certified engineers.
           </p>
+
 
           <div className="mt-9 flex flex-wrap gap-3">
             <a
