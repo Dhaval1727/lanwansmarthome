@@ -71,7 +71,7 @@ export function SectionHeading({
           "inline-flex items-center gap-2 rounded-full border px-3.5 py-1.5 text-xs font-semibold tracking-[0.18em] uppercase",
           tone === "dark"
             ? "border-navy-foreground/20 bg-navy-foreground/10 text-accent"
-            : "border-primary/20 bg-primary/5 text-primary",
+            : "border-primary/20 bg-primary/5 text-accent",
         )}
       >
         <span className="size-1.5 rounded-full bg-accent" />
@@ -80,7 +80,7 @@ export function SectionHeading({
       <h2
         className={cn(
           "mt-5 text-3xl leading-[1.1] sm:text-4xl lg:text-[2.75rem]",
-          tone === "dark" ? "text-navy-foreground" : "text-navy",
+          tone === "dark" ? "text-navy-foreground" : "text-foreground",
         )}
       >
         {title}

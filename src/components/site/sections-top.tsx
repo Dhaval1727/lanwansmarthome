@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   ShieldCheck,
   Lightbulb,
@@ -16,9 +17,12 @@ import {
 } from "lucide-react";
 import heroImg from "@/assets/hero.jpg";
 import { Reveal, SectionHeading } from "./primitives";
+import { cn } from "@/lib/utils";
 import {
   BRANDS,
+  CONTACT,
   PRODUCTS,
+  PRODUCT_CATEGORIES,
   PROCESS,
   SOLUTIONS,
   TRUST_BADGES,
@@ -72,16 +76,17 @@ export function Hero() {
           </span>
 
           <h1 className="mt-7 text-[2.75rem] leading-[1.03] text-navy-foreground sm:text-6xl lg:text-7xl">
-            Control Everything
+            Luxury Security,
             <br />
-            <span className="text-gradient">Effortlessly.</span>
+            <span className="text-gradient">Effortlessly Yours.</span>
           </h1>
 
           <p className="mt-6 max-w-xl text-base leading-relaxed text-navy-foreground/75 sm:text-lg">
-            Makes value smarter, comfort enhanced. Ultra-fast IoT response,
-            smart app control and seamless Zigbee 3.0 automation — designed,
-            installed and supported by certified engineers.
+            Bronze-finished smart door locks, face and palm recognition, video
+            door bells and full home automation — engineered for premium homes
+            and installed by certified engineers.
           </p>
+
 
           <div className="mt-9 flex flex-wrap gap-3">
             <a
@@ -132,11 +137,11 @@ export function About() {
     <section id="about" className="py-24 lg:py-32">
       <div className="container-page grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
         <Reveal>
-          <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3.5 py-1.5 text-xs font-semibold tracking-[0.18em] text-primary uppercase">
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3.5 py-1.5 text-xs font-semibold tracking-[0.18em] text-accent uppercase">
             <span className="size-1.5 rounded-full bg-accent" />
             About Lanwan
           </span>
-          <h2 className="mt-5 text-3xl leading-[1.12] text-navy sm:text-4xl lg:text-[2.75rem]">
+          <h2 className="mt-5 text-3xl leading-[1.12] text-foreground sm:text-4xl lg:text-[2.75rem]">
             Automation that feels invisible, engineered to be dependable.
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground">
@@ -149,14 +154,14 @@ export function About() {
 
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             <div className="rounded-2xl border border-border bg-surface p-6">
-              <h3 className="font-display text-base text-navy">Our Mission</h3>
+              <h3 className="font-display text-base text-foreground">Our Mission</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 Make premium automation accessible, reliable and effortless for
                 every Indian home.
               </p>
             </div>
             <div className="rounded-2xl border border-border bg-surface p-6">
-              <h3 className="font-display text-base text-navy">Our Vision</h3>
+              <h3 className="font-display text-base text-foreground">Our Vision</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 A future where every building is secure, energy-aware and
                 intuitive to live in.
@@ -167,7 +172,7 @@ export function About() {
           <ul className="mt-8 grid gap-3 sm:grid-cols-2">
             {points.map((p) => (
               <li key={p} className="flex items-center gap-2.5 text-sm font-medium text-foreground">
-                <span className="grid size-5 shrink-0 place-items-center rounded-full bg-primary/10 text-primary">
+                <span className="grid size-5 shrink-0 place-items-center rounded-full bg-primary/10 text-accent">
                   <Check className="size-3" strokeWidth={3} />
                 </span>
                 {p}
@@ -188,7 +193,7 @@ export function About() {
             />
           </div>
           <div className="glass-card absolute -bottom-8 -left-4 w-56 rounded-2xl p-5 sm:left-8">
-            <p className="font-display text-3xl text-navy">98%</p>
+            <p className="font-display text-3xl text-foreground">98%</p>
             <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
               of our customers refer us to a friend or neighbour
             </p>
@@ -200,36 +205,70 @@ export function About() {
 }
 
 export function Products() {
+  const [filter, setFilter] = useState<string>("All");
+  const list =
+    filter === "All" ? PRODUCTS : PRODUCTS.filter((p) => p.category === filter);
+
   return (
     <section id="products" className="bg-surface py-24 lg:py-32">
       <div className="container-page">
         <SectionHeading
-          eyebrow="Our Products"
-          title={<>Premium hardware, curated and tested</>}
-          subtitle="The complete Phlipton catalogue — switches, knobs, screens, locks, curtains and lighting — installed by our own engineers."
+          eyebrow="Product Catalogue"
+          title={<>Premium smart locks, curated and tested</>}
+          subtitle="S-AL, S1, S1 Pro, Series 6, glass door locks, video door bells, accessories and full home automation — installed by our own engineers."
         />
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {PRODUCTS.map((product, i) => (
+        <Reveal delay={80}>
+          <div
+            role="tablist"
+            aria-label="Filter products by category"
+            className="mt-10 flex flex-wrap justify-center gap-2"
+          >
+            {PRODUCT_CATEGORIES.map((cat) => (
+              <button
+                key={cat}
+                role="tab"
+                type="button"
+                aria-selected={filter === cat}
+                onClick={() => setFilter(cat)}
+                className={cn(
+                  "rounded-full border px-4 py-2 text-sm font-semibold transition-all duration-300 active:scale-95",
+                  filter === cat
+                    ? "border-transparent bg-brand text-primary-foreground shadow-glow"
+                    : "border-border bg-card text-muted-foreground hover:border-accent/40 hover:text-accent",
+                )}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
+        </Reveal>
+
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {list.map((product, i) => (
             <Reveal
               as="article"
               key={product.name}
               delay={(i % 4) * 90}
-              className="group flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-soft transition-all duration-500 hover:-translate-y-1.5 hover:border-primary/30 hover:shadow-lift"
+              className="group flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-soft transition-all duration-500 hover:-translate-y-1.5 hover:border-accent/40 hover:shadow-lift"
             >
               <div className="relative overflow-hidden bg-secondary">
                 <img
                   src={product.image}
-                  alt={product.name}
+                  alt={product.alt ?? product.name}
                   loading="lazy"
+                  decoding="async"
                   width={900}
                   height={900}
                   className="aspect-square w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <span className="absolute inset-x-0 bottom-0 h-16 bg-linear-to-t from-card to-transparent" />
+                <span className="absolute top-4 left-4 rounded-full bg-navy/70 px-3 py-1 text-[0.65rem] font-semibold tracking-[0.14em] text-accent uppercase backdrop-blur-md">
+                  {product.category}
+                </span>
               </div>
               <div className="flex flex-1 flex-col p-6">
-                <h3 className="font-display text-lg text-navy">{product.name}</h3>
+                <h3 className="font-display text-lg text-foreground">{product.name}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {product.description}
                 </p>
@@ -243,14 +282,25 @@ export function Products() {
                     </li>
                   ))}
                 </ul>
-                <a
-                  href="#contact"
-                  aria-label={`Learn more about ${product.name}`}
-                  className="mt-6 inline-flex w-fit items-center gap-1.5 rounded-full border border-primary/25 bg-primary/5 px-4 py-2 text-sm font-semibold text-primary transition-colors duration-300 hover:border-primary hover:bg-brand hover:text-primary-foreground"
-                >
-                  Learn More
-                  <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
-                </a>
+                <div className="mt-6 flex flex-wrap items-center gap-2">
+                  <a
+                    href="#contact"
+                    aria-label={`View details of ${product.name}`}
+                    className="inline-flex items-center gap-1.5 rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-sm font-semibold text-accent transition-all duration-300 hover:border-accent hover:bg-brand hover:text-primary-foreground active:scale-95"
+                  >
+                    View Details
+                    <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </a>
+                  <a
+                    href={CONTACT.whatsappHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Enquire now about ${product.name}`}
+                    className="inline-flex items-center rounded-full px-3 py-2 text-sm font-semibold text-muted-foreground transition-colors duration-300 hover:text-accent"
+                  >
+                    Enquire Now
+                  </a>
+                </div>
               </div>
             </Reveal>
           ))}
@@ -259,6 +309,7 @@ export function Products() {
     </section>
   );
 }
+
 
 export function Solutions() {
   return (
@@ -311,10 +362,10 @@ export function WhyUs() {
                 delay={(i % 4) * 80}
                 className="group rounded-3xl border border-border bg-card p-7 shadow-soft transition-all duration-500 hover:-translate-y-1.5 hover:border-primary/30 hover:shadow-lift"
               >
-                <span className="grid size-12 place-items-center rounded-2xl bg-primary/8 text-primary transition-colors duration-500 group-hover:bg-brand group-hover:text-primary-foreground">
+                <span className="grid size-12 place-items-center rounded-2xl bg-primary/8 text-accent transition-colors duration-500 group-hover:bg-brand group-hover:text-primary-foreground">
                   <Icon className="size-5.5" strokeWidth={1.6} />
                 </span>
-                <h3 className="mt-5 font-display text-lg text-navy">{item.title}</h3>
+                <h3 className="mt-5 font-display text-lg text-foreground">{item.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.copy}</p>
               </Reveal>
             );
@@ -358,10 +409,10 @@ export function Process() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-6">
             {PROCESS.map((p, i) => (
               <Reveal key={p.step} delay={i * 80} className="relative text-center lg:text-left">
-                <span className="relative z-10 grid size-12 place-items-center rounded-2xl bg-card font-display text-sm text-primary shadow-soft ring-1 ring-primary/15 max-lg:mx-auto">
+                <span className="relative z-10 grid size-12 place-items-center rounded-2xl bg-card font-display text-sm text-accent shadow-soft ring-1 ring-primary/15 max-lg:mx-auto">
                   {p.step}
                 </span>
-                <h3 className="mt-5 font-display text-base text-navy">{p.title}</h3>
+                <h3 className="mt-5 font-display text-base text-foreground">{p.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.copy}</p>
               </Reveal>
             ))}
@@ -384,7 +435,7 @@ export function Brands() {
             {[...BRANDS, ...BRANDS].map((brand, i) => (
               <span
                 key={`${brand}-${i}`}
-                className="grid h-16 w-44 place-items-center rounded-2xl border border-border bg-card font-display text-lg tracking-tight text-navy/70 transition-colors duration-300 hover:border-primary/30 hover:text-primary"
+                className="grid h-16 w-44 place-items-center rounded-2xl border border-border bg-card font-display text-lg tracking-tight text-foreground/70 transition-colors duration-300 hover:border-primary/30 hover:text-accent"
               >
                 {brand}
               </span>
