@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   ShieldCheck,
   Lightbulb,
@@ -16,9 +17,12 @@ import {
 } from "lucide-react";
 import heroImg from "@/assets/hero.jpg";
 import { Reveal, SectionHeading } from "./primitives";
+import { cn } from "@/lib/utils";
 import {
   BRANDS,
+  CONTACT,
   PRODUCTS,
+  PRODUCT_CATEGORIES,
   PROCESS,
   SOLUTIONS,
   TRUST_BADGES,
