@@ -186,7 +186,7 @@ export function Faqs() {
                   className="flex w-full items-start justify-between gap-6 text-left"
                 >
                   <span className="font-display text-base text-foreground">{f.q}</span>
-                  <span className="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full bg-primary/8 text-primary">
+                  <span className="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full bg-primary/8 text-accent">
                     {isOpen ? <Minus className="size-3.5" /> : <Plus className="size-3.5" />}
                   </span>
                 </button>
@@ -253,7 +253,7 @@ export function Blog() {
                 className="group flex h-full flex-col justify-between rounded-3xl border border-border bg-card p-6 shadow-soft transition-all duration-500 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lift"
               >
                 <div>
-                  <span className="text-[0.7rem] font-semibold tracking-[0.16em] text-primary uppercase">
+                  <span className="text-[0.7rem] font-semibold tracking-[0.16em] text-accent uppercase">
                     {post.tag}
                   </span>
                   <h3 className="mt-3 font-display text-base leading-snug text-foreground">
@@ -313,7 +313,7 @@ export function Contact() {
             <ul className="grid gap-3 rounded-3xl border border-border bg-card p-6 shadow-soft sm:p-8">
               {details.map(({ Icon, label, value, href }) => (
                 <li key={label} className="flex items-start gap-4 border-b border-border/70 py-3 last:border-0">
-                  <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-primary/8 text-primary">
+                  <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-primary/8 text-accent">
                     <Icon className="size-4.5" strokeWidth={1.6} />
                   </span>
                   <div>
@@ -323,7 +323,7 @@ export function Contact() {
                     {href ? (
                       <a
                         href={href}
-                        className="text-sm font-medium text-foreground transition-colors hover:text-primary"
+                        className="text-sm font-medium text-foreground transition-colors hover:text-accent"
                       >
                         {value}
                       </a>
@@ -400,7 +400,7 @@ export function Contact() {
               </button>
               <p className="mt-3 text-center text-xs text-muted-foreground">
                 Or call us directly at{" "}
-                <a href={CONTACT.phoneHref} className="font-semibold text-primary">
+                <a href={CONTACT.phoneHref} className="font-semibold text-accent">
                   {CONTACT.phoneDisplay}
                 </a>
               </p>
@@ -573,7 +573,7 @@ export function FloatingActions() {
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           aria-label="Back to top"
           className={cn(
-            "grid size-13 place-items-center rounded-full border border-border bg-card text-foreground shadow-soft transition-all duration-300 hover:text-primary",
+            "grid size-13 place-items-center rounded-full border border-border bg-card text-foreground shadow-soft transition-all duration-300 hover:text-accent",
             show ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-3 opacity-0",
           )}
         >

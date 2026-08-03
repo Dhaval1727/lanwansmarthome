@@ -132,7 +132,7 @@ export function About() {
     <section id="about" className="py-24 lg:py-32">
       <div className="container-page grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
         <Reveal>
-          <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3.5 py-1.5 text-xs font-semibold tracking-[0.18em] text-primary uppercase">
+          <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3.5 py-1.5 text-xs font-semibold tracking-[0.18em] text-accent uppercase">
             <span className="size-1.5 rounded-full bg-accent" />
             About Lanwan
           </span>
@@ -167,7 +167,7 @@ export function About() {
           <ul className="mt-8 grid gap-3 sm:grid-cols-2">
             {points.map((p) => (
               <li key={p} className="flex items-center gap-2.5 text-sm font-medium text-foreground">
-                <span className="grid size-5 shrink-0 place-items-center rounded-full bg-primary/10 text-primary">
+                <span className="grid size-5 shrink-0 place-items-center rounded-full bg-primary/10 text-accent">
                   <Check className="size-3" strokeWidth={3} />
                 </span>
                 {p}
@@ -246,7 +246,7 @@ export function Products() {
                 <a
                   href="#contact"
                   aria-label={`Learn more about ${product.name}`}
-                  className="mt-6 inline-flex w-fit items-center gap-1.5 rounded-full border border-primary/25 bg-primary/5 px-4 py-2 text-sm font-semibold text-primary transition-colors duration-300 hover:border-primary hover:bg-brand hover:text-primary-foreground"
+                  className="mt-6 inline-flex w-fit items-center gap-1.5 rounded-full border border-primary/25 bg-primary/5 px-4 py-2 text-sm font-semibold text-accent transition-colors duration-300 hover:border-primary hover:bg-brand hover:text-primary-foreground"
                 >
                   Learn More
                   <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -311,7 +311,7 @@ export function WhyUs() {
                 delay={(i % 4) * 80}
                 className="group rounded-3xl border border-border bg-card p-7 shadow-soft transition-all duration-500 hover:-translate-y-1.5 hover:border-primary/30 hover:shadow-lift"
               >
-                <span className="grid size-12 place-items-center rounded-2xl bg-primary/8 text-primary transition-colors duration-500 group-hover:bg-brand group-hover:text-primary-foreground">
+                <span className="grid size-12 place-items-center rounded-2xl bg-primary/8 text-accent transition-colors duration-500 group-hover:bg-brand group-hover:text-primary-foreground">
                   <Icon className="size-5.5" strokeWidth={1.6} />
                 </span>
                 <h3 className="mt-5 font-display text-lg text-foreground">{item.title}</h3>
@@ -358,7 +358,7 @@ export function Process() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-6">
             {PROCESS.map((p, i) => (
               <Reveal key={p.step} delay={i * 80} className="relative text-center lg:text-left">
-                <span className="relative z-10 grid size-12 place-items-center rounded-2xl bg-card font-display text-sm text-primary shadow-soft ring-1 ring-primary/15 max-lg:mx-auto">
+                <span className="relative z-10 grid size-12 place-items-center rounded-2xl bg-card font-display text-sm text-accent shadow-soft ring-1 ring-primary/15 max-lg:mx-auto">
                   {p.step}
                 </span>
                 <h3 className="mt-5 font-display text-base text-foreground">{p.title}</h3>
@@ -384,7 +384,7 @@ export function Brands() {
             {[...BRANDS, ...BRANDS].map((brand, i) => (
               <span
                 key={`${brand}-${i}`}
-                className="grid h-16 w-44 place-items-center rounded-2xl border border-border bg-card font-display text-lg tracking-tight text-foreground/70 transition-colors duration-300 hover:border-primary/30 hover:text-primary"
+                className="grid h-16 w-44 place-items-center rounded-2xl border border-border bg-card font-display text-lg tracking-tight text-foreground/70 transition-colors duration-300 hover:border-primary/30 hover:text-accent"
               >
                 {brand}
               </span>

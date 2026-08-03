@@ -101,7 +101,7 @@ export function Header() {
               className={cn(
                 "rounded-full px-3 py-2 text-sm font-medium transition-colors",
                 scrolled
-                  ? "text-foreground/80 hover:bg-secondary hover:text-primary"
+                  ? "text-foreground/80 hover:bg-secondary hover:text-accent"
                   : "text-navy-foreground/80 hover:bg-navy-foreground/10 hover:text-navy-foreground",
               )}
             >
@@ -117,7 +117,7 @@ export function Header() {
             className={cn(
               "grid size-10 place-items-center rounded-full border transition-colors",
               scrolled
-                ? "border-border text-foreground/80 hover:border-primary/40 hover:text-primary"
+                ? "border-border text-foreground/80 hover:border-primary/40 hover:text-accent"
                 : "border-navy-foreground/25 text-navy-foreground/85 hover:border-accent/60 hover:text-accent",
             )}
           >
@@ -128,7 +128,7 @@ export function Header() {
             className={cn(
               "hidden size-10 place-items-center rounded-full border transition-colors sm:grid",
               scrolled
-                ? "border-border text-foreground/80 hover:border-primary/40 hover:text-primary"
+                ? "border-border text-foreground/80 hover:border-primary/40 hover:text-accent"
                 : "border-navy-foreground/25 text-navy-foreground/85 hover:border-accent/60 hover:text-accent",
             )}
             aria-label={`Call ${CONTACT.phoneDisplay}`}
