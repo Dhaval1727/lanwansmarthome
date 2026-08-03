@@ -78,7 +78,7 @@ export function Header() {
           <span
             className={cn(
               "font-display text-lg leading-none tracking-tight transition-colors",
-              scrolled ? "text-navy" : "text-navy-foreground",
+              scrolled ? "text-foreground" : "text-navy-foreground",
             )}
           >
             LAN<span className="text-gradient">WAN</span>

@@ -136,7 +136,7 @@ export function About() {
             <span className="size-1.5 rounded-full bg-accent" />
             About Lanwan
           </span>
-          <h2 className="mt-5 text-3xl leading-[1.12] text-navy sm:text-4xl lg:text-[2.75rem]">
+          <h2 className="mt-5 text-3xl leading-[1.12] text-foreground sm:text-4xl lg:text-[2.75rem]">
             Automation that feels invisible, engineered to be dependable.
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground">
@@ -149,14 +149,14 @@ export function About() {
 
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             <div className="rounded-2xl border border-border bg-surface p-6">
-              <h3 className="font-display text-base text-navy">Our Mission</h3>
+              <h3 className="font-display text-base text-foreground">Our Mission</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 Make premium automation accessible, reliable and effortless for
                 every Indian home.
               </p>
             </div>
             <div className="rounded-2xl border border-border bg-surface p-6">
-              <h3 className="font-display text-base text-navy">Our Vision</h3>
+              <h3 className="font-display text-base text-foreground">Our Vision</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 A future where every building is secure, energy-aware and
                 intuitive to live in.
@@ -188,7 +188,7 @@ export function About() {
             />
           </div>
           <div className="glass-card absolute -bottom-8 -left-4 w-56 rounded-2xl p-5 sm:left-8">
-            <p className="font-display text-3xl text-navy">98%</p>
+            <p className="font-display text-3xl text-foreground">98%</p>
             <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
               of our customers refer us to a friend or neighbour
             </p>
@@ -229,7 +229,7 @@ export function Products() {
                 <span className="absolute inset-x-0 bottom-0 h-16 bg-linear-to-t from-card to-transparent" />
               </div>
               <div className="flex flex-1 flex-col p-6">
-                <h3 className="font-display text-lg text-navy">{product.name}</h3>
+                <h3 className="font-display text-lg text-foreground">{product.name}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {product.description}
                 </p>
@@ -314,7 +314,7 @@ export function WhyUs() {
                 <span className="grid size-12 place-items-center rounded-2xl bg-primary/8 text-primary transition-colors duration-500 group-hover:bg-brand group-hover:text-primary-foreground">
                   <Icon className="size-5.5" strokeWidth={1.6} />
                 </span>
-                <h3 className="mt-5 font-display text-lg text-navy">{item.title}</h3>
+                <h3 className="mt-5 font-display text-lg text-foreground">{item.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.copy}</p>
               </Reveal>
             );
@@ -361,7 +361,7 @@ export function Process() {
                 <span className="relative z-10 grid size-12 place-items-center rounded-2xl bg-card font-display text-sm text-primary shadow-soft ring-1 ring-primary/15 max-lg:mx-auto">
                   {p.step}
                 </span>
-                <h3 className="mt-5 font-display text-base text-navy">{p.title}</h3>
+                <h3 className="mt-5 font-display text-base text-foreground">{p.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.copy}</p>
               </Reveal>
             ))}
@@ -384,7 +384,7 @@ export function Brands() {
             {[...BRANDS, ...BRANDS].map((brand, i) => (
               <span
                 key={`${brand}-${i}`}
-                className="grid h-16 w-44 place-items-center rounded-2xl border border-border bg-card font-display text-lg tracking-tight text-navy/70 transition-colors duration-300 hover:border-primary/30 hover:text-primary"
+                className="grid h-16 w-44 place-items-center rounded-2xl border border-border bg-card font-display text-lg tracking-tight text-foreground/70 transition-colors duration-300 hover:border-primary/30 hover:text-primary"
               >
                 {brand}
               </span>

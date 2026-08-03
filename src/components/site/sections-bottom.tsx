@@ -139,7 +139,7 @@ export function Testimonials() {
                   {t.initials}
                 </span>
                 <div>
-                  <p className="font-display text-sm text-navy">{t.name}</p>
+                  <p className="font-display text-sm text-foreground">{t.name}</p>
                   <p className="text-xs text-muted-foreground">{t.location}</p>
                 </div>
               </div>
@@ -185,7 +185,7 @@ export function Faqs() {
                   aria-expanded={isOpen}
                   className="flex w-full items-start justify-between gap-6 text-left"
                 >
-                  <span className="font-display text-base text-navy">{f.q}</span>
+                  <span className="font-display text-base text-foreground">{f.q}</span>
                   <span className="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full bg-primary/8 text-primary">
                     {isOpen ? <Minus className="size-3.5" /> : <Plus className="size-3.5" />}
                   </span>
@@ -256,7 +256,7 @@ export function Blog() {
                   <span className="text-[0.7rem] font-semibold tracking-[0.16em] text-primary uppercase">
                     {post.tag}
                   </span>
-                  <h3 className="mt-3 font-display text-base leading-snug text-navy">
+                  <h3 className="mt-3 font-display text-base leading-snug text-foreground">
                     {post.title}
                   </h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
@@ -323,12 +323,12 @@ export function Contact() {
                     {href ? (
                       <a
                         href={href}
-                        className="text-sm font-medium text-navy transition-colors hover:text-primary"
+                        className="text-sm font-medium text-foreground transition-colors hover:text-primary"
                       >
                         {value}
                       </a>
                     ) : (
-                      <p className="text-sm font-medium text-navy">{value}</p>
+                      <p className="text-sm font-medium text-foreground">{value}</p>
                     )}
                   </div>
                 </li>
@@ -351,7 +351,7 @@ export function Contact() {
               onSubmit={onSubmit}
               className="rounded-3xl border border-border bg-card p-7 shadow-lift sm:p-9"
             >
-              <h3 className="font-display text-xl text-navy">Request a free consultation</h3>
+              <h3 className="font-display text-xl text-foreground">Request a free consultation</h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 No obligation. No pushy sales calls.
               </p>
@@ -573,7 +573,7 @@ export function FloatingActions() {
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           aria-label="Back to top"
           className={cn(
-            "grid size-13 place-items-center rounded-full border border-border bg-card text-navy shadow-soft transition-all duration-300 hover:text-primary",
+            "grid size-13 place-items-center rounded-full border border-border bg-card text-foreground shadow-soft transition-all duration-300 hover:text-primary",
             show ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-3 opacity-0",
           )}
         >
@@ -585,7 +585,7 @@ export function FloatingActions() {
       <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 gap-2 border-t border-border bg-background/95 p-3 backdrop-blur-xl lg:hidden">
         <a
           href={CONTACT.phoneHref}
-          className="inline-flex items-center justify-center gap-2 rounded-full border border-border py-3 text-sm font-semibold text-navy"
+          className="inline-flex items-center justify-center gap-2 rounded-full border border-border py-3 text-sm font-semibold text-foreground"
         >
           <Phone className="size-4" /> Call Now
         </a>

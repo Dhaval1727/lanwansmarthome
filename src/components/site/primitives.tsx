@@ -80,7 +80,7 @@ export function SectionHeading({
       <h2
         className={cn(
           "mt-5 text-3xl leading-[1.1] sm:text-4xl lg:text-[2.75rem]",
-          tone === "dark" ? "text-navy-foreground" : "text-navy",
+          tone === "dark" ? "text-navy-foreground" : "text-foreground",
         )}
       >
         {title}
