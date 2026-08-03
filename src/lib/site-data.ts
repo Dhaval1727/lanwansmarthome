@@ -5,6 +5,13 @@ import camera from "@/assets/p-camera.jpg";
 import bell from "@/assets/p-bell.jpg";
 import light from "@/assets/p-light.jpg";
 import curtain from "@/assets/p-curtain.jpg";
+import lockSal from "@/assets/lock-sal.jpg";
+import lockS1 from "@/assets/lock-s1.jpg";
+import lockS1Pro from "@/assets/lock-s1pro.jpg";
+import lockSeries6 from "@/assets/lock-series6.jpg";
+import lockGlass from "@/assets/lock-glass.jpg";
+import lockDoorbell from "@/assets/lock-doorbell.jpg";
+import lockAccessories from "@/assets/lock-accessories.jpg";
 
 export const CONTACT = {
   brand: "Lanwan Automation",
