@@ -102,7 +102,7 @@ export const CATEGORIES: Category[] = [
         alt: "Series 2 Pro smart door lock with built-in video display panel",
         connectivity: ["Wi-Fi Active"],
         description:
-          "Series 2 with a built-in视 display and camera — see the visitor at your door before you open it.",
+          "Series 2 with a built-in display and camera — see the visitor at your door before you open it.",
         features: [
           ...lockMethods.base,
           "Application",
