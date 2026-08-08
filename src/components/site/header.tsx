@@ -179,23 +179,27 @@ export function Header() {
         </div>
         <nav className="container-page mt-6 grid gap-1" aria-label="Mobile">
           {NAV.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
+            <Link
+              key={item.label}
+              to={item.to}
+              params={item.params as never}
+              hash={item.hash}
               onClick={() => setOpen(false)}
               className="border-b border-navy-foreground/10 py-3.5 font-display text-xl text-navy-foreground transition-colors hover:text-accent"
             >
               {item.label}
-            </a>
+            </Link>
           ))}
-          <a
-            href="#contact"
+          <Link
+            to="/"
+            hash="contact"
             onClick={() => setOpen(false)}
             className="mt-6 rounded-full bg-brand px-6 py-3.5 text-center text-sm font-semibold text-primary-foreground"
           >
             Get Free Consultation
-          </a>
+          </Link>
         </nav>
+
       </div>
     </header>
   );
