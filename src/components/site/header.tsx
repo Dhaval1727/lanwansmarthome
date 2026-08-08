@@ -95,9 +95,11 @@ export function Header() {
 
         <nav className="hidden items-center gap-0.5 xl:flex" aria-label="Primary">
           {NAV.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
+            <Link
+              key={item.label}
+              to={item.to}
+              params={item.params as never}
+              hash={item.hash}
               className={cn(
                 "rounded-full px-3 py-2 text-sm font-medium transition-colors",
                 scrolled
@@ -106,9 +108,10 @@ export function Header() {
               )}
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
+
 
         <div className="flex items-center gap-2">
           <button
