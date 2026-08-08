@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { Menu, X, Moon, Sun, PhoneCall } from "lucide-react";
 import { CONTACT, NAV } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
+
 
 function useTheme() {
   const [dark, setDark] = useState(false);
