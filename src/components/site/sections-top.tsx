@@ -225,11 +225,11 @@ export function Products() {
             subtitle="A curated selection from our best-selling range."
           />
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {FEATURED_PRODUCTS.map(({ product, categorySlug }, i) => (
+            {FEATURED_PRODUCTS.map((product, i) => (
               <ProductCard
                 key={product.slug}
                 product={product}
-                categorySlug={categorySlug}
+                categorySlug={product.categorySlug}
                 index={i}
               />
             ))}
