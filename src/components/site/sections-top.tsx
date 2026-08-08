@@ -16,7 +16,6 @@ import {
 } from "lucide-react";
 import heroImg from "@/assets/hero.jpg";
 import { Reveal, SectionHeading } from "./primitives";
-import { cn } from "@/lib/utils";
 import { Link } from "@tanstack/react-router";
 import { CATEGORIES, FEATURED_PRODUCTS } from "@/lib/catalog";
 import { CategoryCard, ProductCard } from "./product-ui";
