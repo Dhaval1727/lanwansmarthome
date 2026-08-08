@@ -7,7 +7,6 @@ import {
   Solutions,
   WhyUs,
   Process,
-  Brands,
 } from "@/components/site/sections-top";
 import {
   Stats,
@@ -85,7 +84,6 @@ function Index() {
         <Solutions />
         <WhyUs />
         <Process />
-        <Brands />
         <Stats />
         <Gallery />
         <Testimonials />
