@@ -101,7 +101,7 @@ export function Header() {
               key={item.label}
               to={item.to}
               params={item.params as never}
-              hash={item.hash}
+              {...(item.hash ? { hash: item.hash } : {})}
               className={cn(
                 "rounded-full px-3 py-2 text-sm font-medium transition-colors",
                 scrolled
@@ -185,7 +185,7 @@ export function Header() {
               key={item.label}
               to={item.to}
               params={item.params as never}
-              hash={item.hash}
+              {...(item.hash ? { hash: item.hash } : {})}
               onClick={() => setOpen(false)}
               className="border-b border-navy-foreground/10 py-3.5 font-display text-xl text-navy-foreground transition-colors hover:text-accent"
             >
