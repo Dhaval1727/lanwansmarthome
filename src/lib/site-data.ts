@@ -25,34 +25,24 @@ export const CONTACT = {
   hours: "Mon – Sat · 9:30 AM to 7:30 PM",
 };
 
-export const NAV = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Products", href: "#products" },
-  { label: "Solutions", href: "#solutions" },
-  { label: "Projects", href: "#projects" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Testimonials", href: "#testimonials" },
-  { label: "Blog", href: "#blog" },
-  { label: "FAQs", href: "#faqs" },
-  { label: "Contact", href: "#contact" },
+export const NAV: { label: string; to: string; hash?: string; params?: Record<string, string> }[] = [
+  { label: "Home", to: "/" },
+  { label: "Products", to: "/products" },
+  { label: "Smart Locks", to: "/products/$category", params: { category: "smart-door-locks" } },
+  { label: "Doorbells", to: "/products/$category", params: { category: "video-door-bells" } },
+  { label: "Glass Door Locks", to: "/products/$category", params: { category: "glass-door-locks" } },
+  { label: "About", to: "/", hash: "about" },
+  { label: "Contact", to: "/", hash: "contact" },
 ];
 
 export const TRUST_BADGES = [
   "Zigbee 3.0 & Matter",
   "Make in India",
   "100+ Panel Combinations",
-  "5-Year Switch Warranty",
+  "Certified Engineers",
   "24×7 Support",
 ];
 
-export const PRODUCT_CATEGORIES = [
-  "All",
-  "Smart Locks",
-  "Door Entry",
-  "Accessories",
-  "Automation",
-] as const;
 
 export const PRODUCTS = [
   {
