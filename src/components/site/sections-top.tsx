@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   ShieldCheck,
   Lightbulb,
@@ -18,11 +17,11 @@ import {
 import heroImg from "@/assets/hero.jpg";
 import { Reveal, SectionHeading } from "./primitives";
 import { cn } from "@/lib/utils";
+import { Link } from "@tanstack/react-router";
+import { CATEGORIES, FEATURED_PRODUCTS } from "@/lib/catalog";
+import { CategoryCard, ProductCard } from "./product-ui";
 import {
-  BRANDS,
   CONTACT,
-  PRODUCTS,
-  PRODUCT_CATEGORIES,
   PROCESS,
   SOLUTIONS,
   TRUST_BADGES,
@@ -205,105 +204,45 @@ export function About() {
 }
 
 export function Products() {
-  const [filter, setFilter] = useState<string>("All");
-  const list =
-    filter === "All" ? PRODUCTS : PRODUCTS.filter((p) => p.category === filter);
-
   return (
-    <section id="products" className="bg-surface py-24 lg:py-32">
+    <section id="products" className="bg-surface/70 py-24 lg:py-32">
       <div className="container-page">
         <SectionHeading
           eyebrow="Product Catalogue"
-          title={<>Premium smart locks, curated and tested</>}
-          subtitle="S-AL, S1, S1 Pro, Series 6, glass door locks, video door bells, accessories and full home automation — installed by our own engineers."
+          title={<>Browse by category</>}
+          subtitle="Smart door locks, glass door locks, video door phones, cabinet locks, switches and home automation — all from the Lanwan catalogue."
         />
 
-        <Reveal delay={80}>
-          <div
-            role="tablist"
-            aria-label="Filter products by category"
-            className="mt-10 flex flex-wrap justify-center gap-2"
-          >
-            {PRODUCT_CATEGORIES.map((cat) => (
-              <button
-                key={cat}
-                role="tab"
-                type="button"
-                aria-selected={filter === cat}
-                onClick={() => setFilter(cat)}
-                className={cn(
-                  "rounded-full border px-4 py-2 text-sm font-semibold transition-all duration-300 active:scale-95",
-                  filter === cat
-                    ? "border-transparent bg-brand text-primary-foreground shadow-glow"
-                    : "border-border bg-card text-muted-foreground hover:border-accent/40 hover:text-accent",
-                )}
-              >
-                {cat}
-              </button>
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {CATEGORIES.map((category, i) => (
+            <CategoryCard key={category.slug} category={category} index={i} />
+          ))}
+        </div>
+
+        <div className="mt-20">
+          <SectionHeading
+            eyebrow="Featured"
+            title={<>Most requested models</>}
+            subtitle="A curated selection from our best-selling range."
+          />
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {FEATURED_PRODUCTS.map(({ product, categorySlug }, i) => (
+              <ProductCard
+                key={product.slug}
+                product={product}
+                categorySlug={categorySlug}
+                index={i}
+              />
             ))}
           </div>
-        </Reveal>
-
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {list.map((product, i) => (
-            <Reveal
-              as="article"
-              key={product.name}
-              delay={(i % 4) * 90}
-              className="group flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-card shadow-soft transition-all duration-500 hover:-translate-y-1.5 hover:border-accent/40 hover:shadow-lift"
+          <div className="mt-12 flex justify-center">
+            <Link
+              to="/products"
+              className="inline-flex items-center gap-2 rounded-full bg-brand px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition-transform duration-300 hover:-translate-y-0.5"
             >
-              <div className="relative overflow-hidden bg-secondary">
-                <img
-                  src={product.image}
-                  alt={product.alt ?? product.name}
-                  loading="lazy"
-                  decoding="async"
-                  width={900}
-                  height={900}
-                  className="aspect-square w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <span className="absolute inset-x-0 bottom-0 h-16 bg-linear-to-t from-card to-transparent" />
-                <span className="absolute top-4 left-4 rounded-full bg-navy/70 px-3 py-1 text-[0.65rem] font-semibold tracking-[0.14em] text-accent uppercase backdrop-blur-md">
-                  {product.category}
-                </span>
-              </div>
-              <div className="flex flex-1 flex-col p-6">
-                <h3 className="font-display text-lg text-foreground">{product.name}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                  {product.description}
-                </p>
-                <ul className="mt-4 flex flex-wrap gap-1.5">
-                  {product.features.map((f) => (
-                    <li
-                      key={f}
-                      className="rounded-full bg-secondary px-2.5 py-1 text-[0.7rem] font-medium text-secondary-foreground"
-                    >
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-6 flex flex-wrap items-center gap-2">
-                  <a
-                    href="#contact"
-                    aria-label={`View details of ${product.name}`}
-                    className="inline-flex items-center gap-1.5 rounded-full border border-accent/30 bg-accent/10 px-4 py-2 text-sm font-semibold text-accent transition-all duration-300 hover:border-accent hover:bg-brand hover:text-primary-foreground active:scale-95"
-                  >
-                    View Details
-                    <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </a>
-                  <a
-                    href={CONTACT.whatsappHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`Enquire now about ${product.name}`}
-                    className="inline-flex items-center rounded-full px-3 py-2 text-sm font-semibold text-muted-foreground transition-colors duration-300 hover:text-accent"
-                  >
-                    Enquire Now
-                  </a>
-                </div>
-              </div>
-            </Reveal>
-          ))}
+              View full catalogue <ArrowRight className="size-4" />
+            </Link>
+          </div>
         </div>
       </div>
     </section>
@@ -423,29 +362,3 @@ export function Process() {
   );
 }
 
-export function Brands() {
-  return (
-    <section className="border-y border-border py-14">
-      <div className="container-page">
-        <p className="text-center text-xs font-semibold tracking-[0.24em] text-muted-foreground uppercase">
-          Featured brands we install
-        </p>
-        <div className="group relative mt-8 overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_12%,black_88%,transparent)]">
-          <div className="animate-marquee flex w-max gap-4 group-hover:[animation-play-state:paused]">
-            {[...BRANDS, ...BRANDS].map((brand, i) => (
-              <span
-                key={`${brand}-${i}`}
-                className="grid h-16 w-44 place-items-center rounded-2xl border border-border bg-card font-display text-lg tracking-tight text-foreground/70 transition-colors duration-300 hover:border-primary/30 hover:text-accent"
-              >
-                {brand}
-              </span>
-            ))}
-          </div>
-        </div>
-        <p className="mt-6 text-center text-xs text-muted-foreground">
-          Brand names shown as text placeholders pending official logo permissions.
-        </p>
-      </div>
-    </section>
-  );
-}

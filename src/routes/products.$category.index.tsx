@@ -2,7 +2,7 @@ import { createFileRoute, notFound } from "@tanstack/react-router";
 import { Header } from "@/components/site/header";
 import { Footer, FloatingActions } from "@/components/site/sections-bottom";
 import { ProductCard, PageHeader, EnquiryStrip } from "@/components/site/product-ui";
-import { CATEGORIES, getCategory } from "@/lib/catalog";
+import { CATEGORIES, getCategory, type Product } from "@/lib/catalog";
 import { Link } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/products/$category/")({
@@ -69,7 +69,7 @@ function CategoryPage() {
 
         <section className="pb-20">
           <div className="container-page grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {category.products.map((p, i) => (
+            {category.products.map((p: Product, i: number) => (
               <ProductCard key={p.slug} product={p} categorySlug={category.slug} index={i} />
             ))}
           </div>
