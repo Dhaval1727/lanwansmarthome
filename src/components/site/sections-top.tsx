@@ -127,6 +127,7 @@ export function About() {
     "Certified engineers",
     "100% genuine products",
     "After-sales support",
+    "Extended warranty",
     "Fast service response",
   ];
 

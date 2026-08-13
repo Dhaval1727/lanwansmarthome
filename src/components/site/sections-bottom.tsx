@@ -452,7 +452,7 @@ export function Footer() {
     },
     {
       title: "Products",
-      links: ["Smart Locks", "Smart Switches", "Video Door Phones", "Glass Door Locks", "Smart Curtains"],
+      links: ["Smart Locks", "Smart Switches", "Video Door Phones", "Smart Cameras", "Smart Curtains"],
     },
     {
       title: "Services",
