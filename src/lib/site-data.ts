@@ -1,6 +1,5 @@
 import lock from "@/assets/p-lock.jpg";
 import vdp from "@/assets/p-vdp.jpg";
-import camera from "@/assets/p-camera.jpg";
 import bell from "@/assets/p-bell.jpg";
 import light from "@/assets/p-light.jpg";
 import curtain from "@/assets/p-curtain.jpg";
