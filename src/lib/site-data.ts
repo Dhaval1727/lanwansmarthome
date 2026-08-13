@@ -53,7 +53,7 @@ export const WHY_US = [
   { title: "Zigbee 3.0 Mesh", copy: "Unmatched stability with offline scene operation." },
   { title: "Matter Ready", copy: "Pro Max gateway future-proofs every installation." },
   { title: "Expert Support", copy: "Dedicated account engineer for every project." },
-  { title: "5-Year Warranty", copy: "Up to 5 years on switches plus workmanship cover." },
+  { title: "5 Years Warranty on All Products", copy: "5 years cover across all eligible products, plus workmanship warranty." },
   { title: "Make in India", copy: "Locally engineered panels built for Indian gang boxes." },
   { title: "Quick Installation", copy: "Retrofit fitment — most homes live within 48 hours." },
   { title: "Professional Team", copy: "Uniformed, background-verified technicians." },
@@ -115,14 +115,14 @@ export const GALLERY = [
   { title: "Villa Entrance Smart Lock", tag: "Villa Project", image: lock },
   { title: "Bedroom Curtain Motors", tag: "Apartment", image: curtain },
   { title: "8\" Control Panel Boardroom", tag: "Office", image: vdp },
-  { title: "Perimeter Camera Grid", tag: "Villa Project", image: camera },
+  { title: "Glass Door Lock Retrofit", tag: "Office", image: lock },
   { title: "Video Doorbell Retrofit", tag: "Before / After", image: bell },
 ];
 
 export const FAQS = [
   {
     q: "What warranty do I get on products and installation?",
-    a: "Titan and LuxeRay switch panels carry up to a 5-year warranty, other devices 1 to 3 years, and we add a 1-year workmanship warranty on all wiring and fitment done by our engineers.",
+    a: "All eligible products carry a 5-year warranty — locks, switch panels and automation devices alike — and we add a 1-year workmanship warranty on all wiring and fitment done by our engineers.",
   },
   {
     q: "How long does a full home installation take?",
