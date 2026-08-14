@@ -297,13 +297,13 @@
   background:
     radial-gradient(
       70% 60% at 50% 38%,
-      color-mix(in oklab, var(--accent) 20%, transparent),
-      transparent 72%
+      color-mix(in oklab, var(--accent) 28%, transparent),
+      transparent 74%
     ),
     linear-gradient(
       165deg,
-      color-mix(in oklab, white 16%, transparent),
-      color-mix(in oklab, white 5%, transparent) 55%,
+      color-mix(in oklab, white 24%, transparent),
+      color-mix(in oklab, white 9%, transparent) 55%,
       transparent
     ),
     var(--secondary);
