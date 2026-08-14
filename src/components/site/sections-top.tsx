@@ -251,7 +251,7 @@ export function Products() {
 
 export function Solutions() {
   return (
-    <section id="solutions" className="bg-navy-deep py-24 lg:py-32">
+    <section id="solutions" className="bg-navy/45 py-24 backdrop-blur-sm lg:py-32">
       <div className="container-page">
         <SectionHeading
           tone="dark"
