@@ -17,7 +17,7 @@ export function CategoryCard({ category, index = 0 }: { category: Category; inde
         className="block"
         aria-label={`View ${category.name}`}
       >
-        <div className="relative overflow-hidden bg-secondary">
+        <div className="product-stage relative overflow-hidden">
           <img
             src={category.image}
             alt={category.alt}
@@ -62,7 +62,7 @@ export function ProductCard({
       <Link
         to="/products/$category/$product"
         params={{ category: categorySlug, product: product.slug }}
-        className="relative block overflow-hidden bg-secondary"
+        className="product-stage relative block overflow-hidden"
         tabIndex={-1}
         aria-hidden
       >

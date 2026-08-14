@@ -20,7 +20,7 @@ import { toast } from "sonner";
 
 export function Stats() {
   return (
-    <section className="bg-navy-deep py-20">
+    <section className="bg-navy/45 py-20 backdrop-blur-sm">
       <div className="container-page grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
         {STATS.map((s, i) => (
           <Reveal key={s.label} delay={i * 90} className="text-center">
@@ -120,7 +120,7 @@ export function Gallery() {
 
 export function Testimonials() {
   return (
-    <section id="testimonials" className="bg-surface py-24 lg:py-32">
+    <section id="testimonials" className="bg-surface/55 py-24 backdrop-blur-sm lg:py-32">
       <div className="container-page">
         <SectionHeading
           eyebrow="Testimonials"
@@ -213,7 +213,7 @@ export function Blog() {
   const [featured, ...rest] = BLOG;
 
   return (
-    <section id="blog" className="bg-surface py-24 lg:py-32">
+    <section id="blog" className="bg-surface/55 py-24 backdrop-blur-sm lg:py-32">
       <div className="container-page">
         <SectionHeading
           eyebrow="Blog"
@@ -461,7 +461,7 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-navy-deep pt-20 pb-28 lg:pb-10">
+    <footer className="bg-navy/70 pt-20 pb-28 backdrop-blur-md lg:pb-10">
       <div className="container-page">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_repeat(3,0.7fr)_1.1fr]">
           <div>

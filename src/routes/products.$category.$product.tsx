@@ -62,7 +62,7 @@ function ProductDetail() {
 
         <section className="pb-20">
           <div className="container-page grid gap-10 lg:grid-cols-2 lg:gap-16">
-            <Reveal className="overflow-hidden rounded-[2rem] border border-border bg-secondary shadow-lift">
+            <Reveal className="product-stage overflow-hidden rounded-[2rem] border border-border shadow-lift">
               <img
                 src={product.image}
                 alt={product.alt}

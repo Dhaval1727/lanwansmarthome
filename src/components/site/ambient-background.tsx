@@ -5,6 +5,8 @@
  * product imagery, cards and text always stay dominant. Heavier layers are
  * desktop-only and every animation is gated behind motion-safe.
  */
+import bgSmartHome from "@/assets/bg-smarthome.jpg";
+
 export function AmbientBackground() {
   return (
     <div
@@ -14,8 +16,16 @@ export function AmbientBackground() {
       {/* deep charcoal base */}
       <div className="absolute inset-0 bg-navy-deep" />
 
+      {/* smart-home interior photography — fixed, cover, never repeats or shifts */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-45 md:opacity-55"
+        style={{ backgroundImage: `url(${bgSmartHome})` }}
+      />
+      {/* readability scrim over the photo */}
+      <div className="absolute inset-0 bg-background/55" />
+
       {/* warm overhead light pool — the "room lighting" cue */}
-      <div className="absolute inset-0 bg-[radial-gradient(90%_60%_at_50%_-10%,color-mix(in_oklab,var(--accent)_14%,transparent),transparent_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(90%_60%_at_50%_-10%,color-mix(in_oklab,var(--accent)_16%,transparent),transparent_70%)]" />
 
       {/* soft bronze pools, very low opacity */}
       <span className="absolute -top-48 -left-40 size-[42rem] rounded-full bg-primary/8 blur-[150px] motion-safe:md:animate-float" />
