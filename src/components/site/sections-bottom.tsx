@@ -120,7 +120,7 @@ export function Gallery() {
 
 export function Testimonials() {
   return (
-    <section id="testimonials" className="bg-surface py-24 lg:py-32">
+    <section id="testimonials" className="bg-surface/55 py-24 backdrop-blur-sm lg:py-32">
       <div className="container-page">
         <SectionHeading
           eyebrow="Testimonials"
@@ -213,7 +213,7 @@ export function Blog() {
   const [featured, ...rest] = BLOG;
 
   return (
-    <section id="blog" className="bg-surface py-24 lg:py-32">
+    <section id="blog" className="bg-surface/55 py-24 backdrop-blur-sm lg:py-32">
       <div className="container-page">
         <SectionHeading
           eyebrow="Blog"
