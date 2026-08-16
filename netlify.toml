@@ -1,0 +1,9 @@
+[build.environment]
+  # `nitro` is pinned to a dated beta release (3.0.260603-beta, published 2026-06-03).
+  # Nitro defaults its `compatibilityDate` to "latest" (today's wall-clock date) when
+  # unset, which for this pre-release package means every rebuild silently targets a
+  # date further and further past what this beta was ever built or tested against.
+  # Pinning it to the installed version's own release date keeps the Nitro/Vite
+  # production build deterministic and inside tested territory.
+  COMPATIBILITY_DATE = "2026-06-03"
+  COMPATIBILITY_DATE_NETLIFY = "2026-06-03"
