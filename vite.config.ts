@@ -12,4 +12,12 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  nitro: {
+    // The Netlify site's configured publish directory is "dist/client", but Nitro's
+    // built-in "netlify" preset (auto-detected from the Netlify build environment)
+    // defaults publicDir to "dist" — so client assets landed one level up from where
+    // Netlify's deploy step looks for them, and the deploy failed with
+    // "The deploy directory dist/client has not been found."
+    output: { publicDir: "dist/client" },
+  },
 });
