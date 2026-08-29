@@ -15,17 +15,19 @@ import {
   PackageCheck,
 } from "lucide-react";
 import heroImg from "@/assets/hero.jpg";
+import lightImg from "@/assets/p-light.jpg";
+import curtainImg from "@/assets/p-curtain.jpg";
+import luxuryImg from "@/assets/images/lanwan-smart-home-luxury-living-room.png";
+
+import appLivingRoom from "@/assets/lifestyle/app_smart_switch_living_room.jpg";
+import appVillaEntrance from "@/assets/lifestyle/app_smart_lock_villa.jpg";
+import appHotelRoom from "@/assets/lifestyle/app_glass_lock_office.jpg"; // Using office for now as premium space
+import appModernOffice from "@/assets/lifestyle/app_video_doorbell_entrance.jpg";
 import { Reveal, SectionHeading } from "./primitives";
 import { Link } from "@tanstack/react-router";
 import { CATEGORIES, FEATURED_PRODUCTS } from "@/lib/catalog";
 import { CategoryCard, ProductCard } from "./product-ui";
-import {
-  CONTACT,
-  PROCESS,
-  SOLUTIONS,
-  TRUST_BADGES,
-  WHY_US,
-} from "@/lib/site-data";
+import { CONTACT, PROCESS, SOLUTIONS, TRUST_BADGES, WHY_US } from "@/lib/site-data";
 
 export function Hero() {
   return (
@@ -80,26 +82,26 @@ export function Hero() {
           </h1>
 
           <p className="mt-6 max-w-xl text-base leading-relaxed text-navy-foreground/75 sm:text-lg">
-            Bronze-finished smart door locks, face and palm recognition, video
-            door bells and full home automation — engineered for premium homes
-            and installed by certified engineers.
+            Bronze-finished smart door locks, face and palm recognition, video door bells and full
+            home automation — engineered for premium homes and installed by certified engineers.
           </p>
 
-
           <div className="mt-9 flex flex-wrap gap-3">
-            <a
-              href="#contact"
+            <Link
+              to="/"
+              hash="contact"
               className="group inline-flex items-center gap-2 rounded-full bg-brand px-7 py-4 text-sm font-semibold text-primary-foreground shadow-glow transition-transform duration-300 hover:-translate-y-0.5"
             >
               Get Free Consultation
               <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </a>
-            <a
-              href="#products"
+            </Link>
+            <Link
+              to="/"
+              hash="products"
               className="inline-flex items-center gap-2 rounded-full border border-navy-foreground/25 bg-navy-foreground/10 px-7 py-4 text-sm font-semibold text-navy-foreground backdrop-blur-md transition-colors duration-300 hover:border-accent/60 hover:text-accent"
             >
               Explore Products
-            </a>
+            </Link>
           </div>
         </Reveal>
 
@@ -143,26 +145,23 @@ export function About() {
             Automation that feels invisible, engineered to be dependable.
           </h2>
           <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-            Lanwan Automation is a leading smart home automation and IoT solutions
-            company, transforming everyday spaces into intelligent environments.
-            From homes to enterprises — hotels, hospitals, senior living spaces
-            and warehouses — we design solutions that bring comfort, convenience
-            and control to your fingertips.
+            Lanwan Automation is a leading smart home automation and IoT solutions company,
+            transforming everyday spaces into intelligent environments. From homes to enterprises —
+            hotels, hospitals, senior living spaces and warehouses — we design solutions that bring
+            comfort, convenience and control to your fingertips.
           </p>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-2">
             <div className="rounded-2xl border border-border bg-surface p-6">
               <h3 className="font-display text-base text-foreground">Our Mission</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                Make premium automation accessible, reliable and effortless for
-                every Indian home.
+                Make premium automation accessible, reliable and effortless for every Indian home.
               </p>
             </div>
             <div className="rounded-2xl border border-border bg-surface p-6">
               <h3 className="font-display text-base text-foreground">Our Vision</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                A future where every building is secure, energy-aware and
-                intuitive to live in.
+                A future where every building is secure, energy-aware and intuitive to live in.
               </p>
             </div>
           </div>
@@ -179,16 +178,34 @@ export function About() {
           </ul>
         </Reveal>
 
-        <Reveal delay={150} className="relative">
-          <div className="relative overflow-hidden rounded-[2rem] shadow-lift">
-            <img
-              src={heroImg}
-              alt="Certified engineer installing a smart lock in a luxury home"
-              loading="lazy"
-              width={1920}
-              height={1280}
-              className="aspect-4/5 w-full object-cover"
-            />
+        <Reveal delay={150} className="relative mt-8 lg:mt-0">
+          <div className="grid grid-cols-2 gap-4 sm:gap-6">
+            <div className="overflow-hidden rounded-[2rem] shadow-lift h-full relative">
+              <img
+                src={luxuryImg}
+                alt="Luxury Smart Home Living Room"
+                loading="lazy"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+            <div className="grid gap-4 sm:gap-6">
+              <div className="overflow-hidden rounded-[2rem] shadow-lift">
+                <img
+                  src={lightImg}
+                  alt="Penthouse Track Lighting"
+                  loading="lazy"
+                  className="aspect-square w-full object-cover"
+                />
+              </div>
+              <div className="overflow-hidden rounded-[2rem] shadow-lift">
+                <img
+                  src={curtainImg}
+                  alt="Bedroom Curtain Motors"
+                  loading="lazy"
+                  className="aspect-square w-full object-cover"
+                />
+              </div>
+            </div>
           </div>
           <div className="glass-card absolute -bottom-8 -left-4 w-56 rounded-2xl p-5 sm:left-8">
             <p className="font-display text-3xl text-foreground">98%</p>
@@ -204,8 +221,19 @@ export function About() {
 
 export function Products() {
   return (
-    <section id="products" className="bg-surface/45 py-24 backdrop-blur-sm lg:py-32">
-      <div className="container-page">
+    <section id="products" className="relative overflow-hidden bg-navy-deep py-24 lg:py-32">
+      {/* Background layer */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src={heroImg}
+          alt=""
+          loading="lazy"
+          className="size-full object-cover object-center opacity-[0.03]"
+        />
+        <div className="absolute inset-0 bg-linear-to-b from-navy-deep via-transparent to-navy-deep" />
+      </div>
+
+      <div className="container-page relative z-10">
         <SectionHeading
           eyebrow="Product Catalogue"
           title={<>Browse by category</>}
@@ -248,31 +276,67 @@ export function Products() {
   );
 }
 
-
 export function Solutions() {
-  return (
-    <section id="solutions" className="bg-navy/45 py-24 backdrop-blur-sm lg:py-32">
-      <div className="container-page">
-        <SectionHeading
-          tone="dark"
-          eyebrow="Smart Home Solutions"
-          title={<>Built for the space you are designing</>}
-          subtitle="From a single apartment retrofit to hotels, hospitals and warehouses, one ecosystem scales with you."
-        />
+  const majorSolutions = SOLUTIONS.slice(0, 4);
+  const minorSolutions = SOLUTIONS.slice(4);
 
-        <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {SOLUTIONS.map((s, i) => (
+  const images = [appLivingRoom, appVillaEntrance, appHotelRoom, appModernOffice];
+  const productsLists = [
+    ["Smart Lighting", "Curtains", "Climate Control"],
+    ["Smart Lock", "Video Doorbell", "Lighting"],
+    ["RFID Locks", "DND Panels", "Energy Switches"],
+    ["Access Control", "Occupancy", "Energy Dashboard"],
+  ];
+
+  return (
+    <section id="solutions" className="bg-background py-24 lg:py-32">
+      <div className="container-page">
+        <SectionHeading eyebrow="Solutions" title="Engineered for your exact requirements." />
+
+        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {majorSolutions.map((s, i) => (
             <Reveal
               key={s.title}
-              delay={(i % 3) * 90}
-              className="group relative overflow-hidden rounded-3xl border border-navy-foreground/12 bg-navy-foreground/6 p-7 backdrop-blur-md transition-all duration-500 hover:-translate-y-1 hover:border-accent/40"
+              delay={(i % 4) * 90}
+              className="group relative flex flex-col overflow-hidden rounded-[2rem] border border-border/50 bg-card/40 shadow-soft backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-accent/40 hover:bg-card/60 hover:shadow-[0_20px_40px_-15px_oklch(0.755_0.115_72_/_0.15)]"
             >
-              <span className="font-display text-xs tracking-[0.2em] text-accent">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <h3 className="mt-3 font-display text-xl text-navy-foreground">{s.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-navy-foreground/65">{s.copy}</p>
-              <span className="absolute -right-10 -bottom-10 size-28 rounded-full bg-accent/10 blur-2xl transition-opacity duration-500 group-hover:opacity-100 lg:opacity-0" />
+              <div className="relative h-48 overflow-hidden rounded-t-[2rem]">
+                <img
+                  src={images[i]}
+                  alt={s.title}
+                  className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-background/20" />
+              </div>
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="font-display text-xl text-foreground group-hover:text-accent transition-colors">
+                  {s.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.copy}</p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {productsLists[i]?.map((p) => (
+                    <span
+                      key={p}
+                      className="text-[0.65rem] uppercase tracking-wider font-semibold border border-border rounded-full px-2 py-0.5 text-muted-foreground"
+                    >
+                      {p}
+                    </span>
+                  ))}
+                </div>
+                <div className="mt-auto pt-6 flex items-center gap-1.5 text-sm font-semibold text-accent">
+                  Explore {s.title} <ArrowRight className="size-4" />
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
+        <div className="mt-12 flex flex-wrap justify-center gap-4">
+          {minorSolutions.map((s, i) => (
+            <Reveal key={s.title} delay={i * 50}>
+              <button className="rounded-full border border-border bg-surface px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:border-accent hover:text-accent">
+                {s.title}
+              </button>
             </Reveal>
           ))}
         </div>
@@ -287,10 +351,7 @@ export function WhyUs() {
   return (
     <section className="py-24 lg:py-32">
       <div className="container-page">
-        <SectionHeading
-          eyebrow="Why Choose Us"
-          title={<>Seven reasons clients stay with us</>}
-        />
+        <SectionHeading eyebrow="Why Choose Us" title={<>Seven reasons clients stay with us</>} />
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {WHY_US.map((item, i) => {
             const Icon = WHY_ICONS[i] ?? Wrench;
@@ -298,9 +359,9 @@ export function WhyUs() {
               <Reveal
                 key={item.title}
                 delay={(i % 4) * 80}
-                className="group rounded-3xl border border-border bg-card p-7 shadow-soft transition-all duration-500 hover:-translate-y-1.5 hover:border-primary/30 hover:shadow-lift"
+                className="group rounded-[2rem] border border-border/50 bg-card/40 p-8 shadow-soft backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-accent/40 hover:bg-card/60 hover:shadow-[0_20px_40px_-15px_oklch(0.755_0.115_72_/_0.15)]"
               >
-                <span className="grid size-12 place-items-center rounded-2xl bg-primary/8 text-accent transition-colors duration-500 group-hover:bg-brand group-hover:text-primary-foreground">
+                <span className="grid size-12 place-items-center rounded-2xl bg-accent/10 text-accent transition-colors duration-500 group-hover:bg-brand group-hover:text-primary-foreground group-hover:shadow-glow">
                   <Icon className="size-5.5" strokeWidth={1.6} />
                 </span>
                 <h3 className="mt-5 font-display text-lg text-foreground">{item.title}</h3>
@@ -310,18 +371,19 @@ export function WhyUs() {
           })}
           <Reveal
             delay={320}
-            className="flex flex-col justify-between rounded-3xl bg-brand p-7 shadow-glow"
+            className="flex flex-col justify-between rounded-[2rem] bg-brand p-8 shadow-glow transition-transform duration-500 hover:-translate-y-2"
           >
-            <h3 className="font-display text-lg text-primary-foreground">
+            <h3 className="font-display text-xl text-primary-foreground">
               Not sure where to start?
             </h3>
-            <a
-              href="#contact"
+            <Link
+              to="/"
+              hash="contact"
               className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary-foreground"
             >
               Book a free consultation
               <ArrowRight className="size-4" />
-            </a>
+            </Link>
           </Reveal>
         </div>
       </div>
@@ -346,8 +408,12 @@ export function Process() {
           />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-6">
             {PROCESS.map((p, i) => (
-              <Reveal key={p.step} delay={i * 80} className="relative text-center lg:text-left">
-                <span className="relative z-10 grid size-12 place-items-center rounded-2xl bg-card font-display text-sm text-accent shadow-soft ring-1 ring-primary/15 max-lg:mx-auto">
+              <Reveal
+                key={p.step}
+                delay={i * 80}
+                className="relative text-center lg:text-left group"
+              >
+                <span className="relative z-10 grid size-12 place-items-center rounded-2xl bg-card font-display text-sm text-accent shadow-soft border border-border/50 max-lg:mx-auto transition-colors duration-500 group-hover:border-accent/50 group-hover:bg-accent/10">
                   {p.step}
                 </span>
                 <h3 className="mt-5 font-display text-base text-foreground">{p.title}</h3>
@@ -360,4 +426,3 @@ export function Process() {
     </section>
   );
 }
-

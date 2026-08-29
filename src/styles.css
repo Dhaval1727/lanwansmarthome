@@ -130,8 +130,7 @@
     color-mix(in oklab, var(--accent) 22%, transparent),
     transparent
   );
-  --shadow-soft: 0 1px 2px oklch(0 0 0 / 0.4),
-    0 8px 24px -12px oklch(0 0 0 / 0.6);
+  --shadow-soft: 0 1px 2px oklch(0 0 0 / 0.4), 0 8px 24px -12px oklch(0 0 0 / 0.6);
   --shadow-lift: 0 24px 60px -28px oklch(0 0 0 / 0.75);
   --shadow-glow: 0 20px 60px -22px oklch(0.575 0.121 55 / 0.65);
   --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
@@ -146,7 +145,6 @@
   --secondary: oklch(0.24 0.004 60);
   --muted: oklch(0.24 0.004 60);
 }
-
 
 @layer base {
   * {
@@ -201,6 +199,10 @@
 
 @utility bg-navy-deep {
   background-image: var(--gradient-navy);
+}
+
+@utility bg-stage-gradient {
+  background-image: radial-gradient(circle at center, oklch(0.32 0.02 65), var(--color-card));
 }
 
 @utility glass-card {
@@ -296,15 +298,14 @@
 @utility product-stage {
   background:
     radial-gradient(
-      70% 60% at 50% 38%,
-      color-mix(in oklab, var(--accent) 28%, transparent),
-      transparent 74%
+      ellipse at 50% 40%,
+      color-mix(in oklab, var(--accent) 15%, #2a2a35) 0%,
+      transparent 70%
     ),
-    linear-gradient(
-      165deg,
-      color-mix(in oklab, white 24%, transparent),
-      color-mix(in oklab, white 9%, transparent) 55%,
-      transparent
+    radial-gradient(
+      circle at 50% 0%,
+      color-mix(in oklab, white 6%, transparent) 0%,
+      transparent 50%
     ),
-    var(--secondary);
+    linear-gradient(180deg, oklch(0.19 0.01 285) 0%, oklch(0.14 0.01 285) 100%);
 }

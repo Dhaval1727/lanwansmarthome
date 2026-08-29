@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import {
   Star,
   Plus,
@@ -14,8 +15,9 @@ import {
   Send,
 } from "lucide-react";
 import { Reveal, SectionHeading, Counter } from "./primitives";
-import { BLOG, CONTACT, FAQS, GALLERY, STATS, TESTIMONIALS } from "@/lib/site-data";
+import { BLOG, CONTACT, FAQS, STATS, TESTIMONIALS } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
+import logoImg from "@/assets/logo.png";
 import { toast } from "sonner";
 
 export function Stats() {
@@ -37,105 +39,21 @@ export function Stats() {
   );
 }
 
-export function Gallery() {
-  const [active, setActive] = useState<number | null>(null);
-
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setActive(null);
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, []);
-
-  const item = active === null ? null : GALLERY[active];
-
-  return (
-    <section id="projects" className="py-24 lg:py-32">
-      <div className="container-page">
-        <SectionHeading
-          eyebrow="Projects & Gallery"
-          title={<>Recent installations across homes and businesses</>}
-          subtitle="Luxury residences, villa security grids, office access control and apartment retrofits."
-        />
-
-        <div id="gallery" className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {GALLERY.map((g, i) => (
-            <Reveal key={g.title} delay={(i % 3) * 90}>
-              <button
-                onClick={() => setActive(i)}
-                className="group relative block w-full overflow-hidden rounded-3xl text-left shadow-soft"
-              >
-                <img
-                  src={g.image}
-                  alt={g.title}
-                  loading="lazy"
-                  width={900}
-                  height={900}
-                  className="aspect-4/3 w-full object-cover transition-transform duration-700 group-hover:scale-107"
-                />
-                <span className="absolute inset-0 bg-linear-to-t from-navy/85 via-navy/20 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-95" />
-                <span className="absolute inset-x-0 bottom-0 p-6">
-                  <span className="block text-[0.7rem] font-semibold tracking-[0.18em] text-accent uppercase">
-                    {g.tag}
-                  </span>
-                  <span className="mt-1.5 block font-display text-lg text-navy-foreground">
-                    {g.title}
-                  </span>
-                </span>
-              </button>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-
-      {item && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          aria-label={item.title}
-          onClick={() => setActive(null)}
-          className="fixed inset-0 z-60 grid place-items-center bg-navy/90 p-4 backdrop-blur-sm"
-        >
-          <button
-            onClick={() => setActive(null)}
-            aria-label="Close gallery"
-            className="absolute top-6 right-6 grid size-11 place-items-center rounded-full border border-navy-foreground/20 text-navy-foreground"
-          >
-            <X className="size-5" />
-          </button>
-          <figure onClick={(e) => e.stopPropagation()} className="max-w-3xl">
-            <img
-              src={item.image}
-              alt={item.title}
-              className="max-h-[75vh] w-full rounded-3xl object-contain"
-            />
-            <figcaption className="mt-4 text-center text-sm text-navy-foreground/80">
-              {item.title} · {item.tag}
-            </figcaption>
-          </figure>
-        </div>
-      )}
-    </section>
-  );
-}
-
 export function Testimonials() {
   return (
     <section id="testimonials" className="bg-surface/55 py-24 backdrop-blur-sm lg:py-32">
       <div className="container-page">
-        <SectionHeading
-          eyebrow="Testimonials"
-          title={<>Rated 4.9 by 380+ verified customers</>}
-        />
+        <SectionHeading eyebrow="Testimonials" title={<>Rated 4.9 by 380+ verified customers</>} />
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {TESTIMONIALS.map((t, i) => (
             <Reveal
               as="article"
               key={t.name}
               delay={(i % 4) * 90}
-              className="flex h-full flex-col rounded-3xl border border-border bg-card p-7 shadow-soft transition-all duration-500 hover:-translate-y-1.5 hover:shadow-lift"
+              className="flex h-full flex-col rounded-[2rem] border border-border/50 bg-card/40 p-8 shadow-soft backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-accent/40 hover:bg-card/60 hover:shadow-[0_20px_40px_-15px_oklch(0.755_0.115_72_/_0.15)]"
             >
               <div className="flex items-center gap-3">
-                <span className="grid size-11 place-items-center rounded-full bg-brand font-display text-sm text-primary-foreground">
+                <span className="grid size-12 place-items-center rounded-full bg-accent/10 font-display text-sm text-accent">
                   {t.initials}
                 </span>
                 <div>
@@ -175,7 +93,10 @@ export function Faqs() {
           subtitle="Still unsure about something? Message us on WhatsApp and an engineer will reply."
         />
 
-        <Reveal delay={120} className="divide-y divide-border rounded-3xl border border-border bg-card px-6 shadow-soft sm:px-8">
+        <Reveal
+          delay={120}
+          className="divide-y divide-border/50 rounded-[2rem] border border-border/50 bg-card/40 px-7 shadow-soft sm:px-9 backdrop-blur-xl"
+        >
           {FAQS.map((f, i) => {
             const isOpen = open === i;
             return (
@@ -215,15 +136,15 @@ export function Blog() {
   return (
     <section id="blog" className="bg-surface/55 py-24 backdrop-blur-sm lg:py-32">
       <div className="container-page">
-        <SectionHeading
-          eyebrow="Blog"
-          title={<>Latest from the automation journal</>}
-        />
+        <SectionHeading eyebrow="Blog" title={<>Latest from the automation journal</>} />
         <div className="mt-14 grid gap-5 lg:grid-cols-2">
           {featured && (
-            <Reveal as="article" className="flex flex-col justify-between rounded-3xl bg-navy-deep p-8 shadow-lift sm:p-10">
+            <Reveal
+              as="article"
+              className="flex flex-col justify-between rounded-[2rem] border border-border/50 bg-card/60 p-8 shadow-soft backdrop-blur-xl transition-all duration-500 hover:border-accent/40 hover:shadow-[0_20px_40px_-15px_oklch(0.755_0.115_72_/_0.15)] sm:p-10"
+            >
               <div>
-                <span className="rounded-full bg-navy-foreground/10 px-3 py-1 text-[0.7rem] font-semibold tracking-[0.16em] text-accent uppercase">
+                <span className="rounded-full bg-accent/10 border border-accent/20 px-3.5 py-1.5 text-[0.7rem] font-semibold tracking-[0.16em] text-accent uppercase">
                   {featured.tag}
                 </span>
                 <h3 className="mt-6 font-display text-2xl leading-snug text-navy-foreground sm:text-3xl">
@@ -250,7 +171,7 @@ export function Blog() {
                 as="article"
                 key={post.title}
                 delay={i * 80}
-                className="group flex h-full flex-col justify-between rounded-3xl border border-border bg-card p-6 shadow-soft transition-all duration-500 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lift"
+                className="group flex h-full flex-col justify-between rounded-[2rem] border border-border/50 bg-card/40 p-7 shadow-soft backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-accent/40 hover:bg-card/60 hover:shadow-[0_20px_40px_-15px_oklch(0.755_0.115_72_/_0.15)]"
               >
                 <div>
                   <span className="text-[0.7rem] font-semibold tracking-[0.16em] text-accent uppercase">
@@ -293,7 +214,12 @@ export function Contact() {
 
   const details = [
     { Icon: Phone, label: "Phone", value: CONTACT.phoneDisplay, href: CONTACT.phoneHref },
-    { Icon: MessageCircle, label: "WhatsApp", value: "Chat with an engineer", href: CONTACT.whatsappHref },
+    {
+      Icon: MessageCircle,
+      label: "WhatsApp",
+      value: "Chat with an engineer",
+      href: CONTACT.whatsappHref,
+    },
     { Icon: Mail, label: "Email", value: CONTACT.email, href: `mailto:${CONTACT.email}` },
     { Icon: MapPin, label: "Experience Centre", value: CONTACT.address },
     { Icon: Clock, label: "Working Hours", value: CONTACT.hours },
@@ -310,10 +236,13 @@ export function Contact() {
 
         <div className="mt-14 grid gap-6 lg:grid-cols-[1fr_1.05fr]">
           <Reveal className="flex flex-col gap-6">
-            <ul className="grid gap-3 rounded-3xl border border-border bg-card p-6 shadow-soft sm:p-8">
+            <ul className="grid gap-3 rounded-[2rem] border border-border/50 bg-card/40 p-7 shadow-soft backdrop-blur-xl sm:p-9">
               {details.map(({ Icon, label, value, href }) => (
-                <li key={label} className="flex items-start gap-4 border-b border-border/70 py-3 last:border-0">
-                  <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-primary/8 text-accent">
+                <li
+                  key={label}
+                  className="flex items-start gap-4 border-b border-border/40 py-3 last:border-0"
+                >
+                  <span className="grid size-11 shrink-0 place-items-center rounded-2xl bg-accent/10 text-accent border border-accent/20">
                     <Icon className="size-4.5" strokeWidth={1.6} />
                   </span>
                   <div>
@@ -335,7 +264,7 @@ export function Contact() {
               ))}
             </ul>
 
-            <div className="overflow-hidden rounded-3xl border border-border shadow-soft">
+            <div className="overflow-hidden rounded-[2rem] border border-border/50 shadow-soft">
               <iframe
                 title="Lanwan Automation experience centre location"
                 src="https://www.google.com/maps?q=Whitefield%20Bengaluru&output=embed"
@@ -349,19 +278,34 @@ export function Contact() {
           <Reveal delay={140}>
             <form
               onSubmit={onSubmit}
-              className="rounded-3xl border border-border bg-card p-7 shadow-lift sm:p-9"
+              className="rounded-[2rem] border border-border/50 bg-card/40 p-8 shadow-soft backdrop-blur-xl sm:p-10"
             >
-              <h3 className="font-display text-xl text-foreground">Request a free consultation</h3>
+              <h3 className="font-display text-2xl text-foreground">Request a free consultation</h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 No obligation. No pushy sales calls.
               </p>
 
               <div className="mt-7 grid gap-4 sm:grid-cols-2">
                 <Field label="Full name" name="name" placeholder="Arjun Mehta" required />
-                <Field label="Phone number" name="phone" type="tel" placeholder="+91 98765 43210" required />
-                <Field label="Email" name="email" type="email" placeholder="you@email.com" className="sm:col-span-2" />
+                <Field
+                  label="Phone number"
+                  name="phone"
+                  type="tel"
+                  placeholder="+91 98765 43210"
+                  required
+                />
+                <Field
+                  label="Email"
+                  name="email"
+                  type="email"
+                  placeholder="you@email.com"
+                  className="sm:col-span-2"
+                />
                 <div className="sm:col-span-2">
-                  <label htmlFor="property" className="text-xs font-semibold tracking-[0.12em] text-muted-foreground uppercase">
+                  <label
+                    htmlFor="property"
+                    className="text-xs font-semibold tracking-[0.12em] text-muted-foreground uppercase"
+                  >
                     Property type
                   </label>
                   <select
@@ -369,15 +313,24 @@ export function Contact() {
                     name="property"
                     className="mt-2 h-12 w-full rounded-xl border border-input bg-background px-4 text-sm text-foreground outline-none transition-colors focus:border-primary focus:ring-2 focus:ring-ring/25"
                   >
-                    {["Apartment", "Independent Home", "Villa", "Office", "Hotel", "Retail Shop", "Other"].map(
-                      (o) => (
-                        <option key={o}>{o}</option>
-                      ),
-                    )}
+                    {[
+                      "Apartment",
+                      "Independent Home",
+                      "Villa",
+                      "Office",
+                      "Hotel",
+                      "Retail Shop",
+                      "Other",
+                    ].map((o) => (
+                      <option key={o}>{o}</option>
+                    ))}
                   </select>
                 </div>
                 <div className="sm:col-span-2">
-                  <label htmlFor="message" className="text-xs font-semibold tracking-[0.12em] text-muted-foreground uppercase">
+                  <label
+                    htmlFor="message"
+                    className="text-xs font-semibold tracking-[0.12em] text-muted-foreground uppercase"
+                  >
                     What do you need?
                   </label>
                   <textarea
@@ -429,7 +382,10 @@ function Field({
 }) {
   return (
     <div className={className}>
-      <label htmlFor={name} className="text-xs font-semibold tracking-[0.12em] text-muted-foreground uppercase">
+      <label
+        htmlFor={name}
+        className="text-xs font-semibold tracking-[0.12em] text-muted-foreground uppercase"
+      >
         {label}
       </label>
       <input
@@ -452,7 +408,13 @@ export function Footer() {
     },
     {
       title: "Products",
-      links: ["Smart Locks", "Smart Switches", "Video Door Phones", "Smart Cameras", "Smart Curtains"],
+      links: [
+        "Smart Locks",
+        "Smart Switches",
+        "Video Door Phones",
+        "Smart Cameras",
+        "Smart Curtains",
+      ],
     },
     {
       title: "Services",
@@ -465,40 +427,44 @@ export function Footer() {
       <div className="container-page">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_repeat(3,0.7fr)_1.1fr]">
           <div>
-            <span className="font-display text-xl text-navy-foreground">
-              LAN<span className="text-gradient">WAN</span>
-            </span>
+            <Link to="/" hash="home" className="inline-block" aria-label={CONTACT.brand}>
+              <img src={logoImg} alt={CONTACT.brand} className="h-10 w-auto object-contain" />
+            </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-navy-foreground/60">
-              Makes value smarter, comfort enhanced — design, supply,
-              installation and lifelong support for homes and enterprises.
+              Makes value smarter, comfort enhanced — design, supply, installation and lifelong
+              support for homes and enterprises.
             </p>
             <p className="mt-5 text-sm text-navy-foreground/70">{CONTACT.address}</p>
             <div className="mt-5 flex gap-2">
               {["IG", "FB", "IN", "YT"].map((s) => (
-                <a
+                <Link
                   key={s}
-                  href="#contact"
+                  to="/"
+                  hash="contact"
                   aria-label={s}
                   className="grid size-9 place-items-center rounded-full border border-navy-foreground/20 text-xs font-semibold text-navy-foreground/70 transition-colors hover:border-accent hover:text-accent"
                 >
                   {s}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
 
           {cols.map((col) => (
             <div key={col.title}>
-              <h3 className="font-display text-sm tracking-wide text-navy-foreground">{col.title}</h3>
+              <h3 className="font-display text-sm tracking-wide text-navy-foreground">
+                {col.title}
+              </h3>
               <ul className="mt-4 grid gap-2.5">
                 {col.links.map((l) => (
                   <li key={l}>
-                    <a
-                      href="#contact"
+                    <Link
+                      to="/"
+                      hash="contact"
                       className="text-sm text-navy-foreground/60 transition-colors hover:text-accent"
                     >
                       {l}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -539,8 +505,12 @@ export function Footer() {
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-navy-foreground/10 pt-6 text-xs text-navy-foreground/50 sm:flex-row">
           <p>© {new Date().getFullYear()} Lanwan Automation. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="#contact" className="transition-colors hover:text-accent">Privacy Policy</a>
-            <a href="#contact" className="transition-colors hover:text-accent">Terms of Service</a>
+            <Link to="/" hash="contact" className="transition-colors hover:text-accent">
+              Privacy Policy
+            </Link>
+            <Link to="/" hash="contact" className="transition-colors hover:text-accent">
+              Terms of Service
+            </Link>
           </div>
         </div>
       </div>
@@ -559,13 +529,13 @@ export function FloatingActions() {
 
   return (
     <>
-      <div className="fixed right-4 bottom-24 z-40 flex flex-col gap-3 lg:bottom-6">
+      <div className="fixed right-4 bottom-24 z-50 flex flex-col gap-3 lg:bottom-6">
         <a
           href={CONTACT.whatsappHref}
           target="_blank"
           rel="noreferrer"
           aria-label="Chat on WhatsApp"
-          className="animate-pulse-ring grid size-13 place-items-center rounded-full bg-whatsapp text-primary-foreground shadow-lift transition-transform duration-300 hover:scale-105"
+          className="animate-pulse-ring grid size-14 place-items-center rounded-full bg-whatsapp text-primary-foreground shadow-lift transition-transform duration-300 hover:scale-105"
         >
           <MessageCircle className="size-6" />
         </a>
@@ -573,7 +543,7 @@ export function FloatingActions() {
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           aria-label="Back to top"
           className={cn(
-            "grid size-13 place-items-center rounded-full border border-border bg-card text-foreground shadow-soft transition-all duration-300 hover:text-accent",
+            "grid size-14 place-items-center rounded-full border border-border bg-card text-foreground shadow-soft transition-all duration-300 hover:text-accent",
             show ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-3 opacity-0",
           )}
         >
@@ -589,12 +559,13 @@ export function FloatingActions() {
         >
           <Phone className="size-4" /> Call Now
         </a>
-        <a
-          href="#contact"
+        <Link
+          to="/"
+          hash="contact"
           className="inline-flex items-center justify-center gap-2 rounded-full bg-brand py-3 text-sm font-semibold text-primary-foreground"
         >
           Free Consultation
-        </a>
+        </Link>
       </div>
     </>
   );

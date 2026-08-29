@@ -8,21 +8,51 @@ import curtain from "@/assets/p-curtain.jpg";
 export const CONTACT = {
   brand: "Lanwan Automation",
   tagline: "Makes Value Smarter, Comfort Enhanced",
-  phoneDisplay: "+91 98765 43210",
-  phoneHref: "tel:+919876543210",
+  phoneDisplay: "+91 70438 84048",
+  phoneHref: "tel:+917043884048",
   whatsappHref:
-    "https://wa.me/919876543210?text=Hi%20Lanwan%2C%20I%27d%20like%20a%20free%20smart%20home%20consultation.",
-  email: "hello@lanwanautomation.in",
-  address: "No. 42, Prestige Tech Park Road, Whitefield, Bengaluru 560066",
+    "https://wa.me/917043884048?text=Hi%20Lanwan%2C%20I%27d%20like%20a%20free%20smart%20home%20consultation.",
+  email: "lanwan.smarthome@gmail.com",
+  address: "Ahmedabad, Gujarat",
   hours: "Mon – Sat · 9:30 AM to 7:30 PM",
 };
 
-export const NAV: { label: string; to: string; hash?: string; params?: Record<string, string> }[] = [
+export const NAV: {
+  label: string;
+  to?: string;
+  hash?: string;
+  params?: Record<string, string>;
+  subItems?: { label: string; to: string; params?: Record<string, string> }[];
+}[] = [
   { label: "Home", to: "/" },
-  { label: "Products", to: "/products" },
-  { label: "Smart Locks", to: "/products/$category", params: { category: "smart-door-locks" } },
-  { label: "Doorbells", to: "/products/$category", params: { category: "video-door-bells" } },
-  { label: "Glass Door Locks", to: "/products/$category", params: { category: "glass-door-locks" } },
+  {
+    label: "Products",
+    to: "/products",
+    subItems: [
+      { label: "Smart Locks", to: "/products/$category", params: { category: "smart-locks" } },
+      {
+        label: "Smart Switches",
+        to: "/products/$category",
+        params: { category: "smart-switches" },
+      },
+      {
+        label: "Control Screen",
+        to: "/products/$category",
+        params: { category: "control-screen" },
+      },
+      {
+        label: "Smart Curtains",
+        to: "/products/$category",
+        params: { category: "smart-curtains" },
+      },
+      {
+        label: "Smart Light",
+        to: "/products/$category",
+        params: { category: "smart-light" },
+      },
+    ],
+  },
+  { label: "Solutions", to: "/", hash: "solutions" },
   { label: "About", to: "/", hash: "about" },
   { label: "Contact", to: "/", hash: "contact" },
 ];
@@ -35,8 +65,6 @@ export const TRUST_BADGES = [
   "24×7 Support",
 ];
 
-
-
 export const SOLUTIONS = [
   { title: "Homes", copy: "Lighting, security and climate for independent houses." },
   { title: "Apartments", copy: "Retrofit Zigbee panels with zero civil work or damage." },
@@ -46,7 +74,10 @@ export const SOLUTIONS = [
   { title: "Senior Living", copy: "Human presence sensors, one-touch scenes and voice control." },
   { title: "Warehouses", copy: "Gateway-managed lighting zones and load monitoring at scale." },
   { title: "Offices", copy: "Access control, occupancy sensing and energy dashboards." },
-  { title: "Architects & Designers", copy: "Concealed hardware, load planning and conduit drawings." },
+  {
+    title: "Architects & Designers",
+    copy: "Concealed hardware, load planning and conduit drawings.",
+  },
 ];
 
 export const WHY_US = [
@@ -60,7 +91,11 @@ export const WHY_US = [
 ];
 
 export const PROCESS = [
-  { step: "01", title: "Consultation", copy: "Free call to understand rooms, routines and budget." },
+  {
+    step: "01",
+    title: "Consultation",
+    copy: "Free call to understand rooms, routines and budget.",
+  },
   { step: "02", title: "Site Visit", copy: "Wiring survey, network check and load mapping." },
   { step: "03", title: "Product Selection", copy: "A curated BOM with live demos of each device." },
   { step: "04", title: "Installation", copy: "Clean, concealed fitment by certified engineers." },
@@ -108,15 +143,6 @@ export const TESTIMONIALS = [
       "42 rooms with Series H1 RFID locks, DND panels and energy-saving switches. Our power bill dropped by nearly a fifth in the first quarter.",
     initials: "PN",
   },
-];
-
-export const GALLERY = [
-  { title: "Penthouse Track Lighting", tag: "Luxury Home", image: light },
-  { title: "Villa Entrance Smart Lock", tag: "Villa Project", image: lock },
-  { title: "Bedroom Curtain Motors", tag: "Apartment", image: curtain },
-  { title: "8\" Control Panel Boardroom", tag: "Office", image: vdp },
-  { title: "Perimeter Camera Grid", tag: "Villa Project", image: camera },
-  { title: "Video Doorbell Retrofit", tag: "Before / After", image: bell },
 ];
 
 export const FAQS = [

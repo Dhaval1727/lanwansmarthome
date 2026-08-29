@@ -1,4 +1,4 @@
-// Product catalogue — sourced from the Lanwan Automation (Phlipton) catalogue.
+// Product catalogue — sourced from the Lanwan Automation catalogue.
 // Images are cropped directly from the catalogue pages.
 
 import s1Pro from "@/assets/catalog/s1-pro.png";
@@ -27,9 +27,32 @@ import vdp4Wire from "@/assets/catalog/vdp-4-wire.png";
 import titanSwitch from "@/assets/catalog/titan-switch.jpg";
 import luxeraySwitch from "@/assets/catalog/luxeray-switch.jpg";
 import smartKnob from "@/assets/catalog/smart-knob.jpg";
-import controlScreen from "@/assets/catalog/multifunctional-screen.jpg";
 import smartCurtains from "@/assets/catalog/smart-curtains.jpg";
 import smartLights from "@/assets/catalog/smart-lights.jpg";
+import smartDoorLockSecurer from "@/assets/images/smart-door-lock-securer.jpg";
+import videoDoorbellCamera from "@/assets/images/video-doorbell-camera.jpg";
+import glassDoorLockClamp from "@/assets/images/glass-door-lock-clamp.jpg";
+import videoDoorbellFeatures from "@/assets/images/video-doorbell-features.jpg";
+import smartDoorLockFaceRecognition from "@/assets/images/smart-door-lock-face-recognition.jpg";
+import capacitiveGlassSwitch from "@/assets/images/capacitive-glass-switch.jpg";
+import smartCurtainsMotor from "@/assets/images/smart-curtains-motor.jpg";
+
+import screen10 from "@/assets/MUTIFUCATION SCREEN/10 INCH SCREEN.png";
+import screen8 from "@/assets/MUTIFUCATION SCREEN/8 inch ..png";
+import screen4 from "@/assets/MUTIFUCATION SCREEN/4 INCH - 1.png";
+
+import lockImg1 from "@/assets/LOCK/B1 LOCK - 2.png";
+import lockImg2 from "@/assets/LOCK/B2 WITH BRAND - PRICELSIT.png";
+import lockImg3 from "@/assets/LOCK/B2 WITH BRAND.png";
+import lockImg4 from "@/assets/LOCK/DOOR BELL N.png";
+import lockImg5 from "@/assets/LOCK/FINGERPRINT LOCK.png";
+import lockImg6 from "@/assets/LOCK/GLASS DOOR LOCK.png";
+import lockImg7 from "@/assets/LOCK/NEW S1 PRO.png";
+import lockImg8 from "@/assets/LOCK/NFC CABINETS LOCK.png";
+import lockImg9 from "@/assets/LOCK/S - VL.jpg";
+import lockImg10 from "@/assets/LOCK/SERIES - 3 PRO - WIFI - BRAND.png";
+import lockImg11 from "@/assets/LOCK/SERIES - 4.png";
+import lockImg12 from "@/assets/LOCK/SERIES - 6.png";
 
 export type Product = {
   slug: string;
@@ -39,6 +62,7 @@ export type Product = {
   connectivity: string[];
   description: string;
   features: string[];
+  subCategory?: string;
 };
 
 export type Category = {
@@ -57,256 +81,22 @@ const lockMethods = {
 
 export const CATEGORIES: Category[] = [
   {
-    slug: "smart-door-locks",
-    name: "Smart Door Locks",
+    slug: "smart-locks",
+    name: "Smart Locks",
     short: "Smart Locks",
-    tagline:
-      "Unlock the future — where your door knows you before you reach for the handle.",
-    image: series4,
-    alt: "Phlipton Series 4 smart door lock with camera display panel",
-    products: [
-      {
-        slug: "series-1-pro",
-        name: "Series 1 Pro",
-        image: s1Pro,
-        alt: "Series 1 Pro smart door lock with lever handle and touch keypad",
-        connectivity: ["Zigbee", "Wi-Fi"],
-        description:
-          "A slim lever-handle smart lock with a hidden touch keypad — the everyday entry lock of the Phlipton range, direct-controlled over Zigbee.",
-        features: [...lockMethods.base, "Application", "Lock Bind", "RX-TX Remote"],
-      },
-      {
-        slug: "series-1-pro-g",
-        name: "Series 1 Pro-G",
-        image: s1ProG,
-        alt: "Series 1 Pro-G smart door lock in bronze gold finish with lever handle",
-        connectivity: ["Zigbee", "Wi-Fi"],
-        description:
-          "The Series 1 Pro in a warm bronze-gold finish, for doors where the hardware is part of the interior design.",
-        features: [...lockMethods.base, "Application", "Lock Bind", "RX-TX Remote"],
-      },
-      {
-        slug: "series-2",
-        name: "Series 2",
-        image: series2,
-        alt: "Series 2 push-pull smart door lock, front and side view",
-        connectivity: ["Zigbee", "Wi-Fi"],
-        description:
-          "A full-length push-pull escutcheon lock with a concealed keypad and mechanical key override for main doors.",
-        features: lockMethods.base,
-      },
-      {
-        slug: "series-2-pro",
-        name: "Series 2 Pro",
-        image: series2Pro,
-        alt: "Series 2 Pro smart door lock with built-in video display panel",
-        connectivity: ["Wi-Fi Active"],
-        description:
-          "Series 2 with a built-in display and camera — see the visitor at your door before you open it.",
-        features: [
-          ...lockMethods.base,
-          "Application",
-          "Palm",
-          "Face",
-          "Lock Bind",
-          "RX-TX Remote",
-        ],
-      },
-      {
-        slug: "series-3",
-        name: "Series 3",
-        image: series3,
-        alt: "Series 3 smart door lock, front and rear escutcheon",
-        connectivity: ["Zigbee", "Wi-Fi"],
-        description:
-          "A robust push-pull lock with an automatic mortise and a clean, iconless front panel that wakes on touch.",
-        features: [...lockMethods.base, "Application", "Lock Bind", "RX-TX Remote"],
-      },
-      {
-        slug: "series-3-pro",
-        name: "Series 3 Pro",
-        image: series3Pro,
-        alt: "Series 3 Pro smart door lock with visitor video screen and keypad",
-        connectivity: ["Zigbee", "Wi-Fi"],
-        description:
-          "Face and palm recognition with an integrated visitor screen, peephole camera and full app control.",
-        features: [
-          ...lockMethods.base,
-          "Face",
-          "Palm",
-          "Application",
-          "Lock Bind",
-          "RX-TX Remote",
-        ],
-      },
-      {
-        slug: "series-3-pro-ai",
-        name: "Series 3 Pro AI",
-        image: series3ProAi,
-        alt: "Series 3 Pro AI smart door lock with AI voice and camera display",
-        connectivity: ["Wi-Fi"],
-        description:
-          "The Series 3 Pro with on-device AI voice — announcements, visitor messages and hands-free interaction at the door.",
-        features: [
-          ...lockMethods.base,
-          "Face",
-          "Palm",
-          "AI Voice",
-          "Application",
-          "Lock Bind",
-          "RX-TX Remote",
-        ],
-      },
-      {
-        slug: "series-3-pro-slim",
-        name: "Series 3 Pro Slim",
-        image: series3ProSlim,
-        alt: "Series 3 Pro Slim smart door lock with narrow body and video screen",
-        connectivity: ["Wi-Fi Active"],
-        description:
-          "A narrow-body version of the Series 3 Pro engineered for slim profile and glass-inset doors.",
-        features: [
-          ...lockMethods.base,
-          "Face",
-          "Palm",
-          "Application",
-          "Lock Bind",
-          "RX-TX Remote",
-        ],
-      },
-      {
-        slug: "series-4",
-        name: "Series 4",
-        image: series4,
-        alt: "Series 4 smart door lock with wide colour display and sculpted handle",
-        connectivity: ["Wi-Fi Active"],
-        description:
-          "A statement lock with a wide colour display, sculpted push-pull body and the complete unlock method set.",
-        features: [
-          ...lockMethods.base,
-          "Face",
-          "Palm",
-          "Application",
-          "Lock Bind",
-          "RX-TX Remote",
-        ],
-      },
-      {
-        slug: "series-4-pro-ai",
-        name: "Series 4 Pro AI",
-        image: series4ProAi,
-        alt: "Series 4 Pro AI smart door lock with visitor screen and gesture panel",
-        connectivity: ["Wi-Fi Active"],
-        description:
-          "Flagship AI lock — face recognition, palm unlock and an always-ready visitor screen on both sides of the door.",
-        features: [
-          ...lockMethods.base,
-          "Face",
-          "Palm",
-          "Application",
-          "Lock Bind",
-        ],
-      },
-      {
-        slug: "series-6",
-        name: "Series 6",
-        image: series6,
-        alt: "Series 6 luxury smart door lock with chrome sculpted body and video screen",
-        connectivity: ["Wi-Fi Active"],
-        description:
-          "A luxury sculpted escutcheon in polished metal with a visitor screen — built for signature main doors.",
-        features: [
-          ...lockMethods.base,
-          "Face",
-          "Palm",
-          "Application",
-          "Lock Bind",
-          "RX-TX Remote",
-        ],
-      },
-      {
-        slug: "series-v1",
-        name: "Series V1",
-        image: seriesV1,
-        alt: "Series V1 vertical bar smart door lock with slim visitor screen",
-        connectivity: ["Wi-Fi Active"],
-        description:
-          "A vertical full-height handle lock that reads as architectural hardware, with the intelligence hidden inside.",
-        features: [
-          ...lockMethods.base,
-          "Face",
-          "Palm",
-          "Application",
-          "Lock Bind",
-          "RX-TX Remote",
-        ],
-      },
-      {
-        slug: "series-al-1",
-        name: "Series AL 1",
-        image: seriesAl1,
-        alt: "Series AL 1 slim aluminium smart lock with lever handles",
-        connectivity: ["Bluetooth"],
-        description:
-          "A slim aluminium narrow-stile lock for aluminium and sliding doors, paired over Bluetooth from the app.",
-        features: ["Fingerprint", "Password", "Card", "Application", "Key", "Battery"],
-      },
-      {
-        slug: "series-b1",
-        name: "Series B1",
-        image: seriesB1,
-        alt: "Series B1 cylinder smart lock with fingerprint and keypad head",
-        connectivity: ["Bluetooth"],
-        description:
-          "A smart cylinder that replaces the existing lock barrel — upgrade a door to fingerprint access without changing the door.",
-        features: ["Fingerprint", "Password", "Card", "Application", "Key", "Battery"],
-      },
-      {
-        slug: "series-r1",
-        name: "Series R1 / R1D",
-        image: seriesR1,
-        alt: "Series R1 and R1D rim locks with keypad and fingerprint reader",
-        connectivity: ["Wi-Fi Active"],
-        description:
-          "Rim-mounted smart locks for wooden and metal doors, with a matching deadbolt variant for secondary entrances.",
-        features: [
-          "Fingerprint",
-          "Password",
-          "Card",
-          "Key",
-          "Application",
-          "RX-TX Remote",
-          "Battery",
-        ],
-      },
-      {
-        slug: "series-h1",
-        name: "Series H1",
-        image: seriesH1,
-        alt: "Series H1 smart lever handle with illuminated fingerprint ring",
-        connectivity: ["Bluetooth"],
-        description:
-          "A smart lever handle with an illuminated fingerprint ring and inline keypad — ideal for internal and room doors.",
-        features: ["Fingerprint", "Password", "Card", "Application", "Key", "Battery"],
-      },
-    ],
-  },
-  {
-    slug: "glass-door-locks",
-    name: "Glass Door Locks",
-    short: "Glass Door Locks",
-    tagline: "Frameless access control for glass office, balcony and shopfront doors.",
-    image: seriesG1,
-    alt: "Series G1 glass door smart lock with RGB fingerprint ring",
+    tagline: "Unlock the future — where your door knows you before you reach for the handle.",
+    image: lockImg11,
+    alt: "Smart Locks Collection",
     products: [
       {
         slug: "series-g0",
         name: "Series G0",
-        image: seriesG0,
+        image: glassDoorLockClamp,
         alt: "Series G0 glass door lock with display, keypad and fingerprint ring",
         connectivity: ["Bluetooth"],
+        subCategory: "Door Locks",
         description:
-          "A clamp-on glass door lock with a status display and fingerprint ring — no drilling into the glass.",
+          "A clamp-on smart glass door lock with keyless entry. Secure frameless doors easily and enjoy remote access control without drilling.",
         features: [
           "Fingerprint",
           "Password",
@@ -323,8 +113,9 @@ export const CATEGORIES: Category[] = [
         image: seriesG1,
         alt: "Series G1 Wi-Fi glass door lock with touch keypad and RGB ring",
         connectivity: ["Wi-Fi"],
+        subCategory: "Door Locks",
         description:
-          "Wi-Fi glass door lock with a full touch keypad and RGB fingerprint ring, managed remotely from the app.",
+          "Wi-Fi connected smart glass door lock. Manage access remotely, monitor entry, and enjoy keyless convenience through an intuitive app.",
         features: [
           "Fingerprint",
           "Password",
@@ -335,25 +126,147 @@ export const CATEGORIES: Category[] = [
           "Battery",
         ],
       },
-    ],
-  },
-  {
-    slug: "video-door-bells",
-    name: "Video Door Bells & VDP",
-    short: "Doorbells",
-    tagline:
-      "Stay connected to your door, wherever you are — crystal-clear video, real-time talk and instant alerts.",
-    image: doorbellWifi,
-    alt: "Wi-Fi video doorbell with camera and illuminated call ring",
-    products: [
+      {
+        slug: "b1-lock-2",
+        name: "B1 Lock 2",
+        image: seriesB1,
+        alt: "B1 Lock 2",
+        connectivity: ["Wi-Fi Active"],
+        subCategory: "Smart Door Locks",
+        description:
+          "Advanced keyless smart lock with seamless Wi-Fi connectivity. Offers secure entry via fingerprint and app, integrating effortlessly into your smart home.",
+        features: [...lockMethods.base],
+      },
+      {
+        slug: "b2-with-brand-pricelsit",
+        name: "B2 With Brand Pricelist",
+        image: lockImg2,
+        alt: "B2 With Brand Pricelist",
+        connectivity: ["Wi-Fi Active"],
+        subCategory: "Smart Door Locks",
+        description:
+          "Premium smart door lock featuring robust security. Enables keyless entry and remote access control for maximum convenience and peace of mind.",
+        features: [...lockMethods.base],
+      },
+      {
+        slug: "b2-with-brand",
+        name: "B2 With Brand",
+        image: series2,
+        alt: "B2 With Brand",
+        connectivity: ["Wi-Fi Active"],
+        subCategory: "Smart Door Locks",
+        description:
+          "Sleek and secure smart lock designed for modern homes. Enjoy keyless access and seamless remote management through your smart home app.",
+        features: [...lockMethods.base],
+      },
+      {
+        slug: "door-bell-n",
+        name: "Door Bell N",
+        image: lockImg4,
+        alt: "Door Bell N",
+        connectivity: ["Wi-Fi Active"],
+        subCategory: "Smart Door Locks",
+        description:
+          "Integrated smart lock with doorbell functionality. Provides secure keyless entry, visitor notifications, and convenient access control in one device.",
+        features: [...lockMethods.base],
+      },
+      {
+        slug: "fingerprint-lock",
+        name: "Fingerprint Lock",
+        image: lockImg5,
+        alt: "Fingerprint Lock",
+        connectivity: ["Wi-Fi Active"],
+        subCategory: "Smart Door Locks",
+        description:
+          "Biometric smart door lock for quick, keyless entry. Enhances home security with advanced fingerprint recognition and smart home integration.",
+        features: [...lockMethods.base],
+      },
+      {
+        slug: "glass-door-lock",
+        name: "Glass Door Lock",
+        image: lockImg6,
+        alt: "Glass Door Lock",
+        connectivity: ["Wi-Fi Active"],
+        subCategory: "Smart Door Locks",
+        description:
+          "Specialized smart lock for glass doors. Delivers secure, keyless access and remote control capabilities without compromising aesthetics.",
+        features: [...lockMethods.base],
+      },
+      {
+        slug: "new-s1-pro",
+        name: "New S1 Pro",
+        image: s1Pro,
+        alt: "New S1 Pro",
+        connectivity: ["Wi-Fi Active"],
+        subCategory: "Smart Door Locks",
+        description:
+          "Next-generation smart door lock with enhanced security features. Enjoy reliable keyless entry, remote monitoring, and seamless smart home connectivity.",
+        features: [...lockMethods.base],
+      },
+      {
+        slug: "nfc-cabinets-lock",
+        name: "NFC Cabinets Lock",
+        image: lockImg8,
+        alt: "NFC Cabinets Lock",
+        connectivity: ["Wi-Fi Active"],
+        subCategory: "Smart Door Locks",
+        description:
+          "Smart lock designed for cabinets and drawers. Secure your valuables with convenient NFC access and intelligent monitoring.",
+        features: [...lockMethods.base],
+      },
+      {
+        slug: "s-vl",
+        name: "S VL",
+        image: lockImg9,
+        alt: "S VL",
+        connectivity: ["Wi-Fi Active"],
+        subCategory: "Smart Door Locks",
+        description:
+          "Versatile smart door lock offering multiple access methods. Upgrade your home security with keyless entry and intuitive remote management.",
+        features: [...lockMethods.base],
+      },
+      {
+        slug: "series-3-pro-wifi-brand",
+        name: "Series 3 Pro Wifi Brand",
+        image: series3Pro,
+        alt: "Series 3 Pro Wifi Brand",
+        connectivity: ["Wi-Fi Active"],
+        subCategory: "Smart Door Locks",
+        description:
+          "Wi-Fi enabled smart lock for ultimate convenience. Control and monitor your door from anywhere with advanced keyless security.",
+        features: [...lockMethods.base],
+      },
+      {
+        slug: "series-4",
+        name: "Series 4",
+        image: series4,
+        alt: "Series 4",
+        connectivity: ["Wi-Fi Active"],
+        subCategory: "Smart Door Locks",
+        description:
+          "Premium smart door lock with a built-in camera display panel. Offers secure keyless access, visual monitoring, and seamless smart home integration.",
+        features: [...lockMethods.base],
+      },
+      {
+        slug: "series-6",
+        name: "Series 6",
+        image: series6,
+        alt: "Series 6",
+        connectivity: ["Wi-Fi Active"],
+        subCategory: "Smart Door Locks",
+        description:
+          "High-end smart door lock with advanced access features. Provides secure, keyless entry and intelligent remote control for modern smart homes.",
+        features: [...lockMethods.base],
+      },
       {
         slug: "wifi-video-doorbell",
         name: "WiFi Video Doorbell",
-        image: doorbellWifi,
+        image: videoDoorbellCamera,
         alt: "Wi-Fi video doorbell with indoor chime unit",
         connectivity: ["Wi-Fi"],
+        subCategory: "Door Bells",
         description:
-          "Hybrid-powered 1080P doorbell with AI human detection, two-way audio and a plug-in indoor chime.",
+          "Smart video doorbell with two-way audio. Monitor visitors, receive instant smartphone notifications, and enhance home security remotely.",
         features: [
           "Hybrid Power (Wired + Battery) with 1080P Camera",
           "App Control + 2-Way Audio & Remote Unlock",
@@ -368,8 +281,9 @@ export const CATEGORIES: Category[] = [
         image: vdp7,
         alt: "7 inch touch Wi-Fi video door phone indoor monitor with outdoor station",
         connectivity: ["Wi-Fi"],
+        subCategory: "Door Bells",
         description:
-          "A 7-inch touch indoor monitor paired with an IP65 outdoor station for intercom, recording and remote unlock.",
+          "Smart video door phone with a 7-inch touch display. See and speak to visitors, unlock doors remotely, and secure your home with ease.",
         features: [
           '7" Touch Display + 2MP Wide-Angle Camera',
           "App Control with Two-Way Intercom",
@@ -384,8 +298,9 @@ export const CATEGORIES: Category[] = [
         image: vdp4Wire,
         alt: "Basic 4-wire analog video door phone with 7 inch monitor",
         connectivity: ["4-Wire"],
+        subCategory: "Door Bells",
         description:
-          "A dependable wired video intercom that works entirely offline — ideal where internet access is not available.",
+          "Reliable wired video intercom system for secure visitor monitoring. Enables clear two-way communication and convenient remote unlocking.",
         features: [
           '2-Way Video Intercom with 7" Display',
           "4-Wire System (No Internet Required)",
@@ -394,24 +309,15 @@ export const CATEGORIES: Category[] = [
           "Multi-Monitor Support + Easy Install",
         ],
       },
-    ],
-  },
-  {
-    slug: "cabinet-locks",
-    name: "Cabinet Locks",
-    short: "Cabinet Locks",
-    tagline: "Concealed fingerprint and RFID locks for drawers, wardrobes and lockers.",
-    image: cabinetWd1,
-    alt: "WD1 cabinet lock with fingerprint module",
-    products: [
       {
         slug: "wd1",
         name: "WD1 Cabinet Lock",
         image: cabinetWd1,
         alt: "WD1 fingerprint cabinet lock body and fingerprint module",
         connectivity: ["Fingerprint"],
+        subCategory: "Cabinet Locks",
         description:
-          "A hidden fingerprint cabinet lock that mounts inside the door — nothing visible from the outside.",
+          "Concealed smart fingerprint lock for cabinets. Secure valuables seamlessly with quick biometric access and battery-powered convenience.",
         features: ["Fingerprint", "Battery"],
       },
       {
@@ -420,8 +326,9 @@ export const CATEGORIES: Category[] = [
         image: cabinetWd2,
         alt: "WD2 RFID and NFC card cabinet lock components",
         connectivity: ["RFID", "NFC"],
+        subCategory: "Cabinet Locks",
         description:
-          "Card and NFC operated cabinet lock for lockers, storage units and shared office furniture.",
+          "Smart cabinet lock with NFC and RFID support. Effortlessly secure lockers and storage spaces with convenient keyless smart access.",
         features: ["RFID Card", "NFC Card", "Battery"],
       },
     ],
@@ -440,8 +347,9 @@ export const CATEGORIES: Category[] = [
         image: titanSwitch,
         alt: "Titan smart switch modules in brushed grey, royal gold and jett black",
         connectivity: ["Zigbee"],
+        subCategory: "Titan Switch",
         description:
-          "Modular 2 | 4 | 6 | 8 module panels in premium aluminium or PC finish, combining switch, dimmer, fan and socket in one plate.",
+          "Modular smart switch panels. Automate lighting and appliances with remote app control, custom scenes, and energy-saving convenience.",
         features: [
           "100+ modular panel combinations",
           "All-in-one: switch, dimmer, fan & socket",
@@ -458,8 +366,9 @@ export const CATEGORIES: Category[] = [
         image: luxeraySwitch,
         alt: "LuxeRay curved glass panel switch with backlit touch buttons and screen",
         connectivity: ["Zigbee", "Wi-Fi"],
+        subCategory: "Luxury Glass Panel Switch",
         description:
-          "2 | 4 | 6 | 8 | 12 module curved glass panels with CNC machined metal bezels in gold, silver and black.",
+          "Elegant curved glass smart switches. Enjoy seamless app control, automated lighting scenes, and stylish convenience for your smart home.",
         features: [
           "2.5D curved toughened glass panel",
           "CNC machined curved metal bezel",
@@ -474,42 +383,16 @@ export const CATEGORIES: Category[] = [
         slug: "smart-knob",
         name: "Smart Knob",
         image: smartKnob,
-        alt: "Phlipton smart rotary knobs in black, gold and rose gold finishes",
+        alt: "Lanwan smart rotary knobs in black, gold and rose gold finishes",
         connectivity: ["Zigbee"],
+        subCategory: "Smart Knob",
         description:
-          "A modern rotary knob for dimming lights and controlling fan speed, pairing with any Titan panel.",
+          "Smart rotary knob for intuitive lighting and fan control. Adjust brightness and ambiance effortlessly within your smart home ecosystem.",
         features: [
           "Knob to control Zigbee lights (dimming & tuning)",
           "AC fan with 4 push buttons",
           "Combines with 4, 6 and 8 switch modules",
           "Available in black, gold and rose gold",
-        ],
-      },
-    ],
-  },
-  {
-    slug: "control-screens",
-    name: "Control Screens",
-    short: "Control Screens",
-    tagline: "One central screen for every scene, device and room.",
-    image: controlScreen,
-    alt: "Multifunctional smart control screens mounted on a wall",
-    products: [
-      {
-        slug: "multifunctional-screen",
-        name: "Multifunctional Screen",
-        image: controlScreen,
-        alt: "3.5 inch and 4 inch multifunctional smart home control screens",
-        connectivity: ["Zigbee", "Wi-Fi"],
-        description:
-          '3.5" | 4" | 8" | 10" wall control panels on the latest Tuya operating system, doubling as an in-wall gateway.',
-        features: [
-          "Inbuilt Alexa support for voice control",
-          "Two-way communication with door bells",
-          "Central control for all Phlipton smart devices",
-          "Inbuilt IR blaster & Sigmesh gateway (3.5\")",
-          "Supports up to 100 ZigBee devices",
-          "Auto brightness + fits two modular gang boxes",
         ],
       },
     ],
@@ -525,11 +408,11 @@ export const CATEGORIES: Category[] = [
       {
         slug: "smart-curtain-motor",
         name: "Smart Curtain Motor & Track",
-        image: smartCurtains,
+        image: smartCurtainsMotor,
         alt: "Motorised curtain track in a bright luxury interior",
         connectivity: ["Zigbee", "Wi-Fi"],
         description:
-          "Control light, privacy and mood with a tap or automation — effortless, elegant and designed for smarter living.",
+          "Motorized smart curtain system. Automate natural light and privacy with remote app control, schedules, and seamless smart home integration.",
         features: [
           "App, scene and schedule control",
           "Silent motor with soft start and stop",
@@ -540,9 +423,9 @@ export const CATEGORIES: Category[] = [
     ],
   },
   {
-    slug: "smart-lighting",
-    name: "Smart Lighting",
-    short: "Smart Lighting",
+    slug: "smart-light",
+    name: "Smart Light",
+    short: "Smart Light",
     tagline: "Smart lights, smarter living — brightness, mood and ambience on demand.",
     image: smartLights,
     alt: "Premium recessed smart downlight with warm beam",
@@ -554,7 +437,7 @@ export const CATEGORIES: Category[] = [
         alt: "Recessed architectural smart downlight",
         connectivity: ["Zigbee"],
         description:
-          "Effortlessly control brightness, mood and ambience with intelligent lighting designed to adapt to your lifestyle — sleek, efficient and beautifully modern.",
+          "Intelligent lighting solutions for your smart home. Control brightness and ambiance via remote app access, schedules, and custom automated scenes.",
         features: [
           "Spotlights, downlights and concealed profiles",
           "Magnetic track lights, surface & concealed",
@@ -564,13 +447,71 @@ export const CATEGORIES: Category[] = [
       },
     ],
   },
+  {
+    slug: "control-screen",
+    name: "Control Screen",
+    short: "Control Screen",
+    tagline: "One central screen for every scene, device and room.",
+    image: screen10,
+    alt: "10-inch multifunctional smart control screen",
+    products: [
+      {
+        slug: "10-inch-multifunctional-screen",
+        name: '10" Multifunctional Screen',
+        image: screen10,
+        alt: "10 inch multifunctional smart home control screen",
+        connectivity: ["Zigbee", "Wi-Fi"],
+        description:
+          "Flagship 10-inch smart home control panel. Centralize control of all connected devices, lighting, and security from one intuitive touch screen.",
+        features: [
+          "Large 10-inch HD touch display",
+          "Inbuilt Alexa support for voice control",
+          "Two-way communication with door bells",
+          "Central control for all Lanwan smart devices",
+          "Supports up to 100 ZigBee devices",
+        ],
+      },
+      {
+        slug: "8-inch-multifunctional-screen",
+        name: '8" Multifunctional Screen',
+        image: screen8,
+        alt: "8 inch multifunctional smart home control screen",
+        connectivity: ["Zigbee", "Wi-Fi"],
+        description:
+          "Balanced 8-inch smart home control panel. Effortlessly manage your automated devices, scenes, and security from a single central hub.",
+        features: [
+          "8-inch high-resolution touch display",
+          "Inbuilt Alexa support for voice control",
+          "Two-way communication with door bells",
+          "Central control for all Lanwan smart devices",
+          "Supports up to 100 ZigBee devices",
+        ],
+      },
+      {
+        slug: "4-inch-multifunctional-screen",
+        name: '4" Multifunctional Screen',
+        image: screen4,
+        alt: "4 inch multifunctional smart home control screen",
+        connectivity: ["Zigbee", "Wi-Fi"],
+        description:
+          "Compact 4-inch smart wall control screen. Conveniently manage your entire smart home ecosystem from a standard wall switch location.",
+        features: [
+          "4-inch touch display with auto brightness",
+          "Two-way communication with door bells",
+          "Central control for all Lanwan smart devices",
+          "Supports up to 100 ZigBee devices",
+          "Fits standard modular gang boxes",
+        ],
+      },
+    ],
+  },
 ];
 
 export const FEATURED_PRODUCT_SLUGS = [
-  ["smart-door-locks", "series-4-pro-ai"],
-  ["smart-door-locks", "series-3-pro"],
-  ["glass-door-locks", "series-g1"],
-  ["video-door-bells", "wifi-video-doorbell"],
+  ["smart-locks", "series-4"],
+  ["smart-locks", "series-6"],
+  ["smart-locks", "series-g1"],
+  ["smart-locks", "wifi-video-doorbell"],
   ["smart-switches", "luxeray-glass-switch"],
   ["smart-switches", "smart-knob"],
 ] as const;

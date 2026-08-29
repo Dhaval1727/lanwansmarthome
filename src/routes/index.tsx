@@ -1,16 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/site/header";
-import {
-  Hero,
-  About,
-  Products,
-  Solutions,
-  WhyUs,
-  Process,
-} from "@/components/site/sections-top";
+import { Hero, About, Products, Solutions, WhyUs, Process } from "@/components/site/sections-top";
 import {
   Stats,
-  Gallery,
   Testimonials,
   Faqs,
   Blog,
@@ -85,7 +77,6 @@ function Index() {
         <WhyUs />
         <Process />
         <Stats />
-        <Gallery />
         <Testimonials />
         <Faqs />
         <Blog />

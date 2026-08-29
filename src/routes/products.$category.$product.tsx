@@ -7,6 +7,23 @@ import { Reveal } from "@/components/site/primitives";
 import { getProduct, type Product } from "@/lib/catalog";
 import { CONTACT } from "@/lib/site-data";
 
+import install10 from "@/assets/MUTIFUCATION SCREEN/10 Smart Home Control Panel.png";
+import install8 from "@/assets/MUTIFUCATION SCREEN/8 Smart Room Control Panel.png";
+import install4 from "@/assets/MUTIFUCATION SCREEN/4 Smart Scene Control Panel.png";
+
+import homeB1Lock2 from "@/assets/LOCK/Home B1 LOCK -2.png";
+import homeB2Pricelist from "@/assets/LOCK/Home B2 WITH BRAND-PRICELSIT.png";
+import homeB2Brand from "@/assets/LOCK/Home B2 WITH BRAND.png";
+import homeDoorBell from "@/assets/LOCK/Home DOOR BELL.png";
+import homeFingerprint from "@/assets/LOCK/HOME FINGERPRINT LOCK.png";
+import homeGlassDoor from "@/assets/LOCK/HOME GLASS DOOR LOCK.png";
+import homeNewS1Pro from "@/assets/LOCK/Home NEW S1 PRO.png";
+import homeNfcCabinets from "@/assets/LOCK/Home NFC CABINETS LOCK.png";
+import homeSVL from "@/assets/LOCK/Home S - VL.png";
+import homeSeries3Pro from "@/assets/LOCK/Home SERIES - 3 PRO - WIFI - BRAND.png";
+import homeSeries4 from "@/assets/LOCK/Home SERIES - 4.png";
+import homeSeries6 from "@/assets/LOCK/Home SERIES - 6.png";
+
 export const Route = createFileRoute("/products/$category/$product")({
   loader: ({ params }) => {
     const hit = getProduct(params.category, params.product);
@@ -45,6 +62,26 @@ function ProductDetail() {
     .filter((p: Product) => p.slug !== product.slug)
     .slice(0, 4);
 
+  let displayImage = product.image;
+  if (category.slug === "control-screen") {
+    if (product.slug.includes("10-inch")) displayImage = install10;
+    else if (product.slug.includes("8-inch")) displayImage = install8;
+    else if (product.slug.includes("4-inch")) displayImage = install4;
+  } else if (category.slug === "smart-locks") {
+    if (product.slug === "b1-lock-2") displayImage = homeB1Lock2;
+    else if (product.slug === "b2-with-brand-pricelsit") displayImage = homeB2Pricelist;
+    else if (product.slug === "b2-with-brand") displayImage = homeB2Brand;
+    else if (product.slug === "door-bell-n") displayImage = homeDoorBell;
+    else if (product.slug === "fingerprint-lock") displayImage = homeFingerprint;
+    else if (product.slug === "glass-door-lock") displayImage = homeGlassDoor;
+    else if (product.slug === "new-s1-pro") displayImage = homeNewS1Pro;
+    else if (product.slug === "nfc-cabinets-lock") displayImage = homeNfcCabinets;
+    else if (product.slug === "s-vl") displayImage = homeSVL;
+    else if (product.slug === "series-3-pro-wifi-brand") displayImage = homeSeries3Pro;
+    else if (product.slug === "series-4") displayImage = homeSeries4;
+    else if (product.slug === "series-6") displayImage = homeSeries6;
+  }
+
   return (
     <div className="min-h-screen">
       <Header />
@@ -55,16 +92,20 @@ function ProductDetail() {
           crumbs={[
             { label: "Home", to: "/" },
             { label: "Products", to: "/products" },
-            { label: category.short, to: "/products/$category", params: { category: category.slug } },
+            {
+              label: category.short,
+              to: "/products/$category",
+              params: { category: category.slug },
+            },
             { label: product.name },
           ]}
         />
 
         <section className="pb-20">
           <div className="container-page grid gap-10 lg:grid-cols-2 lg:gap-16">
-            <Reveal className="product-stage overflow-hidden rounded-[2rem] border border-border shadow-lift">
+            <Reveal className="product-stage overflow-hidden rounded-[2rem] border border-border shadow-lift bg-white">
               <img
-                src={product.image}
+                src={displayImage}
                 alt={product.alt}
                 width={1000}
                 height={1000}
@@ -164,9 +205,7 @@ function ProductNotFound() {
       <main className="container-page grid min-h-[60vh] place-items-center pt-32 text-center">
         <div>
           <h1 className="font-display text-3xl text-foreground">Product not found</h1>
-          <p className="mt-3 text-sm text-muted-foreground">
-            This model isn’t in our catalogue.
-          </p>
+          <p className="mt-3 text-sm text-muted-foreground">This model isn’t in our catalogue.</p>
           <Link
             to="/products"
             className="mt-6 inline-flex rounded-full bg-brand px-6 py-3 text-sm font-semibold text-primary-foreground"

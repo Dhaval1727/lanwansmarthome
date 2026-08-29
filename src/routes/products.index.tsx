@@ -29,7 +29,7 @@ function ProductsIndex() {
       <main>
         <PageHeader
           eyebrow="Product Catalogue"
-          title="Every category in the Phlipton ecosystem"
+          title="Every category in the Lanwan ecosystem"
           subtitle="Choose a category to see the full range, model by model, with the exact features listed in our catalogue."
           crumbs={[{ label: "Home", to: "/" }, { label: "Products" }]}
         />

@@ -80,17 +80,37 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Lovable App" },
-      { name: "description", content: "Smart Haven Design offers premium smart home automation solutions, enhancing security and convenience for homes and businesses." },
+      {
+        name: "description",
+        content:
+          "Smart Haven Design offers premium smart home automation solutions, enhancing security and convenience for homes and businesses.",
+      },
       { name: "author", content: "Lovable" },
       { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Smart Haven Design offers premium smart home automation solutions, enhancing security and convenience for homes and businesses." },
+      {
+        property: "og:description",
+        content:
+          "Smart Haven Design offers premium smart home automation solutions, enhancing security and convenience for homes and businesses.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "Lovable App" },
-      { name: "twitter:description", content: "Smart Haven Design offers premium smart home automation solutions, enhancing security and convenience for homes and businesses." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/144d4046-3090-411d-831d-e034a0e9b816/id-preview-eb5ec71f--c385c21a-24c3-4be0-987d-e40a48f4cd74.lovable.app-1785585828560.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/144d4046-3090-411d-831d-e034a0e9b816/id-preview-eb5ec71f--c385c21a-24c3-4be0-987d-e40a48f4cd74.lovable.app-1785585828560.png" },
+      {
+        name: "twitter:description",
+        content:
+          "Smart Haven Design offers premium smart home automation solutions, enhancing security and convenience for homes and businesses.",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/144d4046-3090-411d-831d-e034a0e9b816/id-preview-eb5ec71f--c385c21a-24c3-4be0-987d-e40a48f4cd74.lovable.app-1785585828560.png",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/144d4046-3090-411d-831d-e034a0e9b816/id-preview-eb5ec71f--c385c21a-24c3-4be0-987d-e40a48f4cd74.lovable.app-1785585828560.png",
+      },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -128,6 +148,19 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const router = useRouter();
+
+  useEffect(() => {
+    const navEntries = performance.getEntriesByType("navigation");
+    const isReload =
+      navEntries.length > 0
+        ? (navEntries[0] as PerformanceNavigationTiming).type === "reload"
+        : performance.navigation && performance.navigation.type === 1;
+
+    if (isReload) {
+      router.navigate({ to: "/" });
+    }
+  }, [router]);
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -135,8 +168,6 @@ function RootComponent() {
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
       <Toaster position="bottom-center" />
-
-
     </QueryClientProvider>
   );
 }
