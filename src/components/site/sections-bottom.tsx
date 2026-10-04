@@ -10,75 +10,20 @@ import {
   Mail,
   MapPin,
   Clock,
-  MessageCircle,
   X,
   Send,
+  Instagram,
+  Facebook,
+  Linkedin,
+  Youtube,
 } from "lucide-react";
+import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import { Reveal, SectionHeading, Counter } from "./primitives";
 import { BLOG, CONTACT, FAQS, STATS, TESTIMONIALS } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
 import logoImg from "@/assets/logo.png";
 import { toast } from "sonner";
 
-export function Stats() {
-  return (
-    <section className="bg-navy/45 py-20 backdrop-blur-sm">
-      <div className="container-page grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-        {STATS.map((s, i) => (
-          <Reveal key={s.label} delay={i * 90} className="text-center">
-            <p className="font-display text-4xl text-navy-foreground sm:text-5xl">
-              <span className="text-gradient">
-                <Counter value={s.value} suffix={s.suffix} />
-              </span>
-            </p>
-            <p className="mt-3 text-sm tracking-wide text-navy-foreground/65">{s.label}</p>
-          </Reveal>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-export function Testimonials() {
-  return (
-    <section id="testimonials" className="bg-surface/55 py-24 backdrop-blur-sm lg:py-32">
-      <div className="container-page">
-        <SectionHeading eyebrow="Testimonials" title={<>Rated 4.9 by 380+ verified customers</>} />
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {TESTIMONIALS.map((t, i) => (
-            <Reveal
-              as="article"
-              key={t.name}
-              delay={(i % 4) * 90}
-              className="flex h-full flex-col rounded-[2rem] border border-border/50 bg-card/40 p-8 shadow-soft backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-accent/40 hover:bg-card/60 hover:shadow-[0_20px_40px_-15px_oklch(0.755_0.115_72_/_0.15)]"
-            >
-              <div className="flex items-center gap-3">
-                <span className="grid size-12 place-items-center rounded-full bg-accent/10 font-display text-sm text-accent">
-                  {t.initials}
-                </span>
-                <div>
-                  <p className="font-display text-sm text-foreground">{t.name}</p>
-                  <p className="text-xs text-muted-foreground">{t.location}</p>
-                </div>
-              </div>
-              <div className="mt-4 flex gap-0.5" aria-label={`${t.rating} out of 5 stars`}>
-                {Array.from({ length: t.rating }).map((_, s) => (
-                  <Star key={s} className="size-4 fill-gold text-gold" />
-                ))}
-              </div>
-              <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">
-                “{t.review}”
-              </p>
-              <p className="mt-5 text-[0.7rem] font-medium tracking-wide text-muted-foreground/80">
-                Posted on Google Reviews
-              </p>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 export function Faqs() {
   const [open, setOpen] = useState<number | null>(0);
@@ -199,23 +144,44 @@ export function Blog() {
 export function Contact() {
   const [sending, setSending] = useState(false);
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSending(true);
     const form = e.currentTarget;
-    window.setTimeout(() => {
-      setSending(false);
-      form.reset();
-      toast.success("Request received", {
-        description: "Our consultant will call you within 30 minutes.",
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/imdhaval1712@gmail.com", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
       });
-    }, 700);
+
+      if (response.ok) {
+        toast.success("Request received", {
+          description: "Our consultant will call you within 30 minutes.",
+        });
+        form.reset();
+      } else {
+        toast.error("Failed to send request", {
+          description: "Please try again later or contact us directly.",
+        });
+      }
+    } catch (error) {
+      toast.error("An error occurred", {
+        description: "Please try again later or contact us directly.",
+      });
+    } finally {
+      setSending(false);
+    }
   };
 
   const details = [
     { Icon: Phone, label: "Phone", value: CONTACT.phoneDisplay, href: CONTACT.phoneHref },
     {
-      Icon: MessageCircle,
+      Icon: WhatsAppIcon,
       label: "WhatsApp",
       value: "Chat with an engineer",
       href: CONTACT.whatsappHref,
@@ -286,31 +252,44 @@ export function Contact() {
               </p>
 
               <div className="mt-7 grid gap-4 sm:grid-cols-2">
-                <Field label="Full name" name="name" placeholder="Arjun Mehta" required />
+                <input type="hidden" name="_template" value="box" />
+                <input type="hidden" name="_subject" value="New Site Visit Request - Lanwan Automation" />
+                <Field label="Full Name" name="Full Name" placeholder="E.g. John Doe" required />
                 <Field
-                  label="Phone number"
-                  name="phone"
+                  label="Phone"
+                  name="Phone"
                   type="tel"
-                  placeholder="+91 98765 43210"
+                  placeholder="+91"
                   required
+                  pattern="^\+?\d{10,13}$"
+                  title="Please enter a valid phone number"
                 />
                 <Field
                   label="Email"
-                  name="email"
+                  name="Email"
                   type="email"
-                  placeholder="you@email.com"
+                  placeholder="name@example.com"
                   className="sm:col-span-2"
+                  required
+                />
+                <Field
+                  label="Address"
+                  name="Address"
+                  placeholder="E.g. Whitefield, Bengaluru"
+                  className="sm:col-span-2"
+                  required
                 />
                 <div className="sm:col-span-2">
                   <label
-                    htmlFor="property"
+                    htmlFor="Property"
                     className="text-xs font-semibold tracking-[0.12em] text-muted-foreground uppercase"
                   >
-                    Property type
+                    Property
                   </label>
                   <select
-                    id="property"
-                    name="property"
+                    id="Property"
+                    name="Property"
+                    required
                     className="mt-2 h-12 w-full rounded-xl border border-input bg-background px-4 text-sm text-foreground outline-none transition-colors focus:border-primary focus:ring-2 focus:ring-ring/25"
                   >
                     {[
@@ -328,15 +307,16 @@ export function Contact() {
                 </div>
                 <div className="sm:col-span-2">
                   <label
-                    htmlFor="message"
+                    htmlFor="Message"
                     className="text-xs font-semibold tracking-[0.12em] text-muted-foreground uppercase"
                   >
-                    What do you need?
+                    Message
                   </label>
                   <textarea
-                    id="message"
-                    name="message"
+                    id="Message"
+                    name="Message"
                     rows={4}
+                    required
                     placeholder="e.g. Smart lock, 12 switch points and 4 cameras for a 3BHK"
                     className="mt-2 w-full resize-none rounded-xl border border-input bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/70 focus:border-primary focus:ring-2 focus:ring-ring/25"
                   />
@@ -371,6 +351,8 @@ function Field({
   type = "text",
   placeholder,
   required,
+  pattern,
+  title,
   className,
 }: {
   label: string;
@@ -378,6 +360,8 @@ function Field({
   type?: string;
   placeholder?: string;
   required?: boolean;
+  pattern?: string;
+  title?: string;
   className?: string;
 }) {
   return (
@@ -393,6 +377,8 @@ function Field({
         name={name}
         type={type}
         required={required}
+        pattern={pattern}
+        title={title}
         placeholder={placeholder}
         className="mt-2 h-12 w-full rounded-xl border border-input bg-background px-4 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/70 focus:border-primary focus:ring-2 focus:ring-ring/25"
       />
@@ -401,25 +387,27 @@ function Field({
 }
 
 export function Footer() {
-  const cols = [
-    {
-      title: "Quick Links",
-      links: ["Home", "About", "Products", "Solutions", "Projects", "Contact"],
-    },
-    {
-      title: "Products",
-      links: [
-        "Smart Locks",
-        "Smart Switches",
-        "Video Door Phones",
-        "Smart Cameras",
-        "Smart Curtains",
-      ],
-    },
-    {
-      title: "Services",
-      links: ["Consultation", "Site Survey", "Installation", "AMC & Support", "Corporate Projects"],
-    },
+  const quickLinks = [
+    { label: "Home", to: "/" },
+    { label: "Products", to: "/products" },
+    { label: "Solutions", to: "/", hash: "solutions" },
+    { label: "About", to: "/", hash: "about" },
+    { label: "Contact", to: "/", hash: "contact" },
+  ];
+
+  const productLinks = [
+    { label: "Smart Locks", slug: "smart-locks" },
+    { label: "Smart Switches", slug: "smart-switches" },
+    { label: "Control Screen", slug: "control-screen" },
+    { label: "Smart Curtains", slug: "smart-curtains" },
+    { label: "Smart Light", slug: "smart-light" },
+  ];
+
+  const socialLinks = [
+    { label: "IG", url: "https://www.instagram.com/_lanwan_", icon: <Instagram className="size-4" /> },
+    { label: "FB", url: "https://facebook.com", icon: <Facebook className="size-4" /> },
+    { label: "IN", url: "https://linkedin.com", icon: <Linkedin className="size-4" /> },
+    { label: "YT", url: "https://youtube.com", icon: <Youtube className="size-4" /> },
   ];
 
   return (
@@ -436,40 +424,86 @@ export function Footer() {
             </p>
             <p className="mt-5 text-sm text-navy-foreground/70">{CONTACT.address}</p>
             <div className="mt-5 flex gap-2">
-              {["IG", "FB", "IN", "YT"].map((s) => (
-                <Link
-                  key={s}
-                  to="/"
-                  hash="contact"
-                  aria-label={s}
+              {socialLinks.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={s.label}
                   className="grid size-9 place-items-center rounded-full border border-navy-foreground/20 text-xs font-semibold text-navy-foreground/70 transition-colors hover:border-accent hover:text-accent"
                 >
-                  {s}
-                </Link>
+                  {s.icon}
+                </a>
               ))}
             </div>
           </div>
 
-          {cols.map((col) => (
-            <div key={col.title}>
-              <h3 className="font-display text-sm tracking-wide text-navy-foreground">
-                {col.title}
-              </h3>
-              <ul className="mt-4 grid gap-2.5">
-                {col.links.map((l) => (
-                  <li key={l}>
+          <div>
+            <h3 className="font-display text-sm tracking-wide text-navy-foreground">
+              Quick Links
+            </h3>
+            <ul className="mt-4 grid gap-2.5">
+              {quickLinks.map((l) => (
+                <li key={l.label}>
+                  {l.hash ? (
                     <Link
-                      to="/"
-                      hash="contact"
+                      to={l.to as any}
+                      hash={l.hash as any}
                       className="text-sm text-navy-foreground/60 transition-colors hover:text-accent"
                     >
-                      {l}
+                      {l.label}
                     </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+                  ) : (
+                    <Link
+                      to={l.to as any}
+                      className="text-sm text-navy-foreground/60 transition-colors hover:text-accent"
+                    >
+                      {l.label}
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-display text-sm tracking-wide text-navy-foreground">
+              Products
+            </h3>
+            <ul className="mt-4 grid gap-2.5">
+              {productLinks.map((l) => (
+                <li key={l.label}>
+                  <Link
+                    to="/products/$category"
+                    params={{ category: l.slug }}
+                    className="text-sm text-navy-foreground/60 transition-colors hover:text-accent"
+                  >
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-display text-sm tracking-wide text-navy-foreground">
+              Services
+            </h3>
+            <ul className="mt-4 grid gap-2.5">
+              {["Consultation", "Site Survey", "Installation", "AMC & Support", "Corporate Projects"].map((l) => (
+                <li key={l}>
+                  <Link
+                    to="/"
+                    hash="contact"
+                    className="text-sm text-navy-foreground/60 transition-colors hover:text-accent"
+                  >
+                    {l}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
           <div>
             <h3 className="font-display text-sm tracking-wide text-navy-foreground">Newsletter</h3>
@@ -505,10 +539,10 @@ export function Footer() {
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-navy-foreground/10 pt-6 text-xs text-navy-foreground/50 sm:flex-row">
           <p>© {new Date().getFullYear()} Lanwan Automation. All rights reserved.</p>
           <div className="flex gap-6">
-            <Link to="/" hash="contact" className="transition-colors hover:text-accent">
+            <Link to="/privacy" className="transition-colors hover:text-accent">
               Privacy Policy
             </Link>
-            <Link to="/" hash="contact" className="transition-colors hover:text-accent">
+            <Link to="/terms" className="transition-colors hover:text-accent">
               Terms of Service
             </Link>
           </div>
@@ -537,7 +571,7 @@ export function FloatingActions() {
           aria-label="Chat on WhatsApp"
           className="animate-pulse-ring grid size-14 place-items-center rounded-full bg-whatsapp text-primary-foreground shadow-lift transition-transform duration-300 hover:scale-105"
         >
-          <MessageCircle className="size-6" />
+          <WhatsAppIcon className="size-6" />
         </a>
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}

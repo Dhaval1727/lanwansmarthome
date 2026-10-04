@@ -1,0 +1,7 @@
+name = "lanwan-email-worker"
+main = "src/index.ts"
+compatibility_date = "2023-10-25"
+
+# You will need to add these secrets via wrangler:
+# wrangler secret put RESEND_API_KEY
+# wrangler secret put TO_EMAIL

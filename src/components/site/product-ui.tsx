@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import { Reveal } from "./primitives";
 import { CONTACT } from "@/lib/site-data";
 import type { Category, Product } from "@/lib/catalog";
@@ -9,7 +10,7 @@ export function CategoryCard({ category, index = 0 }: { category: Category; inde
     <Reveal
       as="article"
       delay={(index % 3) * 90}
-      className="group relative overflow-hidden rounded-[2rem] border border-border/60 bg-card/40 shadow-soft backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-accent/40 hover:shadow-[0_20px_40px_-15px_oklch(0.755_0.115_72_/_0.15)] hover:bg-card/60"
+      className="group relative overflow-hidden rounded-[1.5rem] border border-border/40 bg-surface/30 transition-all duration-500 hover:-translate-y-1 hover:border-accent/40 hover:bg-surface/60"
     >
       <Link
         to="/products/$category"
@@ -17,7 +18,7 @@ export function CategoryCard({ category, index = 0 }: { category: Category; inde
         className="block"
         aria-label={`View ${category.name}`}
       >
-        <div className="product-stage relative overflow-hidden border-b border-border/30 bg-gradient-to-b from-transparent to-muted/20">
+        <div className="relative overflow-hidden border-b border-border/20 bg-gradient-to-b from-transparent to-muted/10">
           <img
             src={category.image}
             alt={category.alt}
@@ -25,10 +26,8 @@ export function CategoryCard({ category, index = 0 }: { category: Category; inde
             decoding="async"
             width={900}
             height={700}
-            className="aspect-4/3 w-full object-contain p-5 sm:p-7 transition-transform duration-700 group-hover:scale-105"
-            style={{ filter: "drop-shadow(0 20px 24px rgba(0, 0, 0, 0.25))" }}
+            className="aspect-4/3 w-full object-contain p-8 sm:p-10 transition-transform duration-700 group-hover:scale-105"
           />
-          <span className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-card/80 to-transparent pointer-events-none" />
         </div>
         <div className="p-7">
           <h3 className="font-display text-xl text-foreground group-hover:text-accent transition-colors">
@@ -60,12 +59,12 @@ export function ProductCard({
     <Reveal
       as="article"
       delay={(index % 4) * 80}
-      className="group flex h-full flex-col overflow-hidden rounded-[2rem] border border-border/60 bg-card/40 shadow-soft backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-accent/40 hover:shadow-[0_20px_40px_-15px_oklch(0.755_0.115_72_/_0.15)] hover:bg-card/60"
+      className="group flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-border/40 bg-surface/30 transition-all duration-500 hover:-translate-y-1 hover:border-accent/40 hover:bg-surface/60"
     >
       <Link
         to="/products/$category/$product"
         params={{ category: categorySlug, product: product.slug }}
-        className="product-stage relative block overflow-hidden border-b border-border/30 bg-gradient-to-b from-transparent to-muted/20"
+        className="relative block overflow-hidden border-b border-border/20 bg-gradient-to-b from-transparent to-muted/10"
         tabIndex={-1}
         aria-hidden
       >
@@ -76,10 +75,8 @@ export function ProductCard({
           decoding="async"
           width={800}
           height={800}
-          className="aspect-square w-full object-contain p-5 transition-transform duration-700 group-hover:scale-105"
-          style={{ filter: "drop-shadow(0 20px 24px rgba(0, 0, 0, 0.25))" }}
+          className="aspect-square w-full object-contain p-8 sm:p-12 transition-transform duration-700 group-hover:scale-105"
         />
-        <span className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-card/80 to-transparent pointer-events-none" />
         {categoryName && (
           <span className="absolute top-5 left-5 rounded-full bg-navy/80 px-3.5 py-1.5 text-[0.65rem] font-semibold tracking-[0.14em] text-accent uppercase backdrop-blur-md border border-accent/20 shadow-soft">
             {categoryName}
@@ -125,19 +122,19 @@ export function ProductCard({
           <Link
             to="/products/$category/$product"
             params={{ category: categorySlug, product: product.slug }}
-            className="inline-flex items-center gap-1.5 rounded-full border border-accent/40 bg-accent/10 px-5 py-2.5 text-sm font-semibold text-accent transition-all duration-300 hover:border-accent hover:bg-brand hover:text-primary-foreground hover:shadow-glow active:scale-95"
+            className="inline-flex items-center gap-1.5 rounded-full border border-accent/40 bg-transparent px-5 py-2 text-sm font-medium text-accent transition-all duration-300 hover:border-accent hover:bg-accent/10 active:scale-95"
           >
             View Details
             <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
           <a
-            href={CONTACT.whatsappHref}
+            href={`https://wa.me/${CONTACT.phoneDisplay.replace(/\D/g, "")}?text=${encodeURIComponent(`Hi Lanwan, I am interested in the ${product.name}.`)}`}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Enquire about ${product.name}`}
             className="inline-flex items-center gap-1.5 rounded-full px-4 py-2.5 text-sm font-semibold text-muted-foreground transition-colors duration-300 hover:text-foreground hover:bg-surface"
           >
-            <MessageCircle className="size-4" />
+            <WhatsAppIcon className="size-4" />
             Enquire
           </a>
         </div>
@@ -220,7 +217,7 @@ export function EnquiryStrip() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-background/95 px-6 py-3.5 text-sm font-semibold text-foreground transition-transform duration-300 hover:-translate-y-0.5"
             >
-              <MessageCircle className="size-4" /> WhatsApp Us
+              <WhatsAppIcon className="size-4" /> WhatsApp Us
             </a>
             <Link
               to="/"

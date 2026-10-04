@@ -7,16 +7,16 @@ import { CATEGORIES, getCategory, type Product } from "@/lib/catalog";
 import { Link } from "@tanstack/react-router";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
-import appLivingRoom from "@/assets/lifestyle/app_living_room.jpg";
-import appVillaEntrance from "@/assets/lifestyle/app_villa_entrance.jpg";
-import appHotelRoom from "@/assets/lifestyle/app_hotel_room.jpg";
-import appModernOffice from "@/assets/lifestyle/app_modern_office.jpg";
+import appLivingRoom from "@/assets/lanwan-smart-home-luxury-living-room.png";
+import appVillaEntrance from "@/assets/lanwan-smart-home-luxury-living-room.png";
+import appHotelRoom from "@/assets/lanwan-smart-home-luxury-living-room.png";
+import appModernOffice from "@/assets/lanwan-smart-home-luxury-living-room.png";
 
 // New product-in-space images
-import appSmartLockVilla from "@/assets/lifestyle/app_smart_lock_villa.jpg";
-import appSmartSwitchLiving from "@/assets/lifestyle/app_smart_switch_living_room.jpg";
-import appVideoDoorbell from "@/assets/lifestyle/app_video_doorbell_entrance.jpg";
-import appGlassLockOffice from "@/assets/lifestyle/app_glass_lock_office.jpg";
+import appSmartLockVilla from "@/assets/lanwan-smart-home-luxury-living-room.png";
+import appSmartSwitchLiving from "@/assets/lanwan-smart-home-luxury-living-room.png";
+import appVideoDoorbell from "@/assets/lanwan-smart-home-luxury-living-room.png";
+import appGlassLockOffice from "@/assets/lanwan-smart-home-luxury-living-room.png";
 
 function ApplicationShowcase({ categorySlug }: { categorySlug: string }) {
   let image, title;

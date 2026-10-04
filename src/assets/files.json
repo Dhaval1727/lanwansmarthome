@@ -1,0 +1,474 @@
+﻿[
+    {
+        "Name":  "bg-smarthome.jpg",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\bg-smarthome.jpg"
+    },
+    {
+        "Name":  "files.json",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\files.json"
+    },
+    {
+        "Name":  "hero.jpg",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\hero.jpg"
+    },
+    {
+        "Name":  "lanwan-smart-home-luxury-living-room.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\lanwan-smart-home-luxury-living-room.png"
+    },
+    {
+        "Name":  "logo.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\logo.png"
+    },
+    {
+        "Name":  "p-light.jpg",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\p-light.jpg"
+    },
+    {
+        "Name":  "smart-lock-features-list.jpg",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\smart-lock-features-list.jpg"
+    },
+    {
+        "Name":  "1 NODE.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\DRIVER - CONTROLLER - NODE - RELAY\\1 NODE.png"
+    },
+    {
+        "Name":  "2,3,4 NODE.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\DRIVER - CONTROLLER - NODE - RELAY\\2,3,4 NODE.png"
+    },
+    {
+        "Name":  "CURTAIN NODE.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\DRIVER - CONTROLLER - NODE - RELAY\\CURTAIN NODE.png"
+    },
+    {
+        "Name":  "LED DRIVER - 1.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\DRIVER - CONTROLLER - NODE - RELAY\\LED DRIVER - 1.png"
+    },
+    {
+        "Name":  "LED DRIVER - 2.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\DRIVER - CONTROLLER - NODE - RELAY\\LED DRIVER - 2.png"
+    },
+    {
+        "Name":  "RGB + CCT CONTROLLER.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\DRIVER - CONTROLLER - NODE - RELAY\\RGB + CCT CONTROLLER.png"
+    },
+    {
+        "Name":  "WIRED PRO.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\GATWAY\\WIRED PRO.png"
+    },
+    {
+        "Name":  "FINGERPRINT LOCK.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\LOCK\\CABINET LOCK\\FINGERPRINT LOCK.png"
+    },
+    {
+        "Name":  "NFC CABINETS LOCK.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\LOCK\\CABINET LOCK\\NFC CABINETS LOCK.png"
+    },
+    {
+        "Name":  "app_video_doorbell_entrance.jpg",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\LOCK\\DOOR BELL\\app_video_doorbell_entrance.jpg"
+    },
+    {
+        "Name":  "DOOR BELL N.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\LOCK\\DOOR BELL\\DOOR BELL N.png"
+    },
+    {
+        "Name":  "Home DOOR BELL.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\LOCK\\DOOR BELL\\Home DOOR BELL.png"
+    },
+    {
+        "Name":  "GLASS DOOR LOCK.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\LOCK\\GLASS DOOR LOCK\\GLASS DOOR LOCK.png"
+    },
+    {
+        "Name":  "HOME GLASS DOOR LOCK.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\LOCK\\GLASS DOOR LOCK\\HOME GLASS DOOR LOCK.png"
+    },
+    {
+        "Name":  "5a93763817119705db22a8fa38b4d143.JPG.jpeg",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\LOCK\\SMART LOCK\\5a93763817119705db22a8fa38b4d143.JPG.jpeg"
+    },
+    {
+        "Name":  "B1 LOCK - 2.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\LOCK\\SMART LOCK\\B1 LOCK - 2.png"
+    },
+    {
+        "Name":  "B2 WITH BRAND - PRICELSIT.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\LOCK\\SMART LOCK\\B2 WITH BRAND - PRICELSIT.png"
+    },
+    {
+        "Name":  "B2 WITH BRAND.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\LOCK\\SMART LOCK\\B2 WITH BRAND.png"
+    },
+    {
+        "Name":  "c1eb44ac44f33284db650df98e09c0a2.JPG.jpeg",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\LOCK\\SMART LOCK\\c1eb44ac44f33284db650df98e09c0a2.JPG.jpeg"
+    },
+    {
+        "Name":  "f33d291aaa66e625c9bc868702f75547.jpg.jpeg",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\LOCK\\SMART LOCK\\f33d291aaa66e625c9bc868702f75547.jpg.jpeg"
+    },
+    {
+        "Name":  "Home B1 LOCK -2.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\LOCK\\SMART LOCK\\Home B1 LOCK -2.png"
+    },
+    {
+        "Name":  "HOME GLASS DOOR LOCK.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\LOCK\\SMART LOCK\\HOME GLASS DOOR LOCK.png"
+    },
+    {
+        "Name":  "Home NEW S1 PRO.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\LOCK\\SMART LOCK\\Home NEW S1 PRO.png"
+    },
+    {
+        "Name":  "Home S - VL.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\LOCK\\SMART LOCK\\Home S - VL.png"
+    },
+    {
+        "Name":  "Home SERIES - 6.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\LOCK\\SMART LOCK\\Home SERIES - 6.png"
+    },
+    {
+        "Name":  "Hotels_LOCK.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\LOCK\\SMART LOCK\\Hotels_LOCK.png"
+    },
+    {
+        "Name":  "NEW S1 PRO.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\LOCK\\SMART LOCK\\NEW S1 PRO.png"
+    },
+    {
+        "Name":  "S - VL.JPG",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\LOCK\\SMART LOCK\\S - VL.JPG"
+    },
+    {
+        "Name":  "SERIES - 3 PRO - WIFI - BRAND.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\LOCK\\SMART LOCK\\SERIES - 3 PRO - WIFI - BRAND.png"
+    },
+    {
+        "Name":  "SERIES - 4.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\LOCK\\SMART LOCK\\SERIES - 4.png"
+    },
+    {
+        "Name":  "SERIES - 6.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\LOCK\\SMART LOCK\\SERIES - 6.png"
+    },
+    {
+        "Name":  "10 INCH SCREEN.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\MUTIFUCATION SCREEN\\10 INCH SCREEN.png"
+    },
+    {
+        "Name":  "10 Smart Home Control Panel.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\MUTIFUCATION SCREEN\\10 Smart Home Control Panel.png"
+    },
+    {
+        "Name":  "4 INCH - 1.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\MUTIFUCATION SCREEN\\4 INCH - 1.png"
+    },
+    {
+        "Name":  "4 Smart Scene Control Panel.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\MUTIFUCATION SCREEN\\4 Smart Scene Control Panel.png"
+    },
+    {
+        "Name":  "8 inch ..png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\MUTIFUCATION SCREEN\\8 inch ..png"
+    },
+    {
+        "Name":  "8 Smart Room Control Panel.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\MUTIFUCATION SCREEN\\8 Smart Room Control Panel.png"
+    },
+    {
+        "Name":  "p-curtain.jpg",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART CURTAINS\\p-curtain.jpg"
+    },
+    {
+        "Name":  "smart-curtains-motor.jpg",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART CURTAINS\\smart-curtains-motor.jpg"
+    },
+    {
+        "Name":  "smart-curtains.jpg",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART CURTAINS\\smart-curtains.jpg"
+    },
+    {
+        "Name":  "HOME_SMART_KNOB.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART KNOB\\HOME_SMART_KNOB.png"
+    },
+    {
+        "Name":  "IMG_5007.JPG.jpeg",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART KNOB\\IMG_5007.JPG.jpeg"
+    },
+    {
+        "Name":  "IMG_5008.JPG.jpeg",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART KNOB\\IMG_5008.JPG.jpeg"
+    },
+    {
+        "Name":  "IMG_5009.JPG.jpeg",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART KNOB\\IMG_5009.JPG.jpeg"
+    },
+    {
+        "Name":  "IMG_5009.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART KNOB\\IMG_5009.png"
+    },
+    {
+        "Name":  "IMG_5167 copy.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART KNOB\\IMG_5167 copy.png"
+    },
+    {
+        "Name":  "IMG_5169 copy.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART KNOB\\IMG_5169 copy.png"
+    },
+    {
+        "Name":  "IMG_5169.PNG",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART KNOB\\IMG_5169.PNG"
+    },
+    {
+        "Name":  "IMG_5179 copy.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART KNOB\\IMG_5179 copy.png"
+    },
+    {
+        "Name":  "IMG_5179.PNG",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART KNOB\\IMG_5179.PNG"
+    },
+    {
+        "Name":  "KNOB.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART KNOB\\KNOB.png"
+    },
+    {
+        "Name":  "SMART METAL KNOB - 1.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART KNOB\\SMART METAL KNOB - 1.png"
+    },
+    {
+        "Name":  "SMART METAL KNOB - 2.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART KNOB\\SMART METAL KNOB - 2.png"
+    },
+    {
+        "Name":  "SMART ROTARY KNOB - 1.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART KNOB\\SMART ROTARY KNOB - 1.png"
+    },
+    {
+        "Name":  "SMART ROTARY KNOB - 2.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART KNOB\\SMART ROTARY KNOB - 2.png"
+    },
+    {
+        "Name":  "109-110.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART LIGHTS\\109-110.png"
+    },
+    {
+        "Name":  "113.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART LIGHTS\\113.png"
+    },
+    {
+        "Name":  "115-116 .1.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART LIGHTS\\115-116 .1.png"
+    },
+    {
+        "Name":  "119-120.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART LIGHTS\\119-120.png"
+    },
+    {
+        "Name":  "12.4.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART LIGHTS\\12.4.png"
+    },
+    {
+        "Name":  "133-134.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART LIGHTS\\133-134.png"
+    },
+    {
+        "Name":  "155.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART LIGHTS\\155.png"
+    },
+    {
+        "Name":  "157.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART LIGHTS\\157.png"
+    },
+    {
+        "Name":  "22.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART LIGHTS\\22.png"
+    },
+    {
+        "Name":  "24 copy.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART LIGHTS\\24 copy.png"
+    },
+    {
+        "Name":  "29.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART LIGHTS\\29.png"
+    },
+    {
+        "Name":  "7.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART LIGHTS\\7.png"
+    },
+    {
+        "Name":  "LUXE.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART LIGHTS\\LUXE.png"
+    },
+    {
+        "Name":  "RRRRR.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART LIGHTS\\RRRRR.png"
+    },
+    {
+        "Name":  "SSSSS.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART LIGHTS\\SSSSS.png"
+    },
+    {
+        "Name":  "12 SCENE SWITCH - 1.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\SCENE SWITCH\\12 SCENE SWITCH - 1.png"
+    },
+    {
+        "Name":  "18 SCENE SWITCH - 1.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\SCENE SWITCH\\18 SCENE SWITCH - 1.png"
+    },
+    {
+        "Name":  "HOME_SCENE_SWITCH.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\SCENE SWITCH\\HOME_SCENE_SWITCH.png"
+    },
+    {
+        "Name":  "HOME_GLASS_TOUCH_SWITCH.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\SMART GLASS TOUCH SWITCHES\\BLACK\\HOME_GLASS_TOUCH_SWITCH.png"
+    },
+    {
+        "Name":  "Module2.PNG",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\SMART GLASS TOUCH SWITCHES\\BLACK\\Module2.PNG"
+    },
+    {
+        "Name":  "Module4.PNG",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\SMART GLASS TOUCH SWITCHES\\BLACK\\Module4.PNG"
+    },
+    {
+        "Name":  "Module4_1.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\SMART GLASS TOUCH SWITCHES\\BLACK\\Module4_1.png"
+    },
+    {
+        "Name":  "Module4_4.PNG",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\SMART GLASS TOUCH SWITCHES\\BLACK\\Module4_4.PNG"
+    },
+    {
+        "Name":  "Module4_5.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\SMART GLASS TOUCH SWITCHES\\BLACK\\Module4_5.png"
+    },
+    {
+        "Name":  "10 TOUCH FRONT - WITHOUT BRAND - WHITE.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\SMART GLASS TOUCH SWITCHES\\WHITE\\10 TOUCH FRONT - WITHOUT BRAND - WHITE.png"
+    },
+    {
+        "Name":  "2 TOUCH +1FAN + USOCKET FRONT WITHOUT BRAND - WHITE.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\SMART GLASS TOUCH SWITCHES\\WHITE\\2 TOUCH +1FAN + USOCKET FRONT WITHOUT BRAND - WHITE.png"
+    },
+    {
+        "Name":  "2TOUCH 1 FAN + SOCKET FRONT - WITHOUT BRAND - WHITE RIGHT SOCKET.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\SMART GLASS TOUCH SWITCHES\\WHITE\\2TOUCH 1 FAN + SOCKET FRONT - WITHOUT BRAND - WHITE RIGHT SOCKET.png"
+    },
+    {
+        "Name":  "2TOUCH 1 FAN + SOCKET FRONT - WITHOUT BRAND - WHITE.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\SMART GLASS TOUCH SWITCHES\\WHITE\\2TOUCH 1 FAN + SOCKET FRONT - WITHOUT BRAND - WHITE.png"
+    },
+    {
+        "Name":  "8 TOUCH + USOCKET FRONT WITHOUT BRAND - WHITE RIGHT SIDE SOCKET.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\SMART GLASS TOUCH SWITCHES\\WHITE\\8 TOUCH + USOCKET FRONT WITHOUT BRAND - WHITE RIGHT SIDE SOCKET.png"
+    },
+    {
+        "Name":  "8 TOUCH + USOCKET FRONT WITHOUT BRAND - WHITE.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\SMART GLASS TOUCH SWITCHES\\WHITE\\8 TOUCH + USOCKET FRONT WITHOUT BRAND - WHITE.png"
+    },
+    {
+        "Name":  "8 TOUCH FRONT without brand - White.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\SMART GLASS TOUCH SWITCHES\\WHITE\\8 TOUCH FRONT without brand - White.png"
+    },
+    {
+        "Name":  "21. KNOB + 6 TOUCH + 6 TOUCH.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\TITAN SWITCHES\\TITAN SWITCH MULTI COLOR\\21. KNOB + 6 TOUCH + 6 TOUCH.png"
+    },
+    {
+        "Name":  "HOME_TITAN_SWITCH_GOLDEN.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\TITAN SWITCHES\\TITAN SWITCH MULTI COLOR\\HOME_TITAN_SWITCH_GOLDEN.png"
+    },
+    {
+        "Name":  "1. 2M 2TOUCH + KNOB.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\TITAN SWITCHES\\TITTAN SWITCH FRONT SIDE\\1. 2M 2TOUCH + KNOB.png"
+    },
+    {
+        "Name":  "10. 4M 4 TOUCH  + 4 TOUCH.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\TITAN SWITCHES\\TITTAN SWITCH FRONT SIDE\\10. 4M 4 TOUCH  + 4 TOUCH.png"
+    },
+    {
+        "Name":  "11. 4M 6 TOUCH  + 6 TOUCH.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\TITAN SWITCHES\\TITTAN SWITCH FRONT SIDE\\11. 4M 6 TOUCH  + 6 TOUCH.png"
+    },
+    {
+        "Name":  "12. 6-8M KNOB + 4 TOUCH  + SOCKET.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\TITAN SWITCHES\\TITTAN SWITCH FRONT SIDE\\12. 6-8M KNOB + 4 TOUCH  + SOCKET.png"
+    },
+    {
+        "Name":  "13. 6-8M KNOB + 6 TOUCH  + SOCKET.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\TITAN SWITCHES\\TITTAN SWITCH FRONT SIDE\\13. 6-8M KNOB + 6 TOUCH  + SOCKET.png"
+    },
+    {
+        "Name":  "14. 6-8M 6 TOUCH  + 6 TOUCH  + SOCKET.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\TITAN SWITCHES\\TITTAN SWITCH FRONT SIDE\\14. 6-8M 6 TOUCH  + 6 TOUCH  + SOCKET.png"
+    },
+    {
+        "Name":  "15. 6-8M 4 TOUCH  + 4 TOUCH  + SOCKET.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\TITAN SWITCHES\\TITTAN SWITCH FRONT SIDE\\15. 6-8M 4 TOUCH  + 4 TOUCH  + SOCKET.png"
+    },
+    {
+        "Name":  "16. 6-8M 4 TOUCH  + 6 TOUCH  + SOCKET.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\TITAN SWITCHES\\TITTAN SWITCH FRONT SIDE\\16. 6-8M 4 TOUCH  + 6 TOUCH  + SOCKET.png"
+    },
+    {
+        "Name":  "17. 6-8M KNOB + 4 TOUCH  + 4 TOUCH.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\TITAN SWITCHES\\TITTAN SWITCH FRONT SIDE\\17. 6-8M KNOB + 4 TOUCH  + 4 TOUCH.png"
+    },
+    {
+        "Name":  "18. 6-8M KNOB + 6 TOUCH  + 6 TOUCH.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\TITAN SWITCHES\\TITTAN SWITCH FRONT SIDE\\18. 6-8M KNOB + 6 TOUCH  + 6 TOUCH.png"
+    },
+    {
+        "Name":  "19. 6-8M KNOB + 4 TOUCH  + 6 TOUCH.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\TITAN SWITCHES\\TITTAN SWITCH FRONT SIDE\\19. 6-8M KNOB + 4 TOUCH  + 6 TOUCH.png"
+    },
+    {
+        "Name":  "2. 2M 4 TOUCH.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\TITAN SWITCHES\\TITTAN SWITCH FRONT SIDE\\2. 2M 4 TOUCH.png"
+    },
+    {
+        "Name":  "20. 6-8M 6 TOUCH + 6 TOUCH  + 6 TOUCH.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\TITAN SWITCHES\\TITTAN SWITCH FRONT SIDE\\20. 6-8M 6 TOUCH + 6 TOUCH  + 6 TOUCH.png"
+    },
+    {
+        "Name":  "21. 6-8M 4 TOUCH + 4 TOUCH  + 4 TOUCH.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\TITAN SWITCHES\\TITTAN SWITCH FRONT SIDE\\21. 6-8M 4 TOUCH + 4 TOUCH  + 4 TOUCH.png"
+    },
+    {
+        "Name":  "22. 6-8M 4 TOUCH + 6 TOUCH  + 6 TOUCH.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\TITAN SWITCHES\\TITTAN SWITCH FRONT SIDE\\22. 6-8M 4 TOUCH + 6 TOUCH  + 6 TOUCH.png"
+    },
+    {
+        "Name":  "23. 6-8M 4 TOUCH + 4 TOUCH  + 6 TOUCH.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\TITAN SWITCHES\\TITTAN SWITCH FRONT SIDE\\23. 6-8M 4 TOUCH + 4 TOUCH  + 6 TOUCH.png"
+    },
+    {
+        "Name":  "3. 2M 6 TOUCH.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\TITAN SWITCHES\\TITTAN SWITCH FRONT SIDE\\3. 2M 6 TOUCH.png"
+    },
+    {
+        "Name":  "4. 4M KNOB + SOCKET.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\TITAN SWITCHES\\TITTAN SWITCH FRONT SIDE\\4. 4M KNOB + SOCKET.png"
+    },
+    {
+        "Name":  "5. 4M 4 TOUCH + SOCKET.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\TITAN SWITCHES\\TITTAN SWITCH FRONT SIDE\\5. 4M 4 TOUCH + SOCKET.png"
+    },
+    {
+        "Name":  "6. 4M 6 TOUCH + SOCKET.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\TITAN SWITCHES\\TITTAN SWITCH FRONT SIDE\\6. 4M 6 TOUCH + SOCKET.png"
+    },
+    {
+        "Name":  "7. 4M KNOB + 4 TOUCH.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\TITAN SWITCHES\\TITTAN SWITCH FRONT SIDE\\7. 4M KNOB + 4 TOUCH.png"
+    },
+    {
+        "Name":  "8. 4M KNOB + 6 TOUCH.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\TITAN SWITCHES\\TITTAN SWITCH FRONT SIDE\\8. 4M KNOB + 6 TOUCH.png"
+    },
+    {
+        "Name":  "9. 4M 4 TOUCH  + 6 TOUCH.png",
+        "FullName":  "C:\\Users\\User\\Downloads\\LanwanSmartHome\\src\\assets\\SMART SWITCHES\\TITAN SWITCHES\\TITTAN SWITCH FRONT SIDE\\9. 4M 4 TOUCH  + 6 TOUCH.png"
+    }
+]

@@ -1,28 +1,12 @@
 import { createFileRoute, notFound, Link } from "@tanstack/react-router";
-import { Check, ArrowRight, MessageCircle, Phone } from "lucide-react";
+import { Check, ArrowRight, Phone } from "lucide-react";
 import { Header } from "@/components/site/header";
 import { Footer, FloatingActions } from "@/components/site/sections-bottom";
 import { ProductCard, PageHeader } from "@/components/site/product-ui";
+import { WhatsAppIcon } from "@/components/ui/whatsapp-icon";
 import { Reveal } from "@/components/site/primitives";
 import { getProduct, type Product } from "@/lib/catalog";
 import { CONTACT } from "@/lib/site-data";
-
-import install10 from "@/assets/MUTIFUCATION SCREEN/10 Smart Home Control Panel.png";
-import install8 from "@/assets/MUTIFUCATION SCREEN/8 Smart Room Control Panel.png";
-import install4 from "@/assets/MUTIFUCATION SCREEN/4 Smart Scene Control Panel.png";
-
-import homeB1Lock2 from "@/assets/LOCK/Home B1 LOCK -2.png";
-import homeB2Pricelist from "@/assets/LOCK/Home B2 WITH BRAND-PRICELSIT.png";
-import homeB2Brand from "@/assets/LOCK/Home B2 WITH BRAND.png";
-import homeDoorBell from "@/assets/LOCK/Home DOOR BELL.png";
-import homeFingerprint from "@/assets/LOCK/HOME FINGERPRINT LOCK.png";
-import homeGlassDoor from "@/assets/LOCK/HOME GLASS DOOR LOCK.png";
-import homeNewS1Pro from "@/assets/LOCK/Home NEW S1 PRO.png";
-import homeNfcCabinets from "@/assets/LOCK/Home NFC CABINETS LOCK.png";
-import homeSVL from "@/assets/LOCK/Home S - VL.png";
-import homeSeries3Pro from "@/assets/LOCK/Home SERIES - 3 PRO - WIFI - BRAND.png";
-import homeSeries4 from "@/assets/LOCK/Home SERIES - 4.png";
-import homeSeries6 from "@/assets/LOCK/Home SERIES - 6.png";
 
 export const Route = createFileRoute("/products/$category/$product")({
   loader: ({ params }) => {
@@ -62,25 +46,11 @@ function ProductDetail() {
     .filter((p: Product) => p.slug !== product.slug)
     .slice(0, 4);
 
-  let displayImage = product.image;
-  if (category.slug === "control-screen") {
-    if (product.slug.includes("10-inch")) displayImage = install10;
-    else if (product.slug.includes("8-inch")) displayImage = install8;
-    else if (product.slug.includes("4-inch")) displayImage = install4;
-  } else if (category.slug === "smart-locks") {
-    if (product.slug === "b1-lock-2") displayImage = homeB1Lock2;
-    else if (product.slug === "b2-with-brand-pricelsit") displayImage = homeB2Pricelist;
-    else if (product.slug === "b2-with-brand") displayImage = homeB2Brand;
-    else if (product.slug === "door-bell-n") displayImage = homeDoorBell;
-    else if (product.slug === "fingerprint-lock") displayImage = homeFingerprint;
-    else if (product.slug === "glass-door-lock") displayImage = homeGlassDoor;
-    else if (product.slug === "new-s1-pro") displayImage = homeNewS1Pro;
-    else if (product.slug === "nfc-cabinets-lock") displayImage = homeNfcCabinets;
-    else if (product.slug === "s-vl") displayImage = homeSVL;
-    else if (product.slug === "series-3-pro-wifi-brand") displayImage = homeSeries3Pro;
-    else if (product.slug === "series-4") displayImage = homeSeries4;
-    else if (product.slug === "series-6") displayImage = homeSeries6;
-  }
+  const imagesToDisplay = (product as any).gallery || [product.image];
+
+  const whatsappText = `Hi Lanwan, I am interested in the ${product.name} (${category.name}).`;
+  const whatsappNumber = CONTACT.phoneDisplay.replace(/\D/g, "");
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappText)}`;
 
   return (
     <div className="min-h-screen">
@@ -103,15 +73,19 @@ function ProductDetail() {
 
         <section className="pb-20">
           <div className="container-page grid gap-10 lg:grid-cols-2 lg:gap-16">
-            <Reveal className="product-stage overflow-hidden rounded-[2rem] border border-border shadow-lift bg-white">
-              <img
-                src={displayImage}
-                alt={product.alt}
-                width={1000}
-                height={1000}
-                className="aspect-square w-full object-contain p-8"
-              />
-            </Reveal>
+            <div className="flex flex-col gap-6">
+              {imagesToDisplay.map((img: string, idx: number) => (
+                <Reveal key={idx} className="product-stage overflow-hidden rounded-[2rem] border border-border shadow-lift bg-white">
+                  <img
+                    src={img}
+                    alt={product.alt}
+                    width={1000}
+                    height={1000}
+                    className="aspect-square w-full object-contain p-8"
+                  />
+                </Reveal>
+              ))}
+            </div>
 
             <Reveal delay={120}>
               <div className="flex flex-wrap gap-2">
@@ -129,7 +103,7 @@ function ProductDetail() {
                 {product.description}
               </p>
 
-              <h2 className="mt-9 font-display text-lg text-foreground">Key features</h2>
+              <h2 className="mt-9 font-display text-lg text-foreground">Specifications & Features</h2>
               <ul className="mt-4 grid gap-3 sm:grid-cols-2">
                 {product.features.map((f: string) => (
                   <li key={f} className="flex items-start gap-2.5 text-sm text-foreground">
@@ -140,15 +114,26 @@ function ProductDetail() {
                   </li>
                 ))}
               </ul>
+              
+              <div className="mt-6 grid gap-4 sm:grid-cols-2 border-t border-border/50 pt-6">
+                <div>
+                  <h3 className="text-xs font-semibold tracking-wider text-muted-foreground uppercase">Connectivity</h3>
+                  <p className="mt-1 text-sm font-medium text-foreground">{product.connectivity.join(", ")}</p>
+                </div>
+                <div>
+                  <h3 className="text-xs font-semibold tracking-wider text-muted-foreground uppercase">Installation</h3>
+                  <p className="mt-1 text-sm font-medium text-foreground">By Certified Engineers</p>
+                </div>
+              </div>
 
               <div className="mt-10 flex flex-wrap gap-3">
                 <a
-                  href={CONTACT.whatsappHref}
+                  href={whatsappLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition-transform duration-300 hover:-translate-y-0.5"
                 >
-                  <MessageCircle className="size-4" /> Enquire on WhatsApp
+                  <WhatsAppIcon className="size-4" /> Enquire on WhatsApp
                 </a>
                 <a
                   href={CONTACT.phoneHref}

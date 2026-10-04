@@ -1,9 +1,9 @@
-import lock from "@/assets/p-lock.jpg";
-import vdp from "@/assets/p-vdp.jpg";
-import camera from "@/assets/p-camera.jpg";
-import bell from "@/assets/p-bell.jpg";
+import lock from "@/assets/LOCK/SMART LOCK/Home SERIES - 6.png";
+import vdp from "@/assets/LOCK/DOOR BELL/app_video_doorbell_entrance.jpg";
+import camera from "@/assets/MUTIFUCATION SCREEN/10 INCH SCREEN.png";
+import bell from "@/assets/LOCK/DOOR BELL/Home DOOR BELL.png";
 import light from "@/assets/p-light.jpg";
-import curtain from "@/assets/p-curtain.jpg";
+import curtain from "@/assets/SMART CURTAINS/p-curtain.jpg";
 
 export const CONTACT = {
   brand: "Lanwan Automation",
@@ -62,14 +62,14 @@ export const TRUST_BADGES = [
   "Make in India",
   "100+ Panel Combinations",
   "Certified Engineers",
-  "24×7 Support",
+  "24×7 Helpline",
 ];
 
 export const SOLUTIONS = [
   { title: "Homes", copy: "Lighting, security and climate for independent houses." },
   { title: "Apartments", copy: "Retrofit Zigbee panels with zero civil work or damage." },
-  { title: "Villas", copy: "IP villa intercom, gate control and perimeter security." },
   { title: "Hotels", copy: "Series H0/H1 RFID locks, DND panels and energy-saving switches." },
+  { title: "Villas", copy: "IP villa intercom, gate control and perimeter security." },
   { title: "Hospitals", copy: "Nurse-friendly controls, access logs and reliable offline scenes." },
   { title: "Senior Living", copy: "Human presence sensors, one-touch scenes and voice control." },
   { title: "Warehouses", copy: "Gateway-managed lighting zones and load monitoring at scale." },
@@ -169,6 +169,22 @@ export const FAQS = [
   {
     q: "How many devices can one gateway handle?",
     a: "The Wired Pro Gateway supports 200 Zigbee devices simultaneously, with up to 200 m outdoor and 20 m indoor range. Larger sites use multiple gateways or the Pro Max Matter gateway.",
+  },
+  {
+    q: "What happens during a power failure?",
+    a: "Smart locks run on independent batteries (lasting 6-12 months). When power returns, the Zigbee mesh self-heals and switches reconnect automatically to the gateway.",
+  },
+  {
+    q: "Do I need a strong Wi-Fi connection in every room?",
+    a: "No. Only the central gateway requires a wired or Wi-Fi internet connection. The switches and sensors communicate with the gateway via their own Zigbee mesh network.",
+  },
+  {
+    q: "Can I add more smart devices later?",
+    a: "Yes. Our system is fully modular. You can start with just the living room or front door, and easily add more switches, curtains, or sensors to the same app later.",
+  },
+  {
+    q: "What kind of after-sales support do you provide?",
+    a: "Every customer gets access to our 24×7 helpline. We also offer annual maintenance contracts (AMC) for periodic health checks of your entire automation system.",
   },
 ];
 

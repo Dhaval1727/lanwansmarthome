@@ -16,13 +16,13 @@ import {
 } from "lucide-react";
 import heroImg from "@/assets/hero.jpg";
 import lightImg from "@/assets/p-light.jpg";
-import curtainImg from "@/assets/p-curtain.jpg";
-import luxuryImg from "@/assets/images/lanwan-smart-home-luxury-living-room.png";
+import curtainImg from "@/assets/SMART CURTAINS/p-curtain.jpg";
+import luxuryImg from "@/assets/lanwan-smart-home-luxury-living-room.png";
 
-import appLivingRoom from "@/assets/lifestyle/app_smart_switch_living_room.jpg";
-import appVillaEntrance from "@/assets/lifestyle/app_smart_lock_villa.jpg";
-import appHotelRoom from "@/assets/lifestyle/app_glass_lock_office.jpg"; // Using office for now as premium space
-import appModernOffice from "@/assets/lifestyle/app_video_doorbell_entrance.jpg";
+import appLivingRoom from "@/assets/lanwan-smart-home-luxury-living-room.png";
+import appVillaEntrance from "@/assets/LOCK/Home_Apartment.png";
+import appHotelRoom from "@/assets/LOCK/SMART LOCK/Hotels_LOCK.png";
+import appModernOffice from "@/assets/LOCK/Lock_Villas.png";
 import { Reveal, SectionHeading } from "./primitives";
 import { Link } from "@tanstack/react-router";
 import { CATEGORIES, FEATURED_PRODUCTS } from "@/lib/catalog";

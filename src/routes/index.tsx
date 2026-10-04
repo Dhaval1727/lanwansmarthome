@@ -2,8 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/site/header";
 import { Hero, About, Products, Solutions, WhyUs, Process } from "@/components/site/sections-top";
 import {
-  Stats,
-  Testimonials,
   Faqs,
   Blog,
   Contact,
@@ -33,11 +31,6 @@ const jsonLd = {
         addressCountry: "IN",
       },
       openingHours: "Mo-Sa 09:30-19:30",
-      aggregateRating: {
-        "@type": "AggregateRating",
-        ratingValue: "4.9",
-        reviewCount: "380",
-      },
     },
     {
       "@type": "FAQPage",
@@ -76,8 +69,6 @@ function Index() {
         <Solutions />
         <WhyUs />
         <Process />
-        <Stats />
-        <Testimonials />
         <Faqs />
         <Blog />
         <Contact />
